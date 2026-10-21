@@ -17,11 +17,12 @@ Local `main` tracks `origin/main`. The initial foundation commit is `7d4380c`; i
 - Prioritize Android and Kotlin interviews, with native iOS and KMP coverage.
 - Plan for 4–6 hours weekly; release small missions at a sustainable pace.
 - Use the study planner as the growing app and shared logic before the shared UI comparison.
+- Use separate Kotlin and mobile workspaces in one repository: independent exercises first, then one growing app with chapter checkpoints. See [project structure](PROJECT_STRUCTURE.md).
 - Prefer one coding agent and targeted context. See [agent workflow](AGENT_WORKFLOW.md).
 
 ## Next deliverable
 
-Implement Chapter 01's timer mission using its [pilot brief](LEARNING_EXPERIENCE.md#pilot-mission-for-chapter-01). Pin a reproducible Kotlin exercise build, separate starter, hints, and solution, and verify the boundary cases and run instructions.
+Implement Chapter 01's timer mission using its [pilot brief](LEARNING_EXPERIENCE.md#pilot-mission-for-chapter-01) and the [selected layout](PROJECT_STRUCTURE.md). Add the `kotlin-labs` workspace and Chapter 01 exercise module, pin a reproducible build, separate starter, hints, and solution, and verify the boundary cases, starter isolation, and run instructions.
 
 ## Publication decisions
 

@@ -22,6 +22,8 @@ Learn a concept, predict what code does, run a small example, change it, and exp
 
 The proposed practice app is a study planner: topics, study sessions, revision reminders, search, progress, and offline data. It starts with simple Kotlin models and grows into an Android app, a shared KMP core, and an iOS client. A later lab compares native and shared UI on the same feature.
 
+The [project structure](docs/PROJECT_STRUCTURE.md) uses small, independently runnable Kotlin exercises and one growing mobile app. App chapters will provide start and finish checkpoints so learners can join or recover at a particular lesson.
+
 ## Current contents
 
 The roadmap, research notes, public learning plan, and introductory diagnostic are available. The runnable Kotlin lessons and mobile application will be added chapter by chapter. See the roadmap for the distinction between planned topics and completed lessons.

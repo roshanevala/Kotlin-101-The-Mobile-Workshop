@@ -12,6 +12,8 @@ Chapters are topic groups, not weekly deadlines. Split each chapter into session
 
 The [learning experience and public release plan](LEARNING_EXPERIENCE.md) turns these chapters into small missions with prediction exercises, optional hints, a Bug Museum entry, and working outcomes. A single chapter may contain several missions. The proposed public release starts with Chapters 00–03 and expands as lessons are implemented and verified.
 
+Follow the [project structure and checkpoint plan](PROJECT_STRUCTURE.md): one repository, independently runnable Kotlin exercise modules, and one growing mobile app. Kotlin exercises use their own workspace before Android setup is introduced. Mobile missions provide start and finish checkpoints rather than a new Android project per chapter.
+
 ## Part 0 Starting point
 
 | Chapter | Topics | Practical outcome |

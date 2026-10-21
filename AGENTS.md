@@ -10,6 +10,7 @@ Kotlin 101 — The Mobile Workshop teaches Kotlin and Android first, then iOS an
 - Read the target files and applicable nested `AGENTS.md` before editing. Do not reload instructions already present in context.
 - For continuation or milestone planning, use `docs/PROJECT_STATUS.md`.
 - For topic scope, use `docs/CURRICULUM.md`; for lesson design, use `docs/LEARNING_EXPERIENCE.md`.
+- For exercise layout, app structure, or chapter checkpoints, use `docs/PROJECT_STRUCTURE.md`.
 - For dependency or toolchain decisions, use `docs/RESEARCH.md` and verify current official documentation.
 - For agent workflow questions, use `docs/AGENT_WORKFLOW.md`; for repository publication, use `docs/GITHUB_SETUP.md`.
 - Do not read every linked document before a small edit. These links are routes, not a reading checklist.

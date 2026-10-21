@@ -35,8 +35,10 @@ A useful request specifies the outcome, relevant paths, constraints, and evidenc
 ```text
 Implement Chapter 01's timer mission.
 Use the pilot brief in docs/LEARNING_EXPERIENCE.md and the Chapter 01
-scope in docs/CURRICULUM.md. Work in chapters/01-values-and-types
-and the minimal shared build files needed to run the exercise.
+scope in docs/CURRICULUM.md. Follow docs/PROJECT_STRUCTURE.md.
+Put teaching material in chapters/01-values-and-types and executable
+exercises in kotlin-labs/ch01-values-and-types with the minimal build
+files needed to run them.
 Keep starter, hints, solution, and verification separate.
 Do not introduce Android or KMP setup yet.
 Done when the documented commands run, boundary cases are checked,
