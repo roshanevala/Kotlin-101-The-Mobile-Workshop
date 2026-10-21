@@ -1,0 +1,38 @@
+# Local operating system and editor state
+.DS_Store
+.idea/
+*.iml
+*.swp
+*.swo
+.vscode/*.local.json
+
+# Build output and tool caches
+.gradle/
+.kotlin/
+**/build/
+out/
+__pycache__/
+*.py[cod]
+.venv/
+
+# Android local configuration and signing material
+local.properties
+*.jks
+*.keystore
+keystore.properties
+
+# Apple generated state
+DerivedData/
+xcuserdata/
+*.xcuserstate
+Pods/
+
+# Local credentials and agent scratch data
+.env
+.env.*
+!.env.example
+.agent-local/
+.codex-log/
+*.log
+
+# Keep the future Gradle wrapper JAR and shared project files trackable.
