@@ -6,11 +6,11 @@ Updated **21 October 2026**. Keep this file short; it records delivery state rat
 
 Repository foundation and course planning. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, agent guidance, contribution templates, and a local documentation checker. A documentation CI workflow is prepared; its GitHub execution is pending publication.
+Published: curriculum, technology research, public learning plan, Chapter 00 diagnostic, agent guidance, contribution templates, and a local documentation checker. The Documentation workflow passed on GitHub for the initial foundation commit.
 
 Chapters 01–40, the application, and mobile CI are planned. There is no Gradle wrapper or runnable Android, iOS, or KMP project yet.
 
-Local Git uses `main` and `origin` points to the repository above. The documentation check passed across 16 Markdown files; eight behavior checks for the checker and the workflow's initial-commit and whitespace-failure paths were verified locally. Hosted CI execution is pending the first push.
+Local `main` tracks `origin/main`. The initial foundation commit is `7d4380c`; its [hosted documentation check passed](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652). The local documentation check passed across 16 Markdown files; eight behavior checks for the checker and the workflow's initial-commit and whitespace-failure paths were verified locally.
 
 ## Decisions
 

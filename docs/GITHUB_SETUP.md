@@ -2,7 +2,7 @@
 
 Use **Kotlin 101 — The Mobile Workshop** as the public display name. Keep the technical name and workshop subtitle: together they communicate the subject and the hands-on format. The repository slug can use ordinary hyphens for a readable URL.
 
-Metadata and commands reviewed on **21 October 2026**. The owner created [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop), and the local `origin` remote points to it. The settings below are recommendations until applied and verified.
+Metadata and commands reviewed on **21 October 2026**. The foundation is published at [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop), and local `main` tracks `origin/main`. The public visibility, description, and default branch were verified. Collaboration settings below remain recommendations until applied and verified.
 
 ## Repository metadata
 
@@ -12,7 +12,7 @@ Metadata and commands reviewed on **21 October 2026**. The owner created [roshan
 | Repository name | `Kotlin-101-The-Mobile-Workshop` |
 | Owner | `roshanevala` |
 | Default branch | `main` |
-| Intended visibility | Public when ready to share |
+| Visibility | Public |
 | Current release state | Course foundation; Chapter 00 available and runnable lessons in development |
 | Website field | Leave empty until a reading site exists |
 | Template repository | Leave disabled initially |
@@ -58,7 +58,7 @@ If you want a distinct attribution license for teaching prose, consider MIT for 
 
 No license has been applied yet. Choose the policy and copyright holder before adding the license text. Public visibility and permission to reuse are separate matters; GitHub explains the role of a repository license in its [licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository).
 
-## First local commit
+## Local verification and commits
 
 From the repository root, run the checks and inspect the proposed contents:
 
@@ -74,7 +74,7 @@ After choosing and adding a license, stage its file as well. Then review and com
 git diff --cached --check
 git diff --cached --stat
 git diff --cached
-git commit -m "chore: establish the mobile workshop foundation"
+git commit -m "docs: improve the workshop learning material"
 ```
 
 If Git asks for an identity, configure the name and email you want attached to this repository's commits. A GitHub-provided private commit email is an option if you use one. Avoid copying personal machine paths into tracked examples.
@@ -128,4 +128,4 @@ Run `python3 scripts/check_docs.py` with Python 3.9 or later. It checks basic in
 
 The GitHub workflow runs this checker and a whitespace check. Its checkout action is pinned to the commit published for [actions/checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1). Add Android and iOS jobs when those builds exist, using each lesson's verified commands.
 
-The workflow is prepared locally; its hosted execution must be verified after the first push. Once published, update project status with the repository URL and keep setup instructions consistent with the actual settings.
+The workflow [passed on GitHub for the initial foundation commit](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652). Continue checking the workflow for subsequent changes and keep setup instructions consistent with the actual repository settings.
