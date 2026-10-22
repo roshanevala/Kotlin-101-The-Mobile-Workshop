@@ -30,7 +30,7 @@ This design follows OpenAI's advice to avoid mandatory document stacks and use p
 
 ## Give a task a clear finish line
 
-A useful request specifies the outcome, relevant paths, constraints, and evidence of completion. Here is a copyable prompt for the next deliverable:
+A useful request specifies the outcome, relevant paths, constraints, and evidence of completion. Here is the bounded prompt pattern used for the first runnable chapter:
 
 ```text
 Implement Chapter 01's timer mission.

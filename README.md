@@ -10,9 +10,11 @@ The primary track is **Android and Kotlin**, with substantial KMP and native iOS
 
 ## Start here
 
-1. Read the [course roadmap](docs/CURRICULUM.md).
-2. Review the [technology choices and official references](docs/RESEARCH.md).
-3. Work through [Chapter 00 — Starting point and learning habits](chapters/00-starting-point/README.md).
+1. Try [Chapter 01 — Values and types](chapters/01-values-and-types/README.md): fix a timer that loses 35 minutes.
+2. Use the [Kotlin setup guide](kotlin-labs/README.md) to run it locally, or use the lesson's browser option.
+3. Returning to Kotlin? Try the [Chapter 00 diagnostic](chapters/00-starting-point/README.md).
+
+Explore the [full course roadmap](docs/CURRICULUM.md) and [technology choices](docs/RESEARCH.md) when you want the wider picture.
 
 See the [learning experience and public release plan](docs/LEARNING_EXPERIENCE.md) for the mission format, community ideas, and staged launch.
 
@@ -26,9 +28,9 @@ The [project structure](docs/PROJECT_STRUCTURE.md) uses small, independently run
 
 ## Current contents
 
-The roadmap, research notes, public learning plan, and introductory diagnostic are available. The runnable Kotlin lessons and mobile application will be added chapter by chapter. See the roadmap for the distinction between planned topics and completed lessons.
+Chapter 00 and the first runnable Kotlin mission are available. Chapter 01 includes starter code, three optional hints, a separate worked solution, and seven acceptance examples. Its starter intentionally contains the timer bug; some starter tests fail until you solve it.
 
-The first implementation milestone is Chapter 01: a reproducible Kotlin exercise project, an explanation of values and types, practical exercises, and verified solutions. Its first mission fixes a timer that loses the remaining minutes when converting a session into hours.
+The Android, iOS, and KMP applications and Chapters 02–40 are planned. See the [Chapter 01 verification record](chapters/01-values-and-types/VERIFICATION.md) for the toolchain and checks actually run.
 
 ## Contribute and work with agents
 

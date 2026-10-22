@@ -6,7 +6,7 @@ Use this chapter to identify what you remember and what needs practice. The cour
 
 After this chapter, you should have a record of your current skills, understand the difference between KMP and shared UI, and know how to use each later chapter.
 
-New to programming? The code prediction later in this chapter uses classes and collections that will be taught in subsequent lessons. You can mark those topics as new and begin with Chapter 01 when it is available. Returning developers can use the prediction to find a useful practice topic.
+New to programming? The code prediction later in this chapter uses classes and collections that will be taught in subsequent lessons. You can mark those topics as new and begin with [Chapter 01](../01-values-and-types/README.md). Returning developers can use the prediction to find a useful practice topic.
 
 ## Record your starting point
 
@@ -47,7 +47,7 @@ fun main() {
 }
 ```
 
-This is a reasoning diagnostic. If you want to run it immediately, paste it into [Kotlin Playground](https://play.kotlinlang.org/). The local exercise project will be introduced in Chapter 01.
+This is a reasoning diagnostic. If you want to run it immediately, paste it into [Kotlin Playground](https://play.kotlinlang.org/). The local exercise workspace is introduced in [Chapter 01](../01-values-and-types/README.md).
 
 Try these follow-up questions before reading the answer:
 
@@ -95,4 +95,4 @@ At this pace, spend about 30 minutes on recall, 60–90 minutes on guided learni
 - [ ] I attempted the prediction before reading the explanation.
 - [ ] I chose study sessions totaling 4–6 hours for the coming week.
 
-Next planned chapter: **Chapter 01 Values and types**, with a runnable local Kotlin exercise and verified solutions.
+Next: [Chapter 01 Values and types](../01-values-and-types/README.md), with a runnable local Kotlin exercise and a separate worked solution.

@@ -1,0 +1,26 @@
+# Chapter 01 Verification record
+
+Checked locally on **21 October 2026** using macOS on Apple silicon and OpenJDK **17.0.16**. The workspace pins Kotlin **2.2.21**, Gradle **8.14.3**, and a JDK **17** compilation toolchain. The Gradle distribution checksum is recorded in the wrapper properties.
+
+## Executed checks
+
+Commands below run from `kotlin-labs`, with `JAVA_HOME` selecting JDK 17.
+
+| Command or scenario | Observed result |
+| --- | --- |
+| `./gradlew --console=plain :ch01-values-and-types:run` | Starter compiles and prints `1 h 0 min` |
+| `./gradlew --console=plain :ch01-values-and-types:runSolution` | Reference prints `1 h 35 min` |
+| `./gradlew --console=plain :ch01-values-and-types:checkSolution` | All seven acceptance tests pass |
+| `./gradlew --console=plain :ch01-values-and-types:test` on untouched starter | Seven tests run; five fail for lost remaining minutes, while zero minutes and exactly one hour pass |
+| `test --rerun-tasks` after temporarily fixing the starter | All seven tests pass; original starter restored afterward |
+| `checkSolution --rerun-tasks` with a temporary syntax error in the starter | Reference compiles and passes independently; starter restored afterward |
+| `run --rerun-tasks` with a temporary syntax error in the reference | Starter compiles and prints its baseline output independently; reference restored afterward |
+| Clean source copy, without project build caches, using `--offline --no-daemon` and cached dependency downloads | Starter and reference run; all seven reference tests pass in a path containing spaces, without Android SDK environment variables |
+
+The acceptance inputs are 0, 1, 59, 60, 95, 125, and `Int.MAX_VALUE`. Both implementations use the same test source. The published starter deliberately retains its bug; its failing mission tests are expected.
+
+## Verification limits
+
+The terminal workflow was checked locally. Windows commands, Android Studio's graphical import flow, and the browser exercise were not executed as part of this local verification. Android and iOS builds are outside this chapter.
+
+The [GitHub Kotlin workflow](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/workflows/kotlin-labs.yml) runs the starter and reference and checks the reference on Linux with JDK 17. Consult its run history for current hosted results.

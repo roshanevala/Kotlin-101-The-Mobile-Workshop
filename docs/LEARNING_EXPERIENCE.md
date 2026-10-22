@@ -116,7 +116,7 @@ The Bug Museum exhibit explains why converting to whole hours loses the fraction
 
 An optional share note can read: “I fixed a duration display bug using integer division and remainder. My check included a session shorter than an hour and one exactly an hour long.” Learners can instead keep the note private.
 
-This is a mission brief. The runnable Chapter 01 implementation is the next deliverable.
+The [Chapter 01 lesson](../chapters/01-values-and-types/README.md) implements this brief with separate starter, hints, solution, and acceptance checks.
 
 ## Publishing with a sustainable workload
 
@@ -170,8 +170,8 @@ With a small pilot, summarize the actual responses and observed difficulties. Im
 
 ## Next implementation sequence
 
-1. Build Chapter 01 using the pilot mission above.
-2. Add a separate hint file, solution, verification record, and a local learning log example.
-3. Verify the exact documented setup and run commands.
-4. Use the finished lesson to prepare the first public post and a pilot feedback prompt.
+1. Try the implemented Chapter 01 and its changed requirement as a learner.
+2. Use its verification record and actual setup experience to improve instructions.
+3. Prepare the first public post and a pilot feedback prompt from the finished mission.
+4. Collect reader feedback using the questions above.
 5. Apply the pilot findings to Chapters 02 and 03 before the starter release.

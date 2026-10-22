@@ -1,16 +1,16 @@
 # Project status
 
-Updated **21 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **22 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Repository foundation and course planning. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapter 01's timer mission is implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
-Published: curriculum, technology research, public learning plan, Chapter 00 diagnostic, agent guidance, contribution templates, and a local documentation checker. The Documentation workflow passed on GitHub for the initial foundation commit.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapter 01 mission, agent guidance, contribution templates, and a local documentation checker.
 
-Chapters 01–40, the application, and mobile CI are planned. There is no Gradle wrapper or runnable Android, iOS, or KMP project yet.
+Chapter 01 has a runnable Kotlin workspace, separate starter and reference, seven acceptance tests, progressive hints, and a lesson. Local execution and starter/solution isolation passed; see its [verification record](../chapters/01-values-and-types/VERIFICATION.md). GitHub workflows check documentation and the Chapter 01 reference; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for current hosted results. Chapters 02–40 and the Android, iOS, and KMP applications remain planned.
 
-Local `main` tracks `origin/main`. The initial foundation commit is `7d4380c`; its [hosted documentation check passed](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652). The local documentation check passed across 16 Markdown files; eight behavior checks for the checker and the workflow's initial-commit and whitespace-failure paths were verified locally.
+Local `main` tracks `origin/main`. The structure plan is committed as `180a912`. The initial foundation commit is `7d4380c`; its [hosted documentation check passed](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652).
 
 ## Decisions
 
@@ -22,7 +22,7 @@ Local `main` tracks `origin/main`. The initial foundation commit is `7d4380c`; i
 
 ## Next deliverable
 
-Implement Chapter 01's timer mission using its [pilot brief](LEARNING_EXPERIENCE.md#pilot-mission-for-chapter-01) and the [selected layout](PROJECT_STRUCTURE.md). Add the `kotlin-labs` workspace and Chapter 01 exercise module, pin a reproducible build, separate starter, hints, and solution, and verify the boundary cases, starter isolation, and run instructions.
+Try [Chapter 01](../chapters/01-values-and-types/README.md) as a learner and collect setup and explanation feedback. Then implement Chapter 02's control flow and function exercises using the selected layout.
 
 ## Publication decisions
 

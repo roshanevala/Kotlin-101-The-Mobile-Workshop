@@ -26,7 +26,7 @@ Kotlin 101 — The Mobile Workshop teaches Kotlin and Android first, then iOS an
 ## Verification
 
 - Documentation check: `python3 scripts/check_docs.py`.
-- There is currently no Gradle wrapper or runnable mobile application. Do not invent build commands or claim Android or iOS verification.
+- Kotlin exercises use the wrapper in `kotlin-labs`; use its README and scoped guidance for commands. The Android and iOS applications do not exist yet.
 - When code is introduced, document and run the affected exercise's actual commands. Use tests that check observable behavior and relevant boundary cases.
 - After applicable checks pass, broaden testing only for a concrete unresolved risk. Report unrun checks plainly.
 - Finish with what changed, verification, and any remaining limitation. Update status only when progress materially changes.
