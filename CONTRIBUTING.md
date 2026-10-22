@@ -2,7 +2,7 @@
 
 Help make Kotlin 101 — The Mobile Workshop clearer and easier to run. Useful contributions include a confusing sentence, a missing setup step, a better hint, a meaningful edge case, or a reproducible lesson bug.
 
-The project is currently building its first runnable lesson. See [project status](docs/PROJECT_STATUS.md) for what exists and [the curriculum](docs/CURRICULUM.md) for planned topics.
+The first chapter is available as a lesson, workshop, and explained solution. Learners can start from the [course page](README.md). For development plans, verification records, and agent workflows, use the [maintainer guide](docs/maintainers/README.md).
 
 ## Propose a change
 

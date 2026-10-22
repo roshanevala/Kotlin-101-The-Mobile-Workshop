@@ -4,15 +4,17 @@
 
 Kotlin 101 — The Mobile Workshop teaches Kotlin and Android first, then iOS and KMP. Lessons are practical missions for beginners and returning developers. Develop one chapter at a time; the roadmap is not a claim that all chapters exist.
 
+Keep the learner path simple and inviting: one clear start, concepts before exercises, small interesting examples, and an obvious next step. Planning documents belong in the maintainer section.
+
 ## Read only what the task needs
 
 - Discover files with `rg --files`; search narrowly with `rg -n`.
 - Read the target files and applicable nested `AGENTS.md` before editing. Do not reload instructions already present in context.
-- For continuation or milestone planning, use `docs/PROJECT_STATUS.md`.
-- For topic scope, use `docs/CURRICULUM.md`; for lesson design, use `docs/LEARNING_EXPERIENCE.md`.
-- For exercise layout, app structure, or chapter checkpoints, use `docs/PROJECT_STRUCTURE.md`.
-- For dependency or toolchain decisions, use `docs/RESEARCH.md` and verify current official documentation.
-- For agent workflow questions, use `docs/AGENT_WORKFLOW.md`; for repository publication, use `docs/GITHUB_SETUP.md`.
+- For continuation or milestone planning, use `docs/maintainers/PROJECT_STATUS.md`.
+- For topic scope, use `docs/CURRICULUM.md`; for lesson design, use `docs/maintainers/LEARNING_EXPERIENCE.md`.
+- For exercise layout, app structure, or chapter checkpoints, use `docs/maintainers/PROJECT_STRUCTURE.md`.
+- For dependency or toolchain decisions, use `docs/maintainers/RESEARCH.md` and verify current official documentation.
+- For agent workflow questions, use `docs/maintainers/AGENT_WORKFLOW.md`; for repository publication, use `docs/maintainers/GITHUB_SETUP.md`.
 - Do not read every linked document before a small edit. These links are routes, not a reading checklist.
 
 ## Work efficiently

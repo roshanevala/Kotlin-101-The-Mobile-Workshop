@@ -38,8 +38,8 @@ The topics describe the planned course scope. The README and status file must di
 | Path | Purpose |
 | --- | --- |
 | `AGENTS.md`, `chapters/AGENTS.md`, `docs/AGENTS.md` | Short repository and scoped agent instructions |
-| `docs/AGENT_WORKFLOW.md` | Context, delegation, prompt, and handoff practices |
-| `docs/PROJECT_STATUS.md` | Compact delivery state for resuming work |
+| `docs/maintainers/AGENT_WORKFLOW.md` | Context, delegation, prompt, and handoff practices |
+| `docs/maintainers/PROJECT_STATUS.md` | Compact delivery state for resuming work |
 | `.github/copilot-instructions.md` | Route supported Copilot clients to shared instructions |
 | `CONTRIBUTING.md` | How learners and contributors can help |
 | `.github/ISSUE_TEMPLATE/` | Lesson problem and lesson idea forms |

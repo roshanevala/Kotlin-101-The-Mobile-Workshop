@@ -8,15 +8,15 @@ Guidance reviewed against official documentation on **21 October 2026**.
 
 | File | Purpose | When to read |
 | --- | --- | --- |
-| [Root AGENTS.md](../AGENTS.md) | Shared operating rules and document routes | Repository work |
-| [Chapter AGENTS.md](../chapters/AGENTS.md) | Lesson authoring rules | Chapter changes |
-| [Docs AGENTS.md](AGENTS.md) | Document ownership and evidence rules | Documentation changes |
+| [Root AGENTS.md](../../AGENTS.md) | Shared operating rules and document routes | Repository work |
+| [Chapter AGENTS.md](../../chapters/AGENTS.md) | Lesson authoring rules | Chapter changes |
+| [Docs AGENTS.md](../AGENTS.md) | Document ownership and evidence rules | Documentation changes |
 | [Project status](PROJECT_STATUS.md) | Current stage and next implementation | Continuing work or planning |
 | This file | Prompt patterns and delegation guidance | Agent workflow changes or onboarding |
 
 Codex supports root and nested instruction files, with more specific instructions taking precedence along its discovery path. Check which instructions a client loads; a root-launched session may need to read a target directory's guidance explicitly. [Official AGENTS.md documentation](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
-The short [Copilot instructions](../.github/copilot-instructions.md) point to the same repository guidance. Copilot support varies by client and feature; this file does not configure a specialist or start an agent. [GitHub custom instructions](https://docs.github.com/en/copilot/concepts/prompting-and-context/custom-instructions).
+The short [Copilot instructions](../../.github/copilot-instructions.md) point to the same repository guidance. Copilot support varies by client and feature; this file does not configure a specialist or start an agent. [GitHub custom instructions](https://docs.github.com/en/copilot/concepts/prompting-and-context/custom-instructions).
 
 ## Keep the default context small
 
@@ -34,8 +34,8 @@ A useful request specifies the outcome, relevant paths, constraints, and evidenc
 
 ```text
 Implement Chapter 01's timer mission.
-Use the pilot brief in docs/LEARNING_EXPERIENCE.md and the Chapter 01
-scope in docs/CURRICULUM.md. Follow docs/PROJECT_STRUCTURE.md.
+Use the pilot brief in docs/maintainers/LEARNING_EXPERIENCE.md and the Chapter 01
+scope in docs/CURRICULUM.md. Follow docs/maintainers/PROJECT_STRUCTURE.md.
 Put teaching material in chapters/01-values-and-types and executable
 exercises in kotlin-labs/ch01-values-and-types with the minimal build
 files needed to run them.

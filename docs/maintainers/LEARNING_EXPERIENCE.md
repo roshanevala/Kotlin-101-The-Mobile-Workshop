@@ -1,6 +1,6 @@
 # Kotlin 101 learning experience and public release plan
 
-Kotlin 101 will be an open mobile development workshop: short explanations, small problems to solve, a growing application, and room to compare solutions. The primary path remains Kotlin and Android, followed by native iOS and KMP. The workshop format gives the [curriculum](CURRICULUM.md) a repeatable learning experience without changing its technical scope.
+Kotlin 101 will be an open mobile development workshop: short explanations, small problems to solve, a growing application, and room to compare solutions. The primary path remains Kotlin and Android, followed by native iOS and KMP. The workshop format gives the [curriculum](../CURRICULUM.md) a repeatable learning experience without changing its technical scope.
 
 The public display name is **Kotlin 101 — The Mobile Workshop**. Keep searchable topic names in chapter titles, then add a memorable problem in the opening. For example, “Values and types” opens with “Your study timer lost 35 minutes.”
 
@@ -12,21 +12,21 @@ The public promise should be narrow and achievable: learn Kotlin through practic
 
 ## The first visit
 
-Give the README three obvious starting choices:
+Give the README one primary start link to the first lesson. Keep the returning-developer diagnostic and full roadmap secondary:
 
 | Learner | First action |
 | --- | --- |
-| New to Kotlin | Try the first code prediction, read the beginner explanation, and run the first tiny example |
+| New to Kotlin | Read the first lesson, then use the workshop to apply it |
 | Returning Android developer | Attempt the baseline diagnostic and use the results to choose a chapter |
 | Experienced developer exploring KMP | Check prerequisites and jump to the KMP module once its lessons are available |
 
-Show available lessons separately from planned topics. Put the first runnable exercise before the full roadmap, and make the roadmap available for people who want the complete picture. Aim for a first successful run within 15 minutes on a supported, configured setup; use pilot feedback to see whether that target is realistic.
+Show available lessons separately from planned topics. Keep setup instructions at the point where learners start coding, and make the full roadmap optional. Planning and contributor material belongs in the maintainer section. Aim for a first successful run within 15 minutes on a supported, configured setup; use pilot feedback to see whether that target is realistic.
 
 The early exercises should also offer a browser path where feasible. Core learning materials remain readable without an account, a social post, or access to an iOS machine.
 
 ## A lesson as a small mission
 
-Each mission follows the same sequence, split across sessions when necessary:
+Every chapter has a short entry page leading to `LESSON.md`, `WORKSHOP.md`, and `SOLUTION.md` in that order. Teach the concepts with small examples before asking the learner to repair or build a feature. The workshop then follows this sequence, split across sessions when necessary:
 
 | Step | Learner activity | Why it belongs |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ Each mission follows the same sequence, split across sessions when necessary:
 | Explain | Answer a short interview prompt in your own words | Connect implementation to communication |
 | Revisit | Solve a changed version in a later session | Check whether the idea can be recalled and reused |
 
-Start each page with prerequisites, what will be built, expected effort, and the command to run it. Effort estimates are provisional until learners try the lesson. Provide three levels of hints: a question to consider, the relevant concept, and a partial approach. Link the worked solution separately so it is easy to avoid spoilers.
+Start the lesson with its purpose and prerequisites. Start the workshop with its goal and the commands needed to run it. Keep the setup guide separate and reusable. Effort estimates are provisional until learners try the lesson. Provide three levels of hints in one optional page with collapsed sections: a question to consider, the relevant concept, and a partial approach. Link the worked solution separately so it is easy to avoid spoilers. Execution records belong with maintainer documentation.
 
 Prediction, recall, and revisiting material draw on retrieval and spaced practice. The mission names, achievement ideas, and release cadence are design proposals to evaluate with learners. [Teaching the science of learning](https://link.springer.com/article/10.1186/s41235-017-0087-y).
 
@@ -116,7 +116,7 @@ The Bug Museum exhibit explains why converting to whole hours loses the fraction
 
 An optional share note can read: “I fixed a duration display bug using integer division and remainder. My check included a session shorter than an hour and one exactly an hour long.” Learners can instead keep the note private.
 
-The [Chapter 01 lesson](../chapters/01-values-and-types/README.md) implements this brief with separate starter, hints, solution, and acceptance checks.
+The [Chapter 01 lesson](../../chapters/01-values-and-types/README.md) implements this brief with separate starter, hints, solution, and acceptance checks.
 
 ## Publishing with a sustainable workload
 

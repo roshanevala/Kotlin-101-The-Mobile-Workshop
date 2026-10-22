@@ -26,7 +26,7 @@ Choose one recent interview question you struggled with. Record the question as 
 
 A shared Kotlin rule can decide whether a study session is valid. Android can display that result using Jetpack Compose, while iOS displays it using SwiftUI. Both clients call the same rule.
 
-Compose Multiplatform adds the option to share a UI implementation as well. We will first learn the underlying platform concepts and later compare UI approaches on a working feature. See the [technology research](../../docs/RESEARCH.md) for official references.
+Compose Multiplatform adds the option to share a UI implementation as well. We will first learn the underlying platform concepts and later compare UI approaches on a working feature. See the [technology research](../../docs/maintainers/RESEARCH.md) for official references.
 
 ## Predict a small Kotlin program
 

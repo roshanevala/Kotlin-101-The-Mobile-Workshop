@@ -1,6 +1,8 @@
 # Kotlin exercise setup
 
-This workspace runs the Kotlin lessons without an Android SDK, emulator, or Xcode. Begin with [Chapter 01](../chapters/01-values-and-types/README.md).
+This workspace runs the Kotlin exercises without an Android SDK, emulator, or Xcode. Read the [Chapter 01 lesson](../chapters/01-values-and-types/LESSON.md) first. Use this setup guide when you are ready for the [workshop](../chapters/01-values-and-types/WORKSHOP.md).
+
+Lesson pages live in the repository's `chapters` folder, next to this workspace. Keep the lesson open in your browser or Markdown viewer; use Android Studio for the exercise code in `kotlin-labs`.
 
 ## Requirements
 
@@ -31,7 +33,8 @@ The Kotlin version printed by Gradle's version command belongs to Gradle's own s
 
 On Windows PowerShell, replace `./gradlew` with `./gradlew.bat` in every command. First-run downloads can take a few minutes. The initial timer output is deliberately `1 h 0 min`.
 
-## Chapter 01 commands
+<details>
+<summary>More Chapter 01 commands</summary>
 
 Run these from `kotlin-labs`:
 
@@ -44,12 +47,19 @@ Run these from `kotlin-labs`:
 
 Some starter tests intentionally fail until the mission is solved. A general `check` or `build` includes those tests and therefore also fails on an untouched starter. Maintainer CI checks the reference separately.
 
-## If setup fails
+</details>
+
+<details>
+<summary>If setup fails</summary>
 
 - **Java is missing or the Java version is unsupported:** install JDK 17 and check both version commands above. A new terminal may be needed.
 - **Permission denied for the wrapper on macOS or Linux:** run `chmod +x gradlew` once, then retry.
 - **Download or dependency resolution failed:** check connectivity and proxy settings, then rerun the same command. The build uses the Gradle distribution service, plugin portal, and Maven Central.
 - **Could not find the project or task:** check that the terminal is in `kotlin-labs`, which contains `settings.gradle.kts`.
-- **Tests show expected and actual values:** setup worked; use the [mission lesson](../chapters/01-values-and-types/README.md) to investigate the difference.
+- **Tests show expected and actual values:** setup worked; use the [workshop](../chapters/01-values-and-types/WORKSHOP.md) to investigate the difference.
 
-For reports, include the command, tool versions, and relevant error text. The [verification record](../chapters/01-values-and-types/VERIFICATION.md) identifies the environment actually checked.
+For reports, include the command, tool versions, and relevant error text.
+
+</details>
+
+**[Continue to the workshop](../chapters/01-values-and-types/WORKSHOP.md)**

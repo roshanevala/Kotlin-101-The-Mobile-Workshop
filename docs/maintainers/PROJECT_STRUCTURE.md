@@ -8,9 +8,14 @@ This is the implementation structure selected for the course. The Kotlin workspa
 
 ```text
 Kotlin-101-The-Mobile-Workshop/
-  chapters/                 Lessons, progressive hints, and solution explanations
+  chapters/                 Learner-facing chapter material
     00-starting-point/
     01-values-and-types/
+      README.md             Short chapter entry page
+      LESSON.md             Concepts and small examples first
+      WORKSHOP.md           Hands-on mission after the lesson
+      HINTS.md              Optional hints in collapsed sections
+      SOLUTION.md           Worked explanation after an attempt
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -21,7 +26,9 @@ Kotlin-101-The-Mobile-Workshop/
     androidApp/             Android app that grows through the course
     shared/                 Shared KMP code, introduced with the KMP chapters
     iosApp/                 Native iOS client and Xcode project, added later
-  docs/                     Course plans and contributor guidance
+  docs/
+    CURRICULUM.md           Optional full course roadmap
+    maintainers/            Plans, research, agent workflow, and verification
 ```
 
 Both Gradle workspaces have their own wrapper and settings. Opening `kotlin-labs` must not require an Android SDK, emulator, or Xcode. Opening `mobile` introduces the Android tools when the learner needs them. Shared version conventions can be introduced when both builds exist and there is a concrete need; early lessons should not depend on custom build infrastructure.

@@ -10,9 +10,9 @@ Kotlin exercises come first so language mistakes can be understood without emula
 
 Chapters are topic groups, not weekly deadlines. Split each chapter into sessions that fit the weekly time budget. A returning developer may move quickly through familiar material after demonstrating the exit criteria.
 
-The [learning experience and public release plan](LEARNING_EXPERIENCE.md) turns these chapters into small missions with prediction exercises, optional hints, a Bug Museum entry, and working outcomes. A single chapter may contain several missions. The proposed public release starts with Chapters 00–03 and expands as lessons are implemented and verified.
+The [learning experience and public release plan](maintainers/LEARNING_EXPERIENCE.md) turns these chapters into small missions with prediction exercises, optional hints, a Bug Museum entry, and working outcomes. A single chapter may contain several missions. The proposed public release starts with Chapters 00–03 and expands as lessons are implemented and verified.
 
-Follow the [project structure and checkpoint plan](PROJECT_STRUCTURE.md): one repository, independently runnable Kotlin exercise modules, and one growing mobile app. Kotlin exercises use their own workspace before Android setup is introduced. Mobile missions provide start and finish checkpoints rather than a new Android project per chapter.
+Follow the [project structure and checkpoint plan](maintainers/PROJECT_STRUCTURE.md): one repository, independently runnable Kotlin exercise modules, and one growing mobile app. Kotlin exercises use their own workspace before Android setup is introduced. Mobile missions provide start and finish checkpoints rather than a new Android project per chapter.
 
 ## Part 0 Starting point
 
@@ -127,6 +127,8 @@ Small coding and explanation exercises recur from Chapter 01. Chapter 38 consoli
 
 ## Chapter format
 
+The learner follows **Lesson → Workshop → Solution**. The chapter README is a short entry page. `LESSON.md` teaches the concepts before `WORKSHOP.md` asks the learner to apply them. Optional hints live in one page with collapsed sections; execution records live with the maintainer documentation.
+
 Every implemented chapter should contain:
 
 1. Prerequisites, learning outcomes, and the problem being solved.
@@ -140,7 +142,7 @@ Every implemented chapter should contain:
 9. A completion checklist and a small retrieval exercise for a later session.
 10. Official references and the toolchain used for the example.
 
-Use the mission sequence of see the problem, predict, explore, build, investigate, explain, and revisit. Keep the ordinary topic title for navigation, and use the opening problem to add personality. Challenges should have clear prerequisites and acceptance criteria. Public sharing and optional stretch tasks are separate from completion requirements.
+After the lesson, use the workshop sequence of see the problem, predict, explore, build, investigate, explain, and revisit. Keep the ordinary topic title for navigation, and use the workshop's opening problem to add personality. Challenges should have clear prerequisites and acceptance criteria. Public sharing and optional stretch tasks are separate from completion requirements.
 
 Early pure Kotlin labs should be runnable without an emulator or Xcode. Android lessons must remain usable by learners without a Mac; iOS build and execution steps require a Mac with Xcode.
 

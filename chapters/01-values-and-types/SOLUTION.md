@@ -1,6 +1,6 @@
 # Chapter 01 Worked solution
 
-Try the [mission](README.md) before reading further. The separate [reference file](../../kotlin-labs/ch01-values-and-types/src/solution/kotlin/workshop/ch01/Timer.kt) contains the complete implementation.
+Try the [workshop](WORKSHOP.md) before reading further. The separate [reference file](../../kotlin-labs/ch01-values-and-types/src/solution/kotlin/workshop/ch01/Timer.kt) contains the complete implementation.
 
 ## Recover the minutes
 
@@ -43,3 +43,5 @@ The reference prints `1 h 35 min`. The same seven examples check either your edi
 143 minutes becomes `2 h 23 min`: two complete hours account for 120 minutes, leaving 23. Exactly 120 minutes becomes `2 h 0 min`.
 
 For the interview prompts: use `var` when reassignment is needed; integer division and floating-point division operate on different numeric types; quotes create text rather than a numeric value; 59 and 60 test both sides of the first whole-hour boundary.
+
+[Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)
