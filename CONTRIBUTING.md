@@ -11,6 +11,8 @@ The first chapter is available as a lesson, workshop, and explained solution. Le
 - Once Discussions is enabled, use it for learning questions, alternative approaches, and showcases.
 - Keep personal exercise solutions in your own fork or a discussion. Course solutions are curated separately so exercises remain useful.
 
+For local practice, edit the generated `src/main` file described in the workshop. It is ignored by Git and will not be included in normal course commits. Keep `src/starter` as the original question. If you want to publish or back up your own answers in Git, deliberately copy them into a separate solutions repository or a solutions folder in your own fork.
+
 For a small correction, a focused pull request is welcome. For a substantial lesson or dependency change, describe the intended outcome first so it can fit the course sequence.
 
 ## Make the change

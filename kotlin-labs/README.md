@@ -15,6 +15,7 @@ If you need a JDK, [Eclipse Temurin provides JDK 17](https://adoptium.net/temuri
 1. Choose **Open** and select the repository's `kotlin-labs` folder.
 2. In **Settings → Build, Execution, Deployment → Build Tools → Gradle**, select JDK 17 as the Gradle JDK. Use the IDE's download option if needed.
 3. Let Gradle sync. Open the IDE terminal in `kotlin-labs` and run the command below. This first chapter uses the terminal so its instructions also work outside the IDE.
+4. After that first run, open `ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt`. The command creates this editable working copy for you; you do not need to create folders manually.
 
 ## Run from a terminal
 
@@ -31,7 +32,9 @@ java -version
 
 The Kotlin version printed by Gradle's version command belongs to Gradle's own scripting runtime. The lesson compiler version is declared in this workspace's `build.gradle.kts`.
 
-On Windows PowerShell, replace `./gradlew` with `./gradlew.bat` in every command. First-run downloads can take a few minutes. The initial timer output is deliberately `1 h 0 min`.
+On Windows PowerShell, replace `./gradlew` with `./gradlew.bat` in every command. First-run downloads can take a few minutes. A new timer working copy deliberately prints `1 h 0 min`.
+
+The first run copies the tracked `src/starter` template into your editable `src/main` folder. Existing files are preserved. Your working copy is ignored by Git, so normal course commits do not publish your answer. It is still a normal file you can open and edit in Android Studio; it simply does not appear on GitHub. See the [workshop](../chapters/01-values-and-types/WORKSHOP.md) for the exact file to edit.
 
 <details>
 <summary>More Chapter 01 commands</summary>
@@ -40,7 +43,8 @@ Run these from `kotlin-labs`:
 
 | Command after `./gradlew --console=plain` | Purpose |
 | --- | --- |
-| `:ch01-values-and-types:run` | Run your starter or edited implementation |
+| `:ch01-values-and-types:preparePractice` | Create your working copy without running it; existing work is preserved |
+| `:ch01-values-and-types:run` | Prepare if needed, then run your working copy |
 | `:ch01-values-and-types:test` | Check your implementation against seven acceptance examples |
 | `:ch01-values-and-types:runSolution` | Run the separate reference implementation |
 | `:ch01-values-and-types:checkSolution` | Check the reference with the same seven examples |

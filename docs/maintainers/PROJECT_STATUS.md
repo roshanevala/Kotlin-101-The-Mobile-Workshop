@@ -1,6 +1,6 @@
 # Project status
 
-Updated **22 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **23 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
@@ -8,11 +8,11 @@ Chapter 01's timer mission is implemented. Display name: **Kotlin 101 — The Mo
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
+Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Existing learner work is preserved, and normal course commits exclude personal answers.
+
 Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapter 01 mission, agent guidance, contribution templates, and a local documentation checker.
 
-Chapter 01 has a runnable Kotlin workspace, separate starter and reference, seven acceptance tests, progressive hints, and a lesson. Local execution and starter/solution isolation passed; see its [verification record](verification/ch01.md). GitHub workflows check documentation and the Chapter 01 reference; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for current hosted results. Chapters 02–40 and the Android, iOS, and KMP applications remain planned.
-
-Local `main` tracks `origin/main`. The structure plan is committed as `180a912`. The initial foundation commit is `7d4380c`; its [hosted documentation check passed](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652).
+Chapter 01 has a runnable Kotlin workspace, separate starter and reference, seven acceptance tests, progressive hints, and a lesson. The learner walkthrough is complete: the timer fix passed all seven tests. Local execution, starter/solution isolation, and answer exclusion from Git passed; see the [verification record](verification/ch01.md). GitHub workflows check documentation, fresh exercise preparation, and the Chapter 01 reference; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for current hosted results. Chapters 02–40 and the Android, iOS, and KMP applications remain planned.
 
 ## Decisions
 
@@ -25,7 +25,7 @@ Local `main` tracks `origin/main`. The structure plan is committed as `180a912`.
 
 ## Next deliverable
 
-Try [Chapter 01](../../chapters/01-values-and-types/README.md) as a learner and collect setup and explanation feedback. Then implement Chapter 02's control flow and function exercises using the selected layout.
+Implement Chapter 02's control flow and function exercises using the selected layout. Continue collecting setup and explanation feedback for [Chapter 01](../../chapters/01-values-and-types/README.md).
 
 ## Publication decisions
 

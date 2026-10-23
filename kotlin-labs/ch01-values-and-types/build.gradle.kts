@@ -11,6 +11,27 @@ application {
     mainClass.set("workshop.ch01.TimerKt")
 }
 
+val starterFile = layout.projectDirectory.file("src/starter/kotlin/workshop/ch01/Timer.kt")
+val practiceFile = layout.projectDirectory.file("src/main/kotlin/workshop/ch01/Timer.kt")
+
+val preparePractice by tasks.registering {
+    group = "application"
+    description = "Creates your local working copy once, preserving existing work."
+    inputs.file(starterFile)
+    outputs.file(practiceFile)
+    onlyIf("a working copy does not already exist") { !practiceFile.asFile.exists() }
+    doLast {
+        val target = practiceFile.asFile
+        target.parentFile.mkdirs()
+        starterFile.asFile.copyTo(target, overwrite = false)
+        logger.lifecycle("Created your working copy: src/main/kotlin/workshop/ch01/Timer.kt")
+    }
+}
+
+tasks.named("compileKotlin") {
+    dependsOn(preparePractice)
+}
+
 // Reference code has its own classpath: neither path compiles against the other.
 val solution by sourceSets.creating
 val solutionTest by sourceSets.creating {

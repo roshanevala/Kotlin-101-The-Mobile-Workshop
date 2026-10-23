@@ -20,6 +20,9 @@ Kotlin-101-The-Mobile-Workshop/
     gradlew
     settings.gradle.kts
     ch01-values-and-types/  Independently runnable exercise module
+      src/starter/          Tracked exercise template
+      src/main/             Generated learner working copy, ignored by Git
+      src/solution/         Tracked reference implementation
   mobile/                   Growing app workspace, added with Android chapters
     gradlew
     settings.gradle.kts
@@ -37,7 +40,9 @@ Gradle supports related subprojects under one build. Use that capability for ind
 
 ## Kotlin chapters
 
-Each chapter has a small exercise module in `kotlin-labs`, added when that chapter is implemented. The learner opens the workspace once, follows the lesson's exact run command, and edits the named starter files.
+Each chapter has a small exercise module in `kotlin-labs`, added when that chapter is implemented. The learner opens the workspace once, follows the lesson's exact run command, and edits a local working copy. A tracked template lives in `src/starter`; `preparePractice` copies it into Git-ignored `src/main` only when absent. Compilation prepares the copy automatically, so the regular run and test commands are unchanged.
+
+Never overwrite an existing working copy during preparation, cleanup, or routine verification. Keep answers out of course commits by leaving `src/main` untracked. When migrating an existing tracked main file, obtain the template from its committed starter version and preserve the working file exactly as it is. Learning work is local by default; a separate repository or an explicit solutions folder in a personal fork can hold answers learners choose to version.
 
 Exercise modules do not depend on earlier exercise modules. Running Chapter 05 must not compile a learner's unfinished Chapter 03 exercise. Avoid a single source folder where every previous exercise must compile successfully before the next one runs.
 

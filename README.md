@@ -14,6 +14,8 @@ Read the lessons here on GitHub; their pages live in **`chapters/`**. The runnab
 
 When you are ready to code locally, follow the [one-time setup guide](kotlin-labs/README.md). In Android Studio, open **`kotlin-labs`** and keep the lesson open alongside it.
 
+Workshop commands create a local working copy for your answers. Normal Git commits keep those answers out of the shared starter code.
+
 ## Available chapters
 
 | Chapter | What you will learn | What you will build |

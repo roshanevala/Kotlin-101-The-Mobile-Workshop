@@ -12,13 +12,23 @@ In Android Studio, open the repository's **`kotlin-labs`** folder. Open its term
 ./gradlew --console=plain :ch01-values-and-types:run
 ```
 
-On Windows, use `./gradlew.bat`. The program prints `1 h 0 min` among Gradle's messages. This confirms that setup worked and shows the bug you will investigate.
+On Windows, use `./gradlew.bat`. The first run creates your local working copy. A fresh copy prints `1 h 0 min` among Gradle's messages, showing the bug you will investigate. Existing work is preserved, so later runs show your own implementation's output.
 
-For a browser attempt, copy the [starter file](../../kotlin-labs/ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt) into [Kotlin Playground](https://play.kotlinlang.org/). Local acceptance checks use the Gradle commands in this workshop.
+For a browser attempt, copy the [starter template](../../kotlin-labs/ch01-values-and-types/src/starter/kotlin/workshop/ch01/Timer.kt) into [Kotlin Playground](https://play.kotlinlang.org/). Local acceptance checks use the Gradle commands in this workshop.
 
 ## Find the code to change
 
-Open [Timer.kt in the starter](../../kotlin-labs/ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt). Work in `src/main`; the `src/solution` file is the separate reference.
+After running the command above, open `ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt` inside `kotlin-labs`. This is **your working copy**.
+
+You do not need to create this file or its folders yourself. You can open and edit it normally in Android Studio. On GitHub, you will see the original `src/starter` template.
+
+| Folder | Purpose |
+| --- | --- |
+| `src/starter` | The published question, kept in Git |
+| `src/main` | Your editable working copy, ignored by Git |
+| `src/solution` | The separate reference answer |
+
+Edit `src/main` only. Running or preparing the exercise again does not overwrite it. Normal Git commits leave your answer out, so the published question remains useful to the next learner. Your working copy stays local; it is not backed up by those commits.
 
 - `main` sets the sample duration and prints the formatter's result.
 - `formatStudyTime` receives the duration and returns the display text.
@@ -69,7 +79,7 @@ Explain why checking only 60 minutes would have missed the original bug. Record 
 - [ ] I fixed the calculation and passed all seven checks.
 - [ ] I tried a changed input and explained the result.
 
-To restart, preserve a copy of your edits, then recover the starter from Git's file history or a fresh repository download. The original starter has `val minutes = 0` and its `main` uses 95 minutes. Keep any work you want before replacing that file.
+To restart, save your work outside the chapter's `src` folders, then copy the [starter template](../../kotlin-labs/ch01-values-and-types/src/starter/kotlin/workshop/ch01/Timer.kt) over your local working file. The template contains the original bug and uses 95 minutes. Git history does not contain edits to the ignored working copy.
 
 **[Next Review the explained solution](SOLUTION.md)**
 
