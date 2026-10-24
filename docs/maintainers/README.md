@@ -10,6 +10,6 @@ These documents support developing and maintaining the course. Learners can foll
 | Review technology decisions and sources | [Research](RESEARCH.md) |
 | Work efficiently with coding agents | [Agent workflow](AGENT_WORKFLOW.md) |
 | Maintain repository settings and publication | [GitHub setup](GITHUB_SETUP.md) |
-| Check Chapter 01 execution evidence | [Verification record](verification/ch01.md) |
+| Check exercise execution evidence | [Chapter 01](verification/ch01.md) and [Chapter 02](verification/ch02.md) |
 
 Topic scope lives in the [course roadmap](../CURRICULUM.md). Contribution steps live in [Contributing](../../CONTRIBUTING.md). Read the document relevant to the task; the table is a directory, not a checklist.

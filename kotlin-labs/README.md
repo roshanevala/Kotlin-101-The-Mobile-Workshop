@@ -4,6 +4,8 @@ This workspace runs the Kotlin exercises without an Android SDK, emulator, or Xc
 
 Lesson pages live in the repository's `chapters` folder, next to this workspace. Keep the lesson open in your browser or Markdown viewer; use Android Studio for the exercise code in `kotlin-labs`.
 
+Already set up after Chapter 01? Continue with the [Chapter 02 lesson](../chapters/02-control-flow-and-functions/LESSON.md), then its [workshop](../chapters/02-control-flow-and-functions/WORKSHOP.md). Keep this workspace open and use the new chapter's commands; each chapter has a separate working copy.
+
 ## Requirements
 
 Use a **JDK 17** installation and an internet connection for the first Gradle and dependency downloads. The checked-in wrapper selects **Gradle 8.14.3**; the build selects **Kotlin 2.2.21**. You do not need to install Kotlin or Gradle separately.

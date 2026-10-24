@@ -13,7 +13,7 @@ Metadata and commands reviewed on **21 October 2026**. The foundation is publish
 | Owner | `roshanevala` |
 | Default branch | `main` |
 | Visibility | Public |
-| Current release state | Chapter 00 diagnostic and Chapter 01 Kotlin mission available; mobile applications planned |
+| Current release state | See [project status](PROJECT_STATUS.md) for available chapters and publication state |
 | Website field | Leave empty until a reading site exists |
 | Template repository | Leave disabled initially |
 
@@ -128,6 +128,6 @@ Run `python3 scripts/check_docs.py` with Python 3.9 or later. It checks basic in
 
 The GitHub workflow runs this checker and a whitespace check. Its checkout action is pinned to the commit published for [actions/checkout v7.0.1](https://github.com/actions/checkout/releases/tag/v7.0.1). Add Android and iOS jobs when those builds exist, using each lesson's verified commands.
 
-The separate [Kotlin labs workflow](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/workflows/kotlin-labs.yml) verifies that a fresh working copy still prints the exercise's incorrect output and is ignored by Git, then runs the reference and its seven acceptance examples on JDK 17. It does not require the untouched starter to pass the mission tests. Review its run history after each publication.
+The separate [Kotlin labs workflow](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/workflows/kotlin-labs.yml) uses a matrix for Chapters 01 and 02. Each job verifies that a fresh working copy still prints the exercise's incorrect output and is ignored by Git, then runs the reference and its acceptance tests on JDK 17. It does not require an untouched starter to pass the mission tests. Review its run history after each publication.
 
 The workflow [passed on GitHub for the initial foundation commit](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/39550166652). Continue checking the workflow for subsequent changes and keep setup instructions consistent with the actual repository settings.

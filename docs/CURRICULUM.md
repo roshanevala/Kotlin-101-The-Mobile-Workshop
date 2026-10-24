@@ -1,6 +1,6 @@
 # Kotlin and mobile development curriculum
 
-Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic, and [Chapter 01](../chapters/01-values-and-types/README.md) is the first runnable mission. Chapters 02–40 are planned and will be implemented sequentially.
+Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic, [Chapter 01](../chapters/01-values-and-types/README.md) is the first runnable mission, and [Chapter 02](../chapters/02-control-flow-and-functions/README.md) adds control flow and functions. Chapters 03–40 are planned and will be implemented sequentially.
 
 The main audience is an Android developer returning to regular practice. Beginner explanations remain part of every chapter so other learners can follow without previous professional experience. Advanced chapters develop engineering judgment through measurement, failures, and design decisions.
 

@@ -44,4 +44,6 @@ The reference prints `1 h 35 min`. The same seven examples check either your edi
 
 For the interview prompts: use `var` when reassignment is needed; integer division and floating-point division operate on different numeric types; quotes create text rather than a numeric value; 59 and 60 test both sides of the first whole-hour boundary.
 
+**[Next Learn control flow and functions in Chapter 02](../02-control-flow-and-functions/LESSON.md)**
+
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

@@ -1,18 +1,20 @@
 # Project status
 
-Updated **23 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **24 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Chapter 01's timer mission is implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapters 01 and 02 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
 Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Existing learner work is preserved, and normal course commits exclude personal answers.
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapter 01 mission, agent guidance, contribution templates, and a local documentation checker.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–02 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
-Chapter 01 has a runnable Kotlin workspace, separate starter and reference, seven acceptance tests, progressive hints, and a lesson. The learner walkthrough is complete: the timer fix passed all seven tests. Local execution, starter/solution isolation, and answer exclusion from Git passed; see the [verification record](verification/ch01.md). GitHub workflows check documentation, fresh exercise preparation, and the Chapter 01 reference; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for current hosted results. Chapters 02–40 and the Android, iOS, and KMP applications remain planned.
+Chapter 01's learner walkthrough is complete: the timer fix passed all seven tests. Chapter 02 adds session validation, labels, and numbered rounds, with 19 acceptance tests and 11 verified lesson examples. It runs independently of Chapter 01 and keeps working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md) and [Chapter 02](verification/ch02.md) verification records.
+
+GitHub workflows check documentation and Kotlin exercises, including both chapters in the Kotlin matrix; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 03–40 and the Android, iOS, and KMP applications remain planned.
 
 ## Decisions
 
@@ -25,7 +27,7 @@ Chapter 01 has a runnable Kotlin workspace, separate starter and reference, seve
 
 ## Next deliverable
 
-Implement Chapter 02's control flow and function exercises using the selected layout. Continue collecting setup and explanation feedback for [Chapter 01](../../chapters/01-values-and-types/README.md).
+Complete the [Chapter 02](../../chapters/02-control-flow-and-functions/LESSON.md) learner walkthrough and collect feedback. Then implement Chapter 03's null safety and error exercises. Continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 

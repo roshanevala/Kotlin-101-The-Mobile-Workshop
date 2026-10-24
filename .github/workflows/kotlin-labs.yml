@@ -14,10 +14,22 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  chapter-01:
-    name: Chapter 01 reference checks
+  chapters:
+    name: Chapter ${{ matrix.chapter }} exercise and reference checks
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - chapter: '01'
+            module: ch01-values-and-types
+            working_file: ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt
+            starter_output: '1 h 0 min'
+          - chapter: '02'
+            module: ch02-control-flow-and-functions
+            working_file: ch02-control-flow-and-functions/src/main/kotlin/workshop/ch02/StudyPlan.kt
+            starter_output: 'Round 1: Focus'
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -35,9 +47,9 @@ jobs:
       - name: Verify a fresh working copy retains the exercise
         working-directory: kotlin-labs
         run: |
-          starter_output=$(./gradlew --no-daemon --quiet :ch01-values-and-types:run)
-          test "$starter_output" = "1 h 0 min"
-          git check-ignore --quiet ch01-values-and-types/src/main/kotlin/workshop/ch01/Timer.kt
+          starter_output=$(./gradlew --no-daemon --quiet ":${{ matrix.module }}:run")
+          test "$starter_output" = "${{ matrix.starter_output }}"
+          git check-ignore --quiet "${{ matrix.working_file }}"
       - name: Run and check the separate reference
         working-directory: kotlin-labs
-        run: ./gradlew --no-daemon --console=plain :ch01-values-and-types:runSolution :ch01-values-and-types:checkSolution
+        run: ./gradlew --no-daemon --console=plain ":${{ matrix.module }}:runSolution" ":${{ matrix.module }}:checkSolution"
