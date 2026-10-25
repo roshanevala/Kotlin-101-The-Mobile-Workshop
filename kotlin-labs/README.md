@@ -62,6 +62,7 @@ Some starter tests intentionally fail until the mission is solved. A general `ch
 - **Permission denied for the wrapper on macOS or Linux:** run `chmod +x gradlew` once, then retry.
 - **Download or dependency resolution failed:** check connectivity and proxy settings, then rerun the same command. The build uses the Gradle distribution service, plugin portal, and Maven Central.
 - **Could not find the project or task:** check that the terminal is in `kotlin-labs`, which contains `settings.gradle.kts`.
+- **A new chapter has no Run button, while an older chapter works:** click **Sync Project with Gradle Files** in the top toolbar and wait for sync to finish. Then open the new chapter's file under `src/main`, as named in its workshop. The `src/starter` template is for copying, not IDE execution. [Android Studio's Gradle sync guide](https://developer.android.com/build).
 - **Tests show expected and actual values:** setup worked; use the [workshop](../chapters/01-values-and-types/WORKSHOP.md) to investigate the difference.
 
 For reports, include the command, tool versions, and relevant error text.

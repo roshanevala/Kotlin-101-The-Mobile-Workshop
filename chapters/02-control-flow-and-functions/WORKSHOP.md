@@ -6,7 +6,9 @@ Read the [lesson](LESSON.md) first. Complete this in three small steps: validate
 
 ## Run and find your working copy
 
-Open the existing **`kotlin-labs`** workspace in Android Studio. From its terminal:
+Open the existing **`kotlin-labs`** workspace in Android Studio. After a course update adds a chapter, click **Sync Project with Gradle Files** in the top toolbar and wait for sync to finish. This imports the new chapter as a module so Android Studio can recognize its code and show the Run button beside `main()`.
+
+From its terminal:
 
 ```sh
 ./gradlew --console=plain :ch02-control-flow-and-functions:run
