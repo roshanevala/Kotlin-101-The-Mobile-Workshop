@@ -1,6 +1,6 @@
 # Project status
 
-Updated **24 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **26 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
@@ -12,7 +12,7 @@ Exercise templates live in tracked `src/starter`; normal run and test commands c
 
 Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–02 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
-Chapter 01's learner walkthrough is complete: the timer fix passed all seven tests. Chapter 02 adds session validation, labels, and numbered rounds, with 19 acceptance tests and 11 verified lesson examples. It runs independently of Chapter 01 and keeps working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md) and [Chapter 02](verification/ch02.md) verification records.
+Chapters 01 and 02 have completed learner walkthroughs: the timer fix passed all seven tests, and the planner implementation passed all 19 tests. Chapter 02 also has 11 verified lesson examples. It runs independently of Chapter 01 and keeps working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md) and [Chapter 02](verification/ch02.md) verification records.
 
 GitHub workflows check documentation and Kotlin exercises, including both chapters in the Kotlin matrix; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 03–40 and the Android, iOS, and KMP applications remain planned.
 
@@ -27,7 +27,7 @@ GitHub workflows check documentation and Kotlin exercises, including both chapte
 
 ## Next deliverable
 
-Complete the [Chapter 02](../../chapters/02-control-flow-and-functions/LESSON.md) learner walkthrough and collect feedback. Then implement Chapter 03's null safety and error exercises. Continue improving earlier instructions from learner feedback.
+Implement Chapter 03's null safety and error lesson and exercises using the existing lesson-first layout and independent working-copy setup. Continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 
