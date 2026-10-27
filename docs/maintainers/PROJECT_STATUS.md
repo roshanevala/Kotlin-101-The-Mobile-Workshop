@@ -1,6 +1,6 @@
 # Project status
 
-Updated **26 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **27 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
@@ -12,7 +12,7 @@ Exercise templates live in tracked `src/starter`; normal run and test commands c
 
 Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–03 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
-Chapters 01 and 02 have completed learner walkthroughs: the timer fix passed all seven tests, and the planner implementation passed all 19 tests. Chapter 03 adds safe text parsing, topic fallbacks, and explicit error contracts, with 26 reference tests and 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
+Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
 GitHub workflows check documentation and a matrix of the available Kotlin exercises; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 04–40 and the Android, iOS, and KMP applications remain planned.
 
@@ -27,7 +27,7 @@ GitHub workflows check documentation and a matrix of the available Kotlin exerci
 
 ## Next deliverable
 
-Complete the [Chapter 03](../../chapters/03-null-safety-and-errors/LESSON.md) learner walkthrough and collect feedback. Then implement Chapter 04's classes and modeling lesson. Continue improving earlier instructions from learner feedback.
+Implement Chapter 04's classes and modeling lesson and mission using the existing lesson-first layout and independent working-copy setup. Continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 
