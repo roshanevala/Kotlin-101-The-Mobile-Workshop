@@ -22,6 +22,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | --- | --- | --- |
 | [01 Values and types](chapters/01-values-and-types/README.md) | Values, variables, types, arithmetic, and text | A study-time display that keeps the remaining minutes |
 | [02 Control flow and functions](chapters/02-control-flow-and-functions/README.md) | Functions, conditions, ranges, validation, and loops | A planner with valid sessions and numbered rounds |
+| [03 Null safety and errors](chapters/03-null-safety-and-errors/README.md) | Nullable types, safe calls, parsing, and error contracts | A form that handles missing and invalid session input |
 
 More chapters are coming one at a time. The Android, iOS, and KMP apps are planned.
 

@@ -9,6 +9,7 @@ Apply the root repository guidance. Open only the exercise and build files relev
 - Treat `src/main` as learner-owned work. Do not change it, force-add it, or use its contents as the public starter. When migrating an already tracked working file, preserve it on disk and remove only its Git index entry.
 - Chapter 01 commands: `./gradlew :ch01-values-and-types:run`, `:ch01-values-and-types:test`, `:ch01-values-and-types:runSolution`, and `:ch01-values-and-types:checkSolution`.
 - Chapter 02 uses the same tasks with `:ch02-control-flow-and-functions:` and edits `StudyPlan.kt` in package `workshop.ch02`. Its 19 shared acceptance tests cover validation, label boundaries, rounds, and independent calls. Keep it independent of Chapter 01.
+- Chapter 03 uses those tasks with `:ch03-null-safety-and-errors:` and edits `SessionInput.kt` in package `workshop.ch03`. Its 26 shared acceptance tests distinguish topic fallbacks, nullable parsing, duration errors, and descriptions. Do not introduce classes, lambdas, or dependencies on previous exercise modules.
 - A fresh working copy compiles and runs but intentionally fails some acceptance tests. Do not fix the published template or treat that expected failure as a CI regression. CI checks a fresh copy still contains the exercise and is ignored by Git.
 - Verify the reference using `checkSolution`. Verify a learner fix with `test`. Keep the acceptance examples shared so both implementations face the same requirements.
 - When editing build wiring, verify that a broken starter cannot block the solution and vice versa.

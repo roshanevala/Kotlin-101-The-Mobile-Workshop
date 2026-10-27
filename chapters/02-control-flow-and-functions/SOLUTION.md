@@ -74,6 +74,6 @@ For the interview prompts: validate before repeating work so rejected inputs can
 
 On a later day, explain the rules from memory and predict the result for 50 minutes with no round count supplied. It should be `Round 1: Deep`. This checks the label transition and the default together.
 
-**Next Chapter 03 will cover null safety and errors. It is planned and has no lesson yet.**
+**[Next Learn null safety and errors in Chapter 03](../03-null-safety-and-errors/LESSON.md)**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)
