@@ -1,8 +1,8 @@
 # Kotlin and mobile development curriculum
 
-Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic. [Chapter 01](../chapters/01-values-and-types/README.md) covers values and types, [Chapter 02](../chapters/02-control-flow-and-functions/README.md) adds control flow and functions, and [Chapter 03](../chapters/03-null-safety-and-errors/README.md) introduces null safety and errors. Chapters 04–40 are planned and will be implemented sequentially.
+Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic. [Chapter 01](../chapters/01-values-and-types/README.md) covers values and types, [Chapter 02](../chapters/02-control-flow-and-functions/README.md) adds control flow and functions, [Chapter 03](../chapters/03-null-safety-and-errors/README.md) introduces null safety and errors, and [Chapter 04](../chapters/04-classes-and-modeling/README.md) adds classes and modeling. Chapters 05–40 are planned and will be implemented sequentially.
 
-The main audience is an Android developer returning to regular practice. Beginner explanations remain part of every chapter so other learners can follow without previous professional experience. Advanced chapters develop engineering judgment through measurement, failures, and design decisions.
+The main audience is an Android developer returning to regular practice. For a near-term interview refresh, follow the [focused route](#focused-android-and-kotlin-refresh). Beginner explanations remain part of every chapter so other learners can follow without previous professional experience. Advanced chapters develop engineering judgment through measurement, failures, and design decisions.
 
 ## Course structure
 
@@ -13,6 +13,48 @@ Chapters are topic groups, not weekly deadlines. Split each chapter into session
 The [learning experience and public release plan](maintainers/LEARNING_EXPERIENCE.md) turns these chapters into small missions with prediction exercises, optional hints, a Bug Museum entry, and working outcomes. A single chapter may contain several missions. The proposed public release starts with Chapters 00–03 and expands as lessons are implemented and verified.
 
 Follow the [project structure and checkpoint plan](maintainers/PROJECT_STRUCTURE.md): one repository, independently runnable Kotlin exercise modules, and one growing mobile app. Kotlin exercises use their own workspace before Android setup is introduced. Mobile missions provide start and finish checkpoints rather than a new Android project per chapter.
+
+## Focused Android and Kotlin refresh
+
+For a returning Android developer with **10–12 hours per week**, aim for a **six-week core: 60–72 hours** of learning, building, and interview practice. Keep **Weeks 7–8 as a buffer** for gaps; using all eight weeks gives an **80–96 hour planning budget**. This route selects core topics from the full course; completing a week's selected work does not mean completing every mapped chapter. Treat the schedule as a target and use the practical checks below to adjust it.
+
+Start after Chapters 01–03 or demonstrate their basics through the diagnostic. Keep the completed exercises for occasional recall. The next coding step is Chapter 04's modeling essentials, followed by Chapter 05's collections essentials.
+
+| Week | Focus and selected chapters | Practical check |
+| --- | --- | --- |
+| 1 | Kotlin modeling, collections, lambdas, interfaces, and unit testing: selected essentials from 04–08 | Model and summarize study sessions, test a rule with a fake, and explain collection choices and one Kotlin pitfall |
+| 2 | Suspension, dispatchers, structured concurrency, cancellation, Flow, StateFlow, and asynchronous tests: selected 09–12 | Build a small cancellable search with fake data, test its state changes, and explain why `suspend` does not select a thread |
+| 3 | Android setup, lifecycle, Compose state, state hoisting, and effects: selected 13–14 | Build a study list and editor with fake data; explain state ownership, recreation, and process death |
+| 4 | ViewModel, repositories, lifecycle-aware collection, and one real data source: selected 15 and either 23 or 24 | Connect the feature to a small HTTP path or local persistence; test loading, empty, content, error, and recovery behavior |
+| 5 | Android debugging and KMP build and sharing boundaries: selected 19–20 and 31–32 | Diagnose one feature bug and explain common versus platform code; after the Android checks pass, move one tested rule into a small shared module |
+| 6 | Coding, project explanation, and mock interviews: selected 38–39 | Attempt two mock interviews, solve an unseen Kotlin problem, and implement a changed feature requirement without the solution |
+| 7–8, if needed | Repair gaps identified in checkpoints and mocks; extend toward role-specific Android topics or native iOS prerequisites | Repeat the failed task independently and explain the fix; choose the next topic from demonstrated gaps |
+
+Start short coding and explanation practice in Week 1 and continue every week. Pick two or three small string, array, map, or set problems as their prerequisites are covered. Explain the approach and complexity, then revisit one mistake. From Week 2, use a short weekly mock to practise a Kotlin or Android explanation. Week 6 consolidates practice already underway.
+
+Use one growing Android feature and deterministic fake data first. Week 4 adds one real data path; richer offline synchronization and a second storage or networking stack can follow later. Learn any selected prerequisite before using it, even when its full chapter is scheduled for a later course stage.
+
+Keep the KMP lab bounded to one shared rule and its tests; give unresolved Android gaps priority. Native Swift and SwiftUI depth, iOS integration, shared UI comparisons, advanced runtime details, and production release work continue through the full course afterward. A real iOS client follows its Swift and toolchain prerequisites. The focused route preserves those learning goals while concentrating the six-week core on Kotlin and Android.
+
+Use this weekly budget, shifting time toward mocks in Week 6:
+
+| Activity | Time per week |
+| --- | --- |
+| Learn concepts and experiment with examples | 2 hours |
+| Build the mission, test, and debug | 5 hours |
+| Coding problems and interview explanations | 2 hours |
+| Recall earlier work and review mistakes | 1 hour |
+| Extra practice on the weakest area | Up to 2 hours |
+
+Public posts and presentation polish are optional; repository write-ups should reuse the work rather than consume the study budget.
+
+Only Chapters 01–04 currently have complete course lessons and runnable missions. The weeks above include planned learning targets. Build the next compact mission one at a time, and use the relevant official exercises or documentation while further course material is being prepared. The [project status](maintainers/PROJECT_STATUS.md) records what has actually been delivered and checked.
+
+Assess progress after Weeks 2, 4, and 6. Before moving past a topic, rebuild its small example, explain a decision, and handle a changed requirement. If a checkpoint exposes a gap, use the next practice block to address it, reduce an optional task, or use Weeks 7–8. Familiar material can move faster when these checks already pass.
+
+The intended result is a Kotlin and Android refresh supported by runnable code, tests, debugging examples, and project explanations. Interview readiness depends on the target role and mock performance; the calendar alone does not establish it.
+
+The selected Android topics follow the official [architecture recommendations](https://developer.android.com/topic/architecture/recommendations) and [Compose state guidance](https://developer.android.com/develop/ui/compose/state). Asynchronous work follows the [Kotlin coroutines guide](https://kotlinlang.org/docs/coroutines-guide.html); the KMP lab starts with [sharing business logic](https://developer.android.com/kotlin/multiplatform). The six-week scope, buffer, and time budget are this workshop's planning choices.
 
 ## Part 0 Starting point
 
@@ -148,7 +190,7 @@ Early pure Kotlin labs should be runnable without an emulator or Xcode. Android 
 
 ## Weekly rhythm
 
-For 4–6 hours per week, begin with this proposed allocation:
+The focused interview refresh uses the 10–12 hour budget in its [focused route](#focused-android-and-kotlin-refresh). For learners taking the full course at a slower 4–6 hours per week, begin with this proposed allocation:
 
 | Activity | Time |
 | --- | --- |

@@ -23,9 +23,10 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [01 Values and types](chapters/01-values-and-types/README.md) | Values, variables, types, arithmetic, and text | A study-time display that keeps the remaining minutes |
 | [02 Control flow and functions](chapters/02-control-flow-and-functions/README.md) | Functions, conditions, ranges, validation, and loops | A planner with valid sessions and numbered rounds |
 | [03 Null safety and errors](chapters/03-null-safety-and-errors/README.md) | Nullable types, safe calls, parsing, and error contracts | A form that handles missing and invalid session input |
+| [04 Classes and modeling](chapters/04-classes-and-modeling/README.md) | Classes, properties, value equality, copies, enums, and sealed results | Session models that preserve the original when completing a copy |
 
 More chapters are coming one at a time. The Android, iOS, and KMP apps are planned.
 
-Returning to Kotlin? The [optional starting-point diagnostic](chapters/00-starting-point/README.md) can help identify what to revisit.
+Returning for interviews? Follow the [focused Android and Kotlin refresh](docs/CURRICULUM.md#focused-android-and-kotlin-refresh): a six-week core at 10–12 hours per week, with two buffer weeks. The [optional starting-point diagnostic](chapters/00-starting-point/README.md) can help identify what to revisit.
 
 Browse the [course roadmap](docs/CURRICULUM.md) for future topics. To improve a lesson or contribute code, see [Contributing](CONTRIBUTING.md).

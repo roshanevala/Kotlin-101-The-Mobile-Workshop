@@ -34,6 +34,10 @@ jobs:
             module: ch03-null-safety-and-errors
             working_file: ch03-null-safety-and-errors/src/main/kotlin/workshop/ch03/SessionInput.kt
             starter_output: 'Study Kotlin for 30 min'
+          - chapter: '04'
+            module: ch04-classes-and-modeling
+            working_file: ch04-classes-and-modeling/src/main/kotlin/workshop/ch04/SessionModels.kt
+            starter_output: 'Planned: Kotlin for 30 min'
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

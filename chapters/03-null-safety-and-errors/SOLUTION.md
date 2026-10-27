@@ -69,6 +69,6 @@ For the interview prompts: a default duration hides failed conversion; a parsed 
 
 On a later day, predict the behavior for `"2147483647"` and `"2147483648"` without running them. The first parses but fails duration validation; the second cannot become an `Int` and gets the parsing message.
 
-**Next Chapter 04 will introduce classes and modeling. Its lesson is planned.**
+**[Next Chapter 04 Classes and modeling](../04-classes-and-modeling/LESSON.md)**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

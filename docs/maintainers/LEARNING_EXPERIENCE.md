@@ -122,9 +122,11 @@ The [Chapter 01 lesson](../../chapters/01-values-and-types/README.md) implements
 
 Use GitHub as the proposed initial home for code, lessons, release notes, questions, and contributions. A reading site can follow once the lesson format is proven. Keep lesson content in the repository so another presentation layer can reuse it later.
 
-Plan for one small, complete mission roughly every two weeks, adjusting after the pilot. A curriculum chapter may require several missions. Do not promise weekly full chapters across all 40 topics.
+The current learning priority is the [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh). Give the learner's weekly budget to practice, tests, recall, and interview explanations. Prepare compact lessons from that work, use official resources when a selected topic's course lesson is not ready, and keep sharing optional. Do not delay a study session for publishing polish or mark a whole chapter complete after only its selected essentials were practised.
 
-At a five-hour midpoint, allocate about 3.5 hours to learning, implementing, and verifying; one hour to editing the lesson; and 30 minutes to sharing and feedback. At four hours, reduce publishing scope. Use a sixth hour for optional refinement or community replies when available.
+For the broader public course, begin with one small, complete mission roughly every two weeks and adjust to observed workload. A curriculum chapter may require several missions. This publication cadence does not set the learner's refresh pace.
+
+When allocating a separate five-hour course-production block, budget about 3.5 hours for implementation and verification, one hour for editing, and 30 minutes for sharing and feedback. During the focused refresh, study comes first and production can be spread over a longer period.
 
 Each finished mission can produce three public pieces from the same work:
 
