@@ -1,6 +1,6 @@
 # Project status
 
-Updated **27 October 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **28 October 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
@@ -14,7 +14,7 @@ Available: curriculum, technology research, public learning plan, Chapter 00 dia
 
 Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
-Chapter 04 is ready for a learner attempt. It covers classes, visibility, data equality, shallow copies, enums, and sealed results. Its reference passes 26 acceptance tests, and all eight complete lesson examples match their stated output. The real working copy retains the unsolved starter; learner completion is pending. See [Chapter 04 verification](verification/ch04.md).
+Chapter 04's learner walkthrough is complete: the working implementation passed all 26 acceptance tests on 28 October 2026. Review confirmed value equality, typed validation results, copied completion with original preservation, and exhaustive descriptions. Its reference and all eight complete lesson examples were verified separately. The learner answer remains local, and the published starter retains the exercise. See [Chapter 04 verification](verification/ch04.md).
 
 GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 04's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 05–40 and the Android, iOS, and KMP applications remain planned.
 
@@ -31,7 +31,7 @@ The active learning priority is a [focused Android and Kotlin refresh](../CURRIC
 
 ## Next deliverable
 
-Review the learner's Chapter 04 attempt, then implement Chapter 05's core collections and complexity lesson and mission. Keep concepts before exercises and implement one chapter at a time. Continue improving earlier instructions from learner feedback.
+Implement Chapter 05's core collections and complexity lesson and mission. Keep concepts before exercises and implement one chapter at a time. Continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 
