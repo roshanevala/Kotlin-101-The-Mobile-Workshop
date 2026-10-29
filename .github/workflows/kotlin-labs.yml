@@ -38,6 +38,10 @@ jobs:
             module: ch04-classes-and-modeling
             working_file: ch04-classes-and-modeling/src/main/kotlin/workshop/ch04/SessionModels.kt
             starter_output: 'Planned: Kotlin for 30 min'
+          - chapter: '05'
+            module: ch05-collections-and-complexity
+            working_file: ch05-collections-and-complexity/src/main/kotlin/workshop/ch05/SessionCollections.kt
+            starter_output: 'Completed topics: []'
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

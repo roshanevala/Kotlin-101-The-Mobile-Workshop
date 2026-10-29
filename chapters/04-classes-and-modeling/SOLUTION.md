@@ -62,6 +62,6 @@ Two separately constructed sessions with identical constructor properties compar
 
 On a later day, build a planned session, complete it twice, and predict the equality and identity of each returned value before running it. The completed copies have equal values and distinct identities. The planned original is still planned.
 
-**Next Chapter 05 will introduce collections and complexity. Its lesson is planned.**
+**[Next Chapter 05 Collections and complexity](../05-collections-and-complexity/LESSON.md)**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)
