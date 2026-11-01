@@ -60,6 +60,6 @@ The appended completed Flow record has ID `2`, whose earlier record was a planne
 
 On a later day, move the conflicting Flow record to the beginning of the input and predict the report again. Under this exercise's first-record rule, Flow now contributes 60 minutes. Kotlin still has 45 completed minutes from IDs `3` and `4`; the report becomes `[Flow, KMP, Kotlin]`. Changing order changes which conflicting record wins, so this rule should always be a deliberate product decision.
 
-**Next Chapter 06 will introduce functions as values and lambdas. Its lesson is planned.**
+**[Next: Chapter 06 Functions as values](../06-functions-as-values/LESSON.md)** introduces lambdas and higher-order operations.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

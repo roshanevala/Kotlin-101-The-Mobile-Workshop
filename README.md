@@ -13,7 +13,7 @@ flowchart LR
     accTitle: From Kotlin basics to a mobile app and interview practice
     accDescr: Start with the available Kotlin lessons. Build an Android app, then add iOS and shared Kotlin logic in planned stages. Practise lesson questions and debugging along the way; dedicated coding challenges and mock interviews are planned.
 
-    K("Learn Kotlin<br/>Basics, models, collections<br/>Chapters 01–05 available"):::basics
+    K("Learn Kotlin<br/>Basics, collections, functions<br/>Chapters 01–06 available"):::basics
     A("Build an Android app<br/>Study Planner + Compose<br/>Planned"):::android
     M("Add iOS + KMP<br/>Native UI + shared Kotlin<br/>Planned"):::multiplatform
     I("Interview practice<br/>Questions · coding · debugging<br/>Mock interviews planned"):::interview
@@ -36,7 +36,7 @@ flowchart LR
 
 | Stage | What you will build | Availability |
 | --- | --- | --- |
-| Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–05 available**; 06–08 planned |
+| Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–06 available**; 07–08 planned |
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | Planned |
 | Android · 13–15 | The Study Planner app with Compose screens, ViewModel, and repositories | Planned |
 | Native iOS · 16–18 | A SwiftUI client with native state and concurrency | Planned |
@@ -69,6 +69,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [03 Null safety and errors](chapters/03-null-safety-and-errors/README.md) | Nullable types, safe calls, parsing, and error contracts | A form that handles missing and invalid session input |
 | [04 Classes and modeling](chapters/04-classes-and-modeling/README.md) | Classes, properties, value equality, copies, enums, and sealed results | Session models that preserve the original when completing a copy |
 | [05 Collections and complexity](chapters/05-collections-and-complexity/README.md) | Lists, sets, maps, snapshots, grouping, sorting, and Big O | A progress report with unique sessions, completed totals, and ID lookup |
+| [06 Functions as values](chapters/06-functions-as-values/README.md) | Lambdas, higher-order functions, extensions, receivers, scope functions, and sequences | Composable session filters and eager versus lazy previews with callback counts |
 
 More chapters are coming one at a time. The Android, iOS, and KMP apps are planned.
 
