@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–06 exercises now exist; the mobile workspace and its clients are planned.
+This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–07 exercises now exist; the mobile workspace and its clients are planned.
 
 ## Layout introduced gradually
 
@@ -21,6 +21,7 @@ Kotlin-101-The-Mobile-Workshop/
     04-classes-and-modeling/        Same lesson and workshop layout
     05-collections-and-complexity/  Same lesson and workshop layout
     06-functions-as-values/         Same lesson and workshop layout
+    07-abstraction-and-dependencies/ Same lesson and workshop layout
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -33,6 +34,7 @@ Kotlin-101-The-Mobile-Workshop/
     ch04-classes-and-modeling/        Independent model exercise, same source layout
     ch05-collections-and-complexity/  Independent reporting exercise, same source layout
     ch06-functions-as-values/         Independent filter exercise, same source layout
+    ch07-abstraction-and-dependencies/ Independent storage exercise, same source layout
   mobile/                   Growing app workspace, added with Android chapters
     gradlew
     settings.gradle.kts

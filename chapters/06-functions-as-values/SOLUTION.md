@@ -66,6 +66,6 @@ With too few matches, the lazy pipeline must inspect the remaining input to disc
 
 For later recall, `anyOf` returns `{ session -> first(session) || second(session) }`. `||` skips the second after the first accepts. `preview.let { it.size }` returns an `Int`; `preview.also { println(it.size) }` logs the count and returns the same list.
 
-**Next: Chapter 07 will introduce interfaces, composition, and replaceable dependencies. Its lesson is planned.**
+**[Next: Chapter 07 Abstraction and dependencies](../07-abstraction-and-dependencies/LESSON.md)** introduces interfaces, composition, and replaceable storage.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

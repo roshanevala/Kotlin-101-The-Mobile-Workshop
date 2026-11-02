@@ -1,16 +1,16 @@
 # Project status
 
-Updated **1 November 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **2 November 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Chapters 01–06 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapters 01–07 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
 Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Existing learner work is preserved, and normal course commits exclude personal answers.
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–06 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–07 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
 Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
@@ -20,9 +20,11 @@ Chapter 05 is ready for a learner attempt. Its progress report covers first-reco
 
 Chapter 06 is ready for a learner attempt. Its lesson covers lambdas, higher-order functions, extensions, receivers, scope functions, and sequences. The composable-filter and preview reference passes 26 tests; all eight complete lesson examples match their stated output. The eager-versus-lazy experiment measures callback counts, not elapsed time. The working copy retains the unsolved starter. See [Chapter 06 verification](verification/ch06.md).
 
-GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 06's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 07–40 and the Android, iOS, and KMP applications remain planned.
+Chapter 07 is ready for a learner attempt. Its generic in-memory store, reader view, planner, and report use interfaces, variance, delegation, and constructor injection. The reference passes 30 tests; all eight complete lesson examples match their stated output. Compiler checks confirm safe variance directions and reject unsafe writes. The working copy retains the unsolved starter. See [Chapter 07 verification](verification/ch07.md).
 
-The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–06 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
+GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 07's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 08–40 and the Android, iOS, and KMP applications remain planned.
+
+The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–07 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
 
 ## Decisions
 
@@ -35,7 +37,7 @@ The active learning priority is a [focused Android and Kotlin refresh](../CURRIC
 
 ## Next deliverable
 
-Review the learner's Chapter 05 and Chapter 06 attempts, then implement Chapter 07's abstraction-and-dependencies lesson and mission. Keep concepts before exercises and introduce interfaces, composition, and replaceable in-memory storage one chapter at a time. Continue improving earlier instructions from learner feedback.
+Review the learner's pending Chapter 05–07 attempts, then implement Chapter 08's tests-and-Kotlin-pitfalls lesson and mission. Teach test structure before exercises that reveal equality, shallow-copy, and read-only-collection bugs. Implement one chapter at a time and continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 
