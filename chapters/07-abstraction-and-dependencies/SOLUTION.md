@@ -62,6 +62,6 @@ Giving the report a second empty store makes its total **0**, even though comple
 
 For later recall, a note store uses a key function such as `{ it.number }`. A generic transfer can loop over `reader.all()` and call `writer.save(item)`; a target with the workshop's store contract replaces matching keys and keeps their positions.
 
-**Next: Chapter 08 will introduce test structure and Kotlin pitfalls, including shallow copies and read-only collections. Its lesson is planned.**
+**[Next: Chapter 08 Tests and Kotlin pitfalls](../08-tests-and-kotlin-pitfalls/LESSON.md)** teaches regression tests for equality, shallow copies, and read-only collections.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

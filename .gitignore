@@ -15,8 +15,9 @@ __pycache__/
 *.py[cod]
 .venv/
 
-# Learner working copies are created from tracked src/starter templates.
+# Learner working copies are created from tracked starter templates.
 /kotlin-labs/*/src/main/
+/kotlin-labs/*/src/practiceTest/
 
 # Android local configuration and signing material
 local.properties

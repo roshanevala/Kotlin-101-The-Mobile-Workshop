@@ -56,6 +56,14 @@ jobs:
               Complete 7: false
               Stored topics: []
               Completed minutes: 0
+          - chapter: '08'
+            module: ch08-tests-and-kotlin-pitfalls
+            working_file: ch08-tests-and-kotlin-pitfalls/src/main/kotlin/workshop/ch08/SessionSnapshots.kt
+            starter_output: |-
+              Original topics: [Kotlin, KMP]
+              Saved topics: []
+              Equal sessions: false
+              Completed minutes: 75
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -76,6 +84,12 @@ jobs:
           starter_output=$(./gradlew --no-daemon --quiet ":${{ matrix.module }}:run")
           test "$starter_output" = "${{ matrix.starter_output }}"
           git check-ignore --quiet "${{ matrix.working_file }}"
+      - name: Verify the Chapter 08 learner test copy
+        if: matrix.chapter == '08'
+        working-directory: kotlin-labs
+        run: |
+          git check-ignore --quiet ch08-tests-and-kotlin-pitfalls/src/practiceTest/kotlin/workshop/ch08/SnapshotPracticeTest.kt
+          cmp ch08-tests-and-kotlin-pitfalls/src/starterTest/kotlin/workshop/ch08/SnapshotPracticeTest.kt ch08-tests-and-kotlin-pitfalls/src/practiceTest/kotlin/workshop/ch08/SnapshotPracticeTest.kt
       - name: Run and check the separate reference
         working-directory: kotlin-labs
         run: ./gradlew --no-daemon --console=plain ":${{ matrix.module }}:runSolution" ":${{ matrix.module }}:checkSolution"
