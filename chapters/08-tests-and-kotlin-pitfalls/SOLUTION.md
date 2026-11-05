@@ -59,6 +59,6 @@ The first saved version contains `[Kotlin]`; the second contains `[Kotlin, Flow]
 
 The independent foundations checkpoint has no supplied solution. Use its written rules, test observable behavior, and explain where its latest-record rule differs from Chapter 05's imported-history rule. Completing this chapter's guided exercise alone does not establish independent checkpoint completion.
 
-**Next: Chapter 09 will introduce suspension, execution, and coroutine basics. Its lesson is planned.**
+**[Next: Chapter 09 Suspension and execution](../09-suspension-and-execution/LESSON.md)** introduces coroutine scopes, dispatchers, and independent requests.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

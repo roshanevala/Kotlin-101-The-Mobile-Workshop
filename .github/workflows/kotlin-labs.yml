@@ -64,6 +64,12 @@ jobs:
               Saved topics: []
               Equal sessions: false
               Completed minutes: 75
+          - chapter: '09'
+            module: ch09-suspension-and-execution
+            working_file: ch09-suspension-and-execution/src/main/kotlin/workshop/ch09/DashboardLoading.kt
+            starter_output: |-
+              Sequential: [], minutes=0, peak=0
+              Concurrent: [], minutes=0, peak=0
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

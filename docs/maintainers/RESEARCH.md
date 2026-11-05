@@ -63,6 +63,12 @@ Swift export is currently Alpha. Its documentation describes mappings for suspen
 
 Select Kotlin, Gradle, Android Gradle Plugin, Xcode, and Compose versions as a compatible set before implementing the build. Use the current Android KMP library plugin guidance for shared libraries rather than copying an older project's configuration. Compose compiler plugin versions must align with Kotlin. [KMP compatibility guide](https://kotlinlang.org/docs/multiplatform/multiplatform-compatibility-guide.html), [Compose compatibility](https://kotlinlang.org/docs/multiplatform/compose-compatibility-and-versioning.html).
 
+## Chapter 09 coroutine dependency
+
+Reviewed on **5 November 2026**. The first coroutine exercise pins **`kotlinx-coroutines-core:1.11.0`** in its own module. Its [official release notes](https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.11.0) identify Kotlin **2.2.20** as the library's build version. Dependency resolution, compilation, and execution were verified with the course's Kotlin **2.2.21**, Gradle **8.14.3**, and JDK **17**, without upgrading earlier exercises; see the [Chapter 09 verification record](verification/ch09.md).
+
+Use only the core library for this first comparison. The supplied test fixtures use one-shot signals to observe request lifetime without elapsed-time assertions. Cancellation and failure policies belong to Chapter 10; the coroutine test library and virtual-time instruction remain Chapter 12 work. The console fixture's mutable counters stay in its inherited single-threaded context. An already suspending API does not automatically need an IO dispatcher, and `runBlocking` is used at the console/test boundary rather than inside the loaders. These choices follow [composition](https://kotlinlang.org/docs/composing-suspending-functions.html), [dispatcher guidance](https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html), and the [`runBlocking` contract](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html).
+
 ## Research boundaries and next checks
 
 This research establishes the curriculum direction and initial stack. The course sequence and interview exercises are teaching recommendations. Employer-specific preparation will depend on actual role descriptions and the learner's interview feedback.
