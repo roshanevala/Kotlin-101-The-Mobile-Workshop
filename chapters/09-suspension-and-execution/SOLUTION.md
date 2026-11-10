@@ -60,6 +60,6 @@ With topics `[Flow, Kotlin, Flow]` and total `0L`, both loaders preserve the rep
 
 With `delay(0L)` instead, neither fake request suspends at that call. In the sample's inherited single-threaded context both peaks become **1**, even though the correct concurrent implementation still starts two children before awaiting results. Concurrent structure allows overlap when work waits; it does not manufacture waiting or guarantee parallelism. Restore the original fake before checking the documented baseline.
 
-**Next: Chapter 10 will introduce structured concurrency, cancellation, timeouts, and failure policies. Its lesson is planned.**
+**[Next: Chapter 10 Structured concurrency](../10-structured-concurrency/LESSON.md)** introduces cancellation, timeouts, failure policies, and obsolete-search replacement.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

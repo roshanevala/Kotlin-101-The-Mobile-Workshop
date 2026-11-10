@@ -10,6 +10,7 @@
 .gradle/
 .kotlin/
 **/build/
+/kotlin-labs/*/bin/
 out/
 __pycache__/
 *.py[cod]

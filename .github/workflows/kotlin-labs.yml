@@ -70,6 +70,12 @@ jobs:
             starter_output: |-
               Sequential: [], minutes=0, peak=0
               Concurrent: [], minutes=0, peak=0
+          - chapter: '10'
+            module: ch10-structured-concurrency
+            working_file: ch10-structured-concurrency/src/main/kotlin/workshop/ch10/SearchLifecycle.kt
+            starter_output: |-
+              Old cancelled: false
+              Published queries: [Kotlin, Ko]
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
