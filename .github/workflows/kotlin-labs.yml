@@ -76,6 +76,12 @@ jobs:
             starter_output: |-
               Old cancelled: false
               Published queries: [Kotlin, Ko]
+          - chapter: '11'
+            module: ch11-flow-and-observable-state
+            working_file: ch11-flow-and-observable-state/src/main/kotlin/workshop/ch11/SearchFlow.kt
+            starter_output: |-
+              Search: []
+              Progress: 0/0
     steps:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1

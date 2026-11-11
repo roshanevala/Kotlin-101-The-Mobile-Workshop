@@ -59,6 +59,6 @@ Submitting and joining `KMP` after Kotlin completes produces `[Kotlin, KMP]`. Th
 
 Stopping a waiting request cancels that request, waits for its cleanup, and leaves other sessions under the same owner alive. Cancelling the owner itself instead cancels its descendants. In the optional supervision variation, an uncaught exception escaping the supervisor block fails that block and cancels its remaining children.
 
-**Next: Chapter 11 will introduce Flow and observable state, including debounced search. Its lesson is planned.**
+**Next: [Chapter 11 Flow and observable state](../11-flow-and-observable-state/README.md)** — turn search and progress into shared screen state.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

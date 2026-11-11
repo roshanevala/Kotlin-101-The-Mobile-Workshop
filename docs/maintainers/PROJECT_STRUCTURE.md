@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–10 exercises now exist; the mobile workspace and its clients are planned.
+This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–11 exercises now exist; the mobile workspace and its clients are planned.
 
 ## Layout introduced gradually
 
@@ -25,6 +25,7 @@ Kotlin-101-The-Mobile-Workshop/
     08-tests-and-kotlin-pitfalls/    Adds learner-authored regression tests
     09-suspension-and-execution/    Introduces the coroutine library
     10-structured-concurrency/     Introduces cancellation and search ownership
+    11-flow-and-observable-state/  Introduces cold streams and shared screen state
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -41,6 +42,7 @@ Kotlin-101-The-Mobile-Workshop/
     ch08-tests-and-kotlin-pitfalls/    Snapshot exercise plus editable test working copy
     ch09-suspension-and-execution/    Independent coroutine loading exercise
     ch10-structured-concurrency/     Independent search lifecycle exercise
+    ch11-flow-and-observable-state/  Independent observable search/progress exercise
   mobile/                   Growing app workspace, added with Android chapters
     gradlew
     settings.gradle.kts
