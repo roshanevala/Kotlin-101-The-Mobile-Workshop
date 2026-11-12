@@ -50,6 +50,6 @@ The changed finite demo prints `Search: [KMP]` and `Progress: 3/5`. The query is
 
 With `MutableSharedFlow<String>(replay = 1)`, printing the replay cache immediately after the first emission gives `[Before subscriber]`. A new subscriber first receives that retained value. In the original `take(2)` example it then receives the first `Saved`, so its result becomes `[Before subscriber, Saved]`; the later `Saved` remains the newest replay value. Replay changes observation after subscription, not exactly-once processing.
 
-**Next: Chapter 12 will introduce testing asynchronous behavior, including virtual time and controlled dispatchers. Its lesson is planned.**
+**Next: [Chapter 12 Testing asynchronous behavior](../12-testing-asynchronous-behavior/README.md)** — write virtual-time regressions for retries and rapid query changes.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

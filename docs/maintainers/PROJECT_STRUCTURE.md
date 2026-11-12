@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–11 exercises now exist; the mobile workspace and its clients are planned.
+This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–12 exercises now exist; the mobile workspace and its clients are planned.
 
 ## Layout introduced gradually
 
@@ -26,6 +26,7 @@ Kotlin-101-The-Mobile-Workshop/
     09-suspension-and-execution/    Introduces the coroutine library
     10-structured-concurrency/     Introduces cancellation and search ownership
     11-flow-and-observable-state/  Introduces cold streams and shared screen state
+    12-testing-asynchronous-behavior/  Adds virtual-time regression practice
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -43,6 +44,7 @@ Kotlin-101-The-Mobile-Workshop/
     ch09-suspension-and-execution/    Independent coroutine loading exercise
     ch10-structured-concurrency/     Independent search lifecycle exercise
     ch11-flow-and-observable-state/  Independent observable search/progress exercise
+    ch12-testing-asynchronous-behavior/  Retry/search exercise plus editable test working copy
   mobile/                   Growing app workspace, added with Android chapters
     gradlew
     settings.gradle.kts
@@ -62,9 +64,9 @@ Gradle supports related subprojects under one build. Use that capability for ind
 
 Each chapter has a small exercise module in `kotlin-labs`, added when that chapter is implemented. The learner opens the workspace once, follows the lesson's exact run command, and edits a local working copy. A tracked template lives in `src/starter`; `preparePractice` copies it into Git-ignored `src/main` only when absent. Compilation prepares the copy automatically, so the regular run and test commands are unchanged.
 
-Chapter 08 adds tracked `src/starterTest` and `src/solutionTest` files for test-writing practice. `preparePracticeTests` copies its test template to Git-ignored `src/practiceTest` only when absent; `preparePractice` prepares both the production and test files. The normal `test` task compiles the learner tests alongside fixed `src/test` acceptance checks. `checkSolution` instead compiles the worked regression tests alongside the same acceptance checks, keeping both paths independent. Preserve and exclude both answer folders during verification and staging.
+Chapters 08 and 12 add tracked `src/starterTest` and `src/solutionTest` files for test-writing practice. `preparePracticeTests` copies the chapter's test template to Git-ignored `src/practiceTest` only when absent; `preparePractice` prepares both the production and test files. The normal `test` task compiles the learner tests alongside fixed `src/test` acceptance checks. `checkSolution` instead compiles the worked regression tests alongside the same acceptance checks, keeping both paths independent. Preserve and exclude both answer folders during verification and staging.
 
-Never overwrite an existing working copy during preparation, cleanup, or routine verification. Keep answers out of course commits by leaving `src/main` and Chapter 08's `src/practiceTest` untracked. When migrating an existing tracked main file, obtain the template from its committed starter version and preserve the working file exactly as it is. Learning work is local by default; a separate repository or an explicit solutions folder in a personal fork can hold answers learners choose to version.
+Never overwrite an existing working copy during preparation, cleanup, or routine verification. Keep answers out of course commits by leaving `src/main` and both chapters' `src/practiceTest` untracked. When migrating an existing tracked main file, obtain the template from its committed starter version and preserve the working file exactly as it is. Learning work is local by default; a separate repository or an explicit solutions folder in a personal fork can hold answers learners choose to version.
 
 Exercise modules do not depend on earlier exercise modules. Running Chapter 05 must not compile a learner's unfinished Chapter 03 exercise. Avoid a single source folder where every previous exercise must compile successfully before the next one runs.
 

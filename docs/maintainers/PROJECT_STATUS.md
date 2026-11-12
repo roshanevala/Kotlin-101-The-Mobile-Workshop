@@ -1,16 +1,16 @@
 # Project status
 
-Updated **11 November 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **12 November 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Chapters 01–11 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapters 01–12 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
-Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Chapter 08 also prepares learner-authored tests in Git-ignored `src/practiceTest` from `src/starterTest`. Existing code and test answers are preserved and excluded from normal course commits.
+Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Chapters 08 and 12 also prepare learner-authored tests in Git-ignored `src/practiceTest` from `src/starterTest`. Existing code and test answers are preserved and excluded from normal course commits.
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–11 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–12 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
 Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
@@ -30,9 +30,11 @@ Chapter 10 is ready for a learner attempt. Its search-session mission preserves 
 
 Chapter 11 is ready for a learner attempt. Its cold search pipeline trims and deduplicates queries, replaces obsolete work before a new quiet period, combines independent progress, and shares current screen state in a caller-owned scope. The reference passes 36 tests; all eight complete lesson programs and both changed-request experiments match their stated output. The module reuses coroutines 1.11.0, and the real working copy retains the unsolved starter. See [Chapter 11 verification](verification/ch11.md).
 
-GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 11's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 12–40 and the Android, iOS, and KMP applications remain planned.
+Chapter 12 is ready for a learner attempt. Its retrying-search mission adds coroutines-test 1.11.0 only to test sources, with one scheduler for injected dispatchers. The reference passes 32 tests: 26 shared acceptance checks plus six worked virtual-time regressions. All six lesson tests pass, and selected defects demonstrate retry boundaries, replacement ordering, and cancellation checks. The production and test working copies retain the starter; learner regression-writing and the independent Part 2 checkpoint remain pending. See [Chapter 12 verification](verification/ch12.md).
 
-The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–11 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
+GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 12's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 13–40 and the Android, iOS, and KMP applications remain planned.
+
+The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–12 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
 
 ## Decisions
 
@@ -45,7 +47,7 @@ The active learning priority is a [focused Android and Kotlin refresh](../CURRIC
 
 ## Next deliverable
 
-Review the learner's pending Chapter 05–11 attempts and foundations checkpoint, then implement Chapter 12's testing-asynchronous-behavior lesson and mission. Teach test scopes, virtual time, injected dispatchers, and ordering before deterministic retry and rapid-query exercises. Verify the coroutine test library against the pinned toolchain when adding it, implement one chapter at a time, and continue improving earlier instructions from learner feedback.
+Review the learner's pending Chapter 05–12 attempts, foundations checkpoint, and independent cancellable-search checkpoint, then implement Chapter 13's Android-runtime-and-lifecycle lesson and mission. Introduce the first growing mobile workspace, verify a compatible Android toolchain and setup, and teach runtime/lifecycle concepts before diagnosing lost session state after recreation. Keep Android tooling out of the independent Kotlin workspace, implement one chapter at a time, and continue improving earlier instructions from learner feedback.
 
 ## Publication decisions
 

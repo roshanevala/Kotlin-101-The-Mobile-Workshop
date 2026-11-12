@@ -13,7 +13,7 @@ flowchart LR
     accTitle: From Kotlin basics to a mobile app and interview practice
     accDescr: Start with the available Kotlin lessons. Build an Android app, then add iOS and shared Kotlin logic in planned stages. Practise lesson questions and debugging along the way; dedicated coding challenges and mock interviews are planned.
 
-    K("Learn Kotlin<br/>Kotlin basics + coroutines<br/>Chapters 01–11 available"):::basics
+    K("Learn Kotlin<br/>Kotlin basics + coroutines<br/>Chapters 01–12 available"):::basics
     A("Build an Android app<br/>Study Planner + Compose<br/>Planned"):::android
     M("Add iOS + KMP<br/>Native UI + shared Kotlin<br/>Planned"):::multiplatform
     I("Interview practice<br/>Questions · coding · debugging<br/>Mock interviews planned"):::interview
@@ -37,7 +37,7 @@ flowchart LR
 | Stage | What you will build | Availability |
 | --- | --- | --- |
 | Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–08 available** |
-| Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–11 available**; 12 planned |
+| Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
 | Android · 13–15 | The Study Planner app with Compose screens, ViewModel, and repositories | Planned |
 | Native iOS · 16–18 | A SwiftUI client with native state and concurrency | Planned |
 | Kotlin Multiplatform · 19–22 | Shared Kotlin business rules used by Android and iOS | Planned |
@@ -75,6 +75,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [09 Suspension and execution](chapters/09-suspension-and-execution/README.md) | Suspension versus blocking, scopes, dispatchers, `launch`, and `async` | Sequential and concurrent dashboard loaders with controlled fake requests |
 | [10 Structured concurrency](chapters/10-structured-concurrency/README.md) | Job ownership, cancellation, cleanup, timeouts, failures, supervision, and shared state | A search session that cancels obsolete work and protects active-request changes |
 | [11 Flow and observable state](chapters/11-flow-and-observable-state/README.md) | Cold streams, buffering, latest operators, combining, StateFlow, and SharedFlow | Debounced topic search combined with progress in shared screen state |
+| [12 Testing asynchronous behavior](chapters/12-testing-asynchronous-behavior/README.md) | Test scopes, virtual time, injected dispatchers, boundaries, and controlled interleavings | Learner-written regressions for retry deadlines and rapid search replacement |
 
 More chapters are coming one at a time. The Android, iOS, and KMP apps are planned.
 
