@@ -1,6 +1,6 @@
 # Kotlin and mobile development curriculum
 
-Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic. [Available lessons](../README.md#available-chapters) cover Chapters 01–12, from values and types through testing asynchronous behavior. Chapters 13–40 are planned and will be implemented sequentially.
+Build fluency in Kotlin, confidence in Android interviews, and the ability to develop and evaluate shared Android and iOS features with Kotlin Multiplatform. Chapter 00 is an introductory diagnostic. [Available lessons](../README.md#available-chapters) cover Chapters 01–13, from values and types through Android runtime and lifecycle. Chapters 14–40 are planned and will be implemented sequentially.
 
 The main audience is an Android developer returning to regular practice. For a near-term interview refresh, follow the [focused route](#focused-android-and-kotlin-refresh). Beginner explanations remain part of every chapter so other learners can follow without previous professional experience. Advanced chapters develop engineering judgment through measurement, failures, and design decisions.
 
@@ -48,7 +48,7 @@ Use this weekly budget, shifting time toward mocks in Week 6:
 
 Public posts and presentation polish are optional; repository write-ups should reuse the work rather than consume the study budget.
 
-Only Chapters 01–12 currently have complete course lessons and runnable missions. The weeks above include planned learning targets. Build the next compact mission one at a time, and use the relevant official exercises or documentation while further course material is being prepared. The [project status](maintainers/PROJECT_STATUS.md) records what has actually been delivered and checked.
+Only Chapters 01–13 currently have complete course lessons and runnable missions. The weeks above include planned learning targets. Build the next compact mission one at a time, and use the relevant official exercises or documentation while further course material is being prepared. The [project status](maintainers/PROJECT_STATUS.md) records what has actually been delivered and checked.
 
 Assess progress after Weeks 2, 4, and 6. Before moving past a topic, rebuild its small example, explain a decision, and handle a changed requirement. If a checkpoint exposes a gap, use the next practice block to address it, reduce an optional task, or use Weeks 7–8. Familiar material can move faster when these checks already pass.
 

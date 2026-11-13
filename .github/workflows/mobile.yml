@@ -1,0 +1,45 @@
+name: Android build
+
+on:
+  push:
+    branches: [main]
+    paths: ['mobile/**', '.github/workflows/mobile.yml']
+  pull_request:
+    paths: ['mobile/**', '.github/workflows/mobile.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mobile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up JDK 17
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+          cache-dependency-path: |
+            mobile/**/*.gradle.kts
+            mobile/gradle/wrapper/gradle-wrapper.properties
+      - name: Install pinned SDK packages
+        run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+      - name: Build both variants, compile device tests, and lint reference
+        working-directory: mobile
+        run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:lintReferenceDebug
+      - name: Check that preparation retains the exercise and ignores the answer
+        working-directory: mobile
+        run: |
+          cmp androidApp/src/starter/kotlin/workshop/studylab/MainActivity.kt androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt
+          git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt

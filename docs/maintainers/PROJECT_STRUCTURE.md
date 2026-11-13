@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The Kotlin workspace and Chapters 01–12 exercises now exist; the mobile workspace and its clients are planned.
+This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12 and the first Android draft for Chapter 13 now exist. The iOS and shared KMP clients remain planned.
 
 ## Layout introduced gradually
 
@@ -27,6 +27,7 @@ Kotlin-101-The-Mobile-Workshop/
     10-structured-concurrency/     Introduces cancellation and search ownership
     11-flow-and-observable-state/  Introduces cold streams and shared screen state
     12-testing-asynchronous-behavior/  Adds virtual-time regression practice
+    13-android-runtime-and-lifecycle/  First Android draft and recreation mission
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -45,12 +46,17 @@ Kotlin-101-The-Mobile-Workshop/
     ch10-structured-concurrency/     Independent search lifecycle exercise
     ch11-flow-and-observable-state/  Independent observable search/progress exercise
     ch12-testing-asynchronous-behavior/  Retry/search exercise plus editable test working copy
-  mobile/                   Growing app workspace, added with Android chapters
+  mobile/                   Growing Android workspace, available from Chapter 13
     gradlew
     settings.gradle.kts
     androidApp/             Android app that grows through the course
-    shared/                 Shared KMP code, introduced with the KMP chapters
-    iosApp/                 Native iOS client and Xcode project, added later
+      src/main/             Fixed manifest, resources, and window scaffolding
+      src/starter/          Tracked Chapter 13 Activity exercise
+      src/practice/         Generated learner Activity, ignored
+      src/solution/         Tracked reference Activity
+      src/androidTest/      Shared device acceptance checks
+    shared/                 Planned KMP code, introduced with the KMP chapters
+    iosApp/                 Planned native iOS client and Xcode project
   docs/
     CURRICULUM.md           Optional full course roadmap
     maintainers/            Plans, research, agent workflow, and verification
@@ -76,7 +82,9 @@ Each lesson names the files to edit, the run action, expected output, and how to
 
 ## Android and KMP chapters
 
-Introduce one Android application in `mobile` and extend it through the Android lessons. The study planner gains a topic list, session editor, saved drafts, navigation, persistence, search, and reminders as the relevant concepts arrive.
+The Android application introduced in `mobile` in Chapter 13 grows through later Android lessons. The study planner gains a topic list, session editor, saved drafts, navigation, persistence, search, and reminders as the relevant concepts arrive.
+
+Chapter 13 uses a platform Activity and XML Views to expose lifecycle mechanics before Compose. A single `androidApp` module has practice/reference flavors with distinct application IDs. Shared main contains the fixed manifest/resources/window helper but no Activity; the generated Activity lives in ignored `src/practice`, while reference builds use tracked `src/solution`. The variants never compile each other's Activity. `preparePractice` fills only a missing answer. Device tests are shared in `src/androidTest`. See [mobile setup](../../mobile/README.md).
 
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 
@@ -86,9 +94,9 @@ Optional experiments can remain separate little exercises when isolation helps e
 
 ## Chapter checkpoints
 
-For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags, for example `ch13-start-v1` and `ch13-finish-v1`, when those checkpoints actually exist. A correction creates a new versioned checkpoint rather than moving a published tag.
+For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags when the source checkpoints are published. Chapter 13 keeps the starter and finish reference as separate build variants in one source snapshot; its publication tag is `ch13-v1`. Future chapters may use distinct start/finish tags when their snapshots differ. A correction creates a new versioned checkpoint rather than moving a published tag.
 
-The lesson links directly to its starting snapshot and provides a GitHub ZIP download path so Git expertise is optional. The start contains the prerequisite app behavior and the mission instructions. The worked implementation belongs in the finish checkpoint and separate solution links.
+During local preparation, link the tracked starter/reference sources and exact variant commands. Once published, link the immutable tag and its GitHub ZIP so Git expertise is optional; never claim an unpublished tag exists. The start contains the prerequisite app behavior and the mission instructions. The worked implementation belongs in the finish checkpoint and separate solution links.
 
 Learners can continue their own work between chapters or start from the supplied checkpoint. Recovery instructions should create a fresh copy or preserve their changes before switching versions.
 
@@ -96,4 +104,4 @@ Keep `main` as the latest integrated course state. Maintain chapter history thro
 
 ## First implementation
 
-Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. The Android workspace is introduced when the Android course stage begins.
+Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. Chapter 13 now adds the separate mobile workspace with the saved-draft mission; shared KMP and iOS workspaces remain later additions.

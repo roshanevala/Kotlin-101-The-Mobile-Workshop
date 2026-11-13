@@ -1,0 +1,16 @@
+<resources>
+    <string name="course_label">THE MOBILE WORKSHOP</string>
+    <string name="screen_title">Your next session</string>
+    <string name="screen_intro">Choose a topic, count a little progress, then try recreating this screen.</string>
+    <string name="topic_label">Study topic</string>
+    <string name="default_topic">Kotlin</string>
+    <string name="progress_label">Sessions completed</string>
+    <string name="complete_session">Complete one session</string>
+    <string name="recreate_screen">Recreate screen</string>
+    <string name="reset_draft">Reset draft</string>
+    <string name="draft_note">This is a temporary draft. Reset or a fresh task starts a new plan.</string>
+    <plurals name="completed_sessions">
+        <item quantity="one">%d session</item>
+        <item quantity="other">%d sessions</item>
+    </plurals>
+</resources>

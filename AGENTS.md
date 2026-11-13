@@ -28,7 +28,7 @@ Keep the learner path simple and inviting: one clear start, concepts before exer
 ## Verification
 
 - Documentation check: `python3 scripts/check_docs.py`.
-- Kotlin exercises use the wrapper in `kotlin-labs`; use its README and scoped guidance for commands. The Android and iOS applications do not exist yet.
+- Kotlin exercises use the wrapper in `kotlin-labs`; use its README and scoped guidance for commands. The Android app uses its separate `mobile` wrapper and scoped guidance; its device tests need an API 30+ emulator/device. iOS and KMP clients remain planned.
 - When code is introduced, document and run the affected exercise's actual commands. Use tests that check observable behavior and relevant boundary cases.
 - After applicable checks pass, broaden testing only for a concrete unresolved risk. Report unrun checks plainly.
 - Finish with what changed, verification, and any remaining limitation. Update status only when progress materially changes.

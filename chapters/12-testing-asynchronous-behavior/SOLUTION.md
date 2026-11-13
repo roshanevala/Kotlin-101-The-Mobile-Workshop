@@ -60,6 +60,6 @@ With a 250 ms backoff, the three call times become `[0, 250, 500]`. Update both 
 
 If the first source call succeeds, the call list is `[0]` and backoff adds zero virtual time. Test that as a separate success scenario rather than keeping assertions expecting three calls. An independently delayed successful source still contributes its own delay.
 
-**Next: Chapter 13 will introduce the Android runtime and lifecycle, including the first mobile workspace. Its lesson is planned.**
+**Next: [Chapter 13 Android runtime and lifecycle](../13-android-runtime-and-lifecycle/README.md)** — open the first mobile workspace and repair a disappearing draft.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

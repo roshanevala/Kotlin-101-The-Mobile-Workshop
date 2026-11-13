@@ -1,16 +1,16 @@
 # Project status
 
-Updated **12 November 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **13 November 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Chapters 01–12 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapters 01–13 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
 Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Chapters 08 and 12 also prepare learner-authored tests in Git-ignored `src/practiceTest` from `src/starterTest`. Existing code and test answers are preserved and excluded from normal course commits.
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–12 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–13 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
 Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
@@ -32,9 +32,11 @@ Chapter 11 is ready for a learner attempt. Its cold search pipeline trims and de
 
 Chapter 12 is ready for a learner attempt. Its retrying-search mission adds coroutines-test 1.11.0 only to test sources, with one scheduler for injected dispatchers. The reference passes 32 tests: 26 shared acceptance checks plus six worked virtual-time regressions. All six lesson tests pass, and selected defects demonstrate retry boundaries, replacement ordering, and cancellation checks. The production and test working copies retain the starter; learner regression-writing and the independent Part 2 checkpoint remain pending. See [Chapter 12 verification](verification/ch12.md).
 
-GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 12's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. Chapters 13–40 and the Android, iOS, and KMP applications remain planned.
+Chapter 13 is ready for a learner attempt. The first growing Android workspace now lives in `mobile`, independently of the Kotlin labs. Its small platform Activity/XML draft teaches saved Bundle values before Compose; practice/reference flavors isolate the Activity answers. The reference passes 10 device tests on Android 16/API 36, and a separate background-process-kill/Recents-return observation restored both values with a new PID. Build, lint, preservation, variant-isolation, and selected-defect checks were executed locally. The real practice Activity remains unsolved. See [Chapter 13 verification](verification/ch13.md).
 
-The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–12 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
+GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 12's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. The Android workflow builds both APKs, compiles device tests, and lints the reference; it does not run an emulator. Chapters 14–40, the iOS client, and shared KMP code remain planned. Chapter 13 source checkpoints are present; its immutable publication tag is pending publication.
+
+The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–13 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
 
 ## Decisions
 
@@ -47,7 +49,7 @@ The active learning priority is a [focused Android and Kotlin refresh](../CURRIC
 
 ## Next deliverable
 
-Review the learner's pending Chapter 05–12 attempts, foundations checkpoint, and independent cancellable-search checkpoint, then implement Chapter 13's Android-runtime-and-lifecycle lesson and mission. Introduce the first growing mobile workspace, verify a compatible Android toolchain and setup, and teach runtime/lifecycle concepts before diagnosing lost session state after recreation. Keep Android tooling out of the independent Kotlin workspace, implement one chapter at a time, and continue improving earlier instructions from learner feedback.
+Review the learner's pending Chapter 05–13 attempts and independent foundations/cancellable-search checkpoints, then implement Chapter 14's Jetpack Compose lesson and mission in the existing mobile workspace. Teach composition, state ownership/hoisting, effects, and accessibility before the study list/editor exercise. Verify a compatible Compose compiler/library set before adding it, preserve learner work and published checkpoints, and keep Android tooling out of the independent Kotlin labs.
 
 ## Publication decisions
 
