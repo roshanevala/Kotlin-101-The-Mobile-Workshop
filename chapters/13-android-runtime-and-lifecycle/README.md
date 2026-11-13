@@ -14,4 +14,6 @@ Start after [Chapter 12](../12-testing-asynchronous-behavior/README.md). You sho
 
 The new [mobile setup](../../mobile/README.md) uses its own Gradle workspace and Android SDK. Keep `kotlin-labs` for earlier exercises.
 
+For a fixed source snapshot, use the [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [download its ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip). Extract it and open `mobile`; practice and reference variants are both included.
+
 [Back to the course](../../README.md)
