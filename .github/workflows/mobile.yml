@@ -38,8 +38,10 @@ jobs:
       - name: Build both variants, compile device tests, and lint reference
         working-directory: mobile
         run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:lintReferenceDebug
-      - name: Check that preparation retains the exercise and ignores the answer
+      - name: Check that preparation retains both exercises and ignores answers
         working-directory: mobile
         run: |
           cmp androidApp/src/starter/kotlin/workshop/studylab/MainActivity.kt androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt
           git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt
+          cmp androidApp/src/starter/kotlin/workshop/studylab/StudyPlannerActivity.kt androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt
+          git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt

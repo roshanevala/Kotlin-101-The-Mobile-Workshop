@@ -1,5 +1,7 @@
 # Chapter 13 Worked solution
 
+Use the immutable [ch13-v1 source](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [its ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip) in a new folder for this chapter's View-based app. The current `mobile` launcher continues with Chapter 14; keep existing answers safe in their original workspace.
+
 Attempt the [workshop](WORKSHOP.md) before reading the [reference Activity](../../mobile/androidApp/src/solution/kotlin/workshop/studylab/MainActivity.kt).
 
 ## Save current values and rebuild a new object
@@ -41,6 +43,6 @@ With only the default-topic resource changed to KMP, a fresh plan and Reset choo
 
 Enabling widget auto-save in a temporary broken copy can restore the topic even when the custom Bundle write is absent. Restoring the exercise's `saveEnabled=false` makes the typing regression detect that defect again. An in-memory singleton can likewise conceal state loss during recreation while failing the intended process/task boundaries.
 
-**Next: Chapter 14 will introduce Jetpack Compose, state hoisting, effects, and the study list/editor UI. Its lesson is planned.**
+**Next: [Chapter 14 Jetpack Compose](../14-jetpack-compose/README.md)** — grow the app with a controlled study list/editor and keyed feedback effect.
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

@@ -14,7 +14,7 @@ flowchart LR
     accDescr: Start with the available Kotlin lessons. Build an Android app, then add iOS and shared Kotlin logic in planned stages. Practise lesson questions and debugging along the way; dedicated coding challenges and mock interviews are planned.
 
     K("Learn Kotlin<br/>Kotlin basics + coroutines<br/>Chapters 01–12 available"):::basics
-    A("Build an Android app<br/>Study Lab lifecycle draft<br/>Chapter 13 available"):::android
+    A("Build an Android app<br/>Study Lab + Compose editor<br/>Chapters 13–14 available"):::android
     M("Add iOS + KMP<br/>Native UI + shared Kotlin<br/>Planned"):::multiplatform
     I("Interview practice<br/>Questions · coding · debugging<br/>Mock interviews planned"):::interview
 
@@ -38,7 +38,7 @@ flowchart LR
 | --- | --- | --- |
 | Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–08 available** |
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
-| Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13 available**; 14–15 planned |
+| Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13–14 available**; 15 planned |
 | Native iOS · 16–18 | A SwiftUI client with native state and concurrency | Planned |
 | Kotlin Multiplatform · 19–22 | Shared Kotlin business rules used by Android and iOS | Planned |
 | Data and platform features · 23–30 | Networking, saved data, offline behavior, and a native versus shared UI comparison | Planned |
@@ -77,8 +77,9 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [11 Flow and observable state](chapters/11-flow-and-observable-state/README.md) | Cold streams, buffering, latest operators, combining, StateFlow, and SharedFlow | Debounced topic search combined with progress in shared screen state |
 | [12 Testing asynchronous behavior](chapters/12-testing-asynchronous-behavior/README.md) | Test scopes, virtual time, injected dispatchers, boundaries, and controlled interleavings | Learner-written regressions for retry deadlines and rapid search replacement |
 | [13 Android runtime and lifecycle](chapters/13-android-runtime-and-lifecycle/README.md) | Application components, Context, intents, resources, recreation, and process restoration | A Study Lab Android draft that restores its topic and completed count |
+| [14 Jetpack Compose](chapters/14-jetpack-compose/README.md) | Composition, hoisted/saveable state, keyed effects, lists, layouts, and accessibility | A controlled study list/editor with independent drafts and timed save feedback |
 
-More chapters are coming one at a time. The first Android draft is available; iOS and KMP clients remain planned.
+More chapters are coming one at a time. The Android draft and Compose list/editor are available; iOS and KMP clients remain planned.
 
 Returning for interviews? Follow the [focused Android and Kotlin refresh](docs/CURRICULUM.md#focused-android-and-kotlin-refresh): a six-week core at 10–12 hours per week, with two buffer weeks. The [optional starting-point diagnostic](chapters/00-starting-point/README.md) can help identify what to revisit.
 

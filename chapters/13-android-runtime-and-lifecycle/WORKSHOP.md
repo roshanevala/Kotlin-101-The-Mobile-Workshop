@@ -1,5 +1,7 @@
 # Workshop 13 Your draft disappeared
 
+Use the immutable [ch13-v1 source](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [its ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip) in a new folder for this chapter's View-based app. The current `mobile` launcher continues with Chapter 14; keep existing answers safe in their original workspace.
+
 Bug report: “I typed ‘Coroutines’ and completed two sessions. After the screen was recreated, the app showed ‘Kotlin’ and zero again.” Preserve this small draft without holding an obsolete Activity or introducing permanent storage.
 
 Read the [lesson](LESSON.md) first. Work in three sessions if needed: setup/trace, save/restore, then independent lifecycle checks.

@@ -1,0 +1,20 @@
+<resources>
+    <string name="planner_title">Study Lab</string>
+    <string name="planner_subtitle">Small sessions. Steady progress.</string>
+    <string name="planner_list_heading">Your sessions</string>
+    <string name="planner_progress">Completed %1$d of %2$d</string>
+    <string name="planner_second_topic">Android</string>
+    <string name="planner_session_number">SESSION %1$02d</string>
+    <string name="planner_edit_session">Edit session %1$d: %2$s</string>
+    <string name="planner_toggle_session">Toggle completion for %1$s, session %2$d</string>
+    <string name="planner_editor_title">Edit session %1$d</string>
+    <string name="planner_topic_label">Session topic</string>
+    <string name="planner_save">Save topic</string>
+    <string name="planner_cancel">Cancel edits</string>
+    <string name="planner_saved">Topic saved</string>
+    <string name="planner_blank">Enter a topic before saving.</string>
+    <string name="planner_limit">Up to 80 characters.</string>
+    <string name="planner_planned">Planned</string>
+    <string name="planner_complete">Complete</string>
+    <string name="planner_footer">Select a session to edit it. Your draft stays separate until you save.</string>
+</resources>

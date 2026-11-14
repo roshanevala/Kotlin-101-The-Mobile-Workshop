@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12 and the first Android draft for Chapter 13 now exist. The iOS and shared KMP clients remain planned.
+This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12 and the Android draft/list/editor for Chapters 13–14 now exist. The iOS and shared KMP clients remain planned.
 
 ## Layout introduced gradually
 
@@ -28,6 +28,7 @@ Kotlin-101-The-Mobile-Workshop/
     11-flow-and-observable-state/  Introduces cold streams and shared screen state
     12-testing-asynchronous-behavior/  Adds virtual-time regression practice
     13-android-runtime-and-lifecycle/  First Android draft and recreation mission
+    14-jetpack-compose/        Compose study list/editor and state mission
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -51,9 +52,9 @@ Kotlin-101-The-Mobile-Workshop/
     settings.gradle.kts
     androidApp/             Android app that grows through the course
       src/main/             Fixed manifest, resources, and window scaffolding
-      src/starter/          Tracked Chapter 13 Activity exercise
-      src/practice/         Generated learner Activity, ignored
-      src/solution/         Tracked reference Activity
+      src/starter/          Tracked Chapter 13/14 Activity exercises
+      src/practice/         Generated learner Activities, ignored
+      src/solution/         Tracked reference Activities/editors
       src/androidTest/      Shared device acceptance checks
     shared/                 Planned KMP code, introduced with the KMP chapters
     iosApp/                 Planned native iOS client and Xcode project
@@ -84,7 +85,9 @@ Each lesson names the files to edit, the run action, expected output, and how to
 
 The Android application introduced in `mobile` in Chapter 13 grows through later Android lessons. The study planner gains a topic list, session editor, saved drafts, navigation, persistence, search, and reminders as the relevant concepts arrive.
 
-Chapter 13 uses a platform Activity and XML Views to expose lifecycle mechanics before Compose. A single `androidApp` module has practice/reference flavors with distinct application IDs. Shared main contains the fixed manifest/resources/window helper but no Activity; the generated Activity lives in ignored `src/practice`, while reference builds use tracked `src/solution`. The variants never compile each other's Activity. `preparePractice` fills only a missing answer. Device tests are shared in `src/androidTest`. See [mobile setup](../../mobile/README.md).
+Chapter 13 uses a platform Activity and XML Views to expose lifecycle mechanics before Compose. A single `androidApp` module has practice/reference flavors with distinct application IDs. Shared main contains the fixed manifest/resources/window helper but no Activity; the generated Activity lives in ignored `src/practice`, while reference builds use tracked `src/solution`. The variants never compile each other's Activity. `preparePractice` fills only a missing answer. Device tests are shared in `src/androidTest`.
+
+Chapter 14 extends that same module with Compose and `StudyPlannerActivity`, without modifying either Chapter 13 Activity answer or its immutable tag. The current launcher is Compose; the old Activity remains internal for its ten retained checks. `prepareComposePractice` fills only the missing new answer, and `preparePractice` prepares both missing Activities. A growing practice variant compiles both files, so edited older code must still compile; reference compilation remains separate. All Chapter 13 entry pages direct that lesson to its original checkpoint. The current 32 device checks include 22 Compose contracts and the ten old lifecycle contracts. See [mobile setup](../../mobile/README.md).
 
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 
@@ -94,7 +97,7 @@ Optional experiments can remain separate little exercises when isolation helps e
 
 ## Chapter checkpoints
 
-For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags when the source checkpoints are published. Chapter 13 keeps the starter and finish reference as separate build variants in one source snapshot; its publication tag is `ch13-v1`. Future chapters may use distinct start/finish tags when their snapshots differ. A correction creates a new versioned checkpoint rather than moving a published tag.
+For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags when the source checkpoints are published. Chapter 13 keeps the starter and finish reference as separate build variants in one source snapshot; its published tag is `ch13-v1`. Chapter 14 uses the same policy with `ch14-v1` when publication is requested. Future chapters may use distinct start/finish tags when their snapshots differ. A correction creates a new versioned checkpoint rather than moving a published tag.
 
 During local preparation, link the tracked starter/reference sources and exact variant commands. Once published, link the immutable tag and its GitHub ZIP so Git expertise is optional; never claim an unpublished tag exists. The start contains the prerequisite app behavior and the mission instructions. The worked implementation belongs in the finish checkpoint and separate solution links.
 

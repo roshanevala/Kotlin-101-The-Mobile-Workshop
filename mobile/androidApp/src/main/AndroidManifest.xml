@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StudyLab">
         <activity
-            android:name="workshop.studylab.MainActivity"
+            android:name="workshop.studylab.StudyPlannerActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -17,5 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="workshop.studylab.MainActivity" android:exported="false" />
     </application>
 </manifest>

@@ -1,5 +1,7 @@
 # Chapter 13 Android runtime and lifecycle
 
+Use the immutable [ch13-v1 source](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [its ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip) in a new folder for this chapter's View-based app. The current `mobile` launcher continues with Chapter 14; keep existing answers safe in their original workspace.
+
 Your draft disappears when its screen is recreated. Open the first Study Lab Android app, trace the callbacks, and preserve a small session draft across recreation.
 
 Start after [Chapter 12](../12-testing-asynchronous-behavior/README.md). You should know classes, callbacks/lambdas, nullable values, tests, and cancellation. This lesson introduces Android before Compose in Chapter 14.

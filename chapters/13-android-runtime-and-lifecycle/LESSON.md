@@ -1,5 +1,7 @@
 # Lesson 13 Android runtime and lifecycle
 
+Use the immutable [ch13-v1 source](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [its ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip) in a new folder for this chapter's View-based app. The current `mobile` launcher continues with Chapter 14; keep existing answers safe in their original workspace.
+
 You type a study topic and complete two sessions. The screen changes size, Android creates another Activity, and the topic/count return to their defaults. Your Kotlin fields belonged to one object; Android needs enough saved information to rebuild the screen.
 
 Start after [Chapter 12](../12-testing-asynchronous-behavior/LESSON.md). This lesson introduces Android's execution model before Compose. Use the provided small XML/View screen to observe the runtime. Chapter 14 teaches declarative UI; Chapter 15 introduces ViewModel and broader application architecture.
