@@ -23,7 +23,7 @@ androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt
 
 Edit that file, including its `StudyPlannerRoute` and `SessionEditor`. Leave the tracked [starter](../../mobile/androidApp/src/starter/kotlin/workshop/studylab/StudyPlannerActivity.kt), shared screen/theme, and acceptance tests unchanged. Chapter 13's `MainActivity.kt` answer is preserved alongside it. Preparation fills missing files and never replaces an existing answer.
 
-The same growing Android module compiles its Activities together. If an earlier edited Activity has a compile error, fix that error or use a fresh source snapshot in a new folder, keeping your original answer safe. Reference builds remain isolated from practice sources. Use the immutable [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) to follow the old View-based lesson; do not overwrite your answer to switch chapters.
+The same growing Android module compiles its Activities together. If an earlier edited Activity has a compile error, fix that error or extract this chapter's [ch14-v1 source ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v1.zip) into a new folder, keeping your original answer safe. Reference builds remain isolated from practice sources. Use the immutable [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) to follow the old View-based lesson; do not overwrite your answer to switch chapters.
 
 ## Predict and reproduce the split state
 
