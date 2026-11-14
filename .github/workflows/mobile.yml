@@ -34,7 +34,9 @@ jobs:
             mobile/**/*.gradle.kts
             mobile/gradle/wrapper/gradle-wrapper.properties
       - name: Install pinned SDK packages
-        run: sdkmanager 'platforms;android-36' 'build-tools;35.0.0'
+        run: |
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
+            --sdk_root="$ANDROID_HOME" 'platforms;android-36' 'build-tools;35.0.0'
       - name: Build both variants, compile device tests, and lint reference
         working-directory: mobile
         run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:lintReferenceDebug
