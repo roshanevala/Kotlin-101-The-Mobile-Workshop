@@ -14,6 +14,6 @@ Start after [Chapter 13](../13-android-runtime-and-lifecycle/README.md). You sho
 
 Continue in the existing [mobile workspace](../../mobile/README.md). Chapter 13's Activity answer is preserved; its [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) remains available for that lesson.
 
-For this chapter's exact source, use the immutable [ch14-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v1) or [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v1.zip). Both starter and reference variants are included. Extract into a new folder and open `mobile`, keeping any existing answers safe in their original workspace.
+For this chapter's exact source, use the immutable [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) or [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip). Both starter and reference variants are included. Extract into a new folder and open `mobile`, keeping any existing answers safe in their original workspace.
 
 [Back to the course](../../README.md)

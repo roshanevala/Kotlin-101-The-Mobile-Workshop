@@ -31,7 +31,7 @@ Open **Study Lab reference**. Select practiceDebug again to return to your answe
 
 The **32 device checks** include 22 Compose checks and the 10 retained lifecycle checks. Isolated editor checks verify incoming values/outgoing callbacks; Activity checks verify event policies, IDs, boundaries, recreation, and feedback. Compose-clock checks drive frames and cross the notice deadline without guessed wall-clock sleeps. They do not use recomposition counts as a business contract.
 
-The immutable [ch14-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v1) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v1.zip) pin this chapter's starter and reference variants. Extract into a new folder to preserve existing answers. For the old lesson's original launcher/setup, use the immutable [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1). Its sources are unchanged by this chapter's new commit.
+The immutable [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip) pin this chapter's starter and reference variants. Extract into a new folder to preserve existing answers. For the old lesson's original launcher/setup, use the immutable [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1). Its sources are unchanged by this chapter's new commit.
 
 ## Changed request answer
 
