@@ -1,18 +1,18 @@
 # Study Lab Android setup
 
-This is the growing Android application, introduced in [Chapter 13](../chapters/13-android-runtime-and-lifecycle/README.md) and extended with [Compose in Chapter 14](../chapters/14-jetpack-compose/README.md). Keep `kotlin-labs` for the independent Kotlin exercises; Android builds do not compile those answers.
+This is the growing Android application from [Chapter 13](../chapters/13-android-runtime-and-lifecycle/README.md), extended with [Compose](../chapters/14-jetpack-compose/README.md) and [architecture in Chapter 15](../chapters/15-android-app-architecture/README.md). Keep `kotlin-labs` for independent Kotlin exercises; Android builds do not compile those answers.
 
 ## Install and open
 
-Use Android Studio with Android SDK support. Open **`mobile`**, not the repository root or `kotlin-labs`. In **Settings → Build, Execution, Deployment → Build Tools → Gradle**, select **JDK 17**. The wrapper pins **Gradle 8.14.3**; the project pins **AGP 8.11.1** and **Kotlin 2.2.21**. Compose uses compiler plugin **2.2.21**, BOM **2025.10.01**, and Activity Compose **1.11.0**. Sync/download those dependencies after updating.
+Open **`mobile`** in Android Studio. In **Settings → Build, Execution, Deployment → Build Tools → Gradle**, select **JDK 17**. The wrapper pins **Gradle 8.14.3**, with **AGP 8.11.1** and **Kotlin 2.2.21**. Compose compiler matches Kotlin; Compose BOM is **2025.10.01** and Activity Compose is **1.11.0**. Chapter 15 adds Lifecycle **2.9.4**, Navigation Compose **2.9.5**, and coroutines-android/test **1.11.0**. Sync/download dependencies after updating; these are verified compatible pins, not latest-version claims.
 
-In **SDK Manager**, install **Android SDK Platform 36**, **Build Tools 35.0.0**, **Platform-Tools**, and **Android Emulator**. In **Device Manager**, create and start an Android **API 30 or newer** virtual device; API 36 is the locally checked runtime. Use an ARM64 image on Apple silicon or an image suitable for your host. Initial downloads require internet access and disk space.
+In **SDK Manager**, install **Android SDK Platform 36**, **Build Tools 35.0.0**, **Platform-Tools**, and **Android Emulator**. Create/start an **API 30+** virtual device in **Device Manager**. API 36 is the checked runtime. Use an ARM64 image on Apple silicon or an image suitable for your host. Initial downloads require internet access and disk space.
 
-Android Studio normally writes your SDK path to ignored `local.properties`. A terminal-only setup can use `sdk.dir` there or a correct `ANDROID_HOME`. Do not copy another machine's SDK path. An old or different `ANDROID_HOME` can point to the wrong installation even when the IDE knows the right SDK.
+Android Studio normally writes the SDK path to ignored `local.properties`. A terminal setup can use `sdk.dir` there or a correct `ANDROID_HOME`. Check that any existing environment variable points to the intended SDK. Do not copy another machine's path.
 
-The app's **minimum SDK is 30**, its **compile and target SDK are 36**, and **Build Tools is 35.0.0**. Minimum is the oldest runtime supported; compile selects available SDK symbols; target opts into platform behavior. They need not be the same number. No NDK, Xcode, or physical phone is required.
+Minimum SDK **30** selects the oldest supported runtime; compile SDK **36** selects available symbols; target SDK **36** opts into platform behavior. Build Tools is **35.0.0**. No NDK, Xcode, network service, or physical phone is required for the mission.
 
-## Build and run your Activity
+## Prepare and run your answer
 
 From the IDE terminal in `mobile`:
 
@@ -21,49 +21,58 @@ From the IDE terminal in `mobile`:
 ./gradlew --console=plain :androidApp:installPracticeDebug
 ```
 
-On Windows use `./gradlew.bat`. Build creates your ignored answer, if absent:
+Use `./gradlew.bat` on Windows. Select **practiceDebug** in Build Variants and run the app, or open **Study Lab practice** after installation. The current launcher is the fixed `CatalogueActivity`. Its deterministic fixture fails once, then **Try again** loads Kotlin/Android. Follow [Workshop 15](../chapters/15-android-app-architecture/WORKSHOP.md).
+
+The new ignored answer is:
 
 ```text
-androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt
+androidApp/src/practice/kotlin/workshop/studylab/CatalogueViewModel.kt
 ```
 
-In **Build Variants**, choose **practiceDebug** for `androidApp`. Run the app configuration on the started emulator, or open **Study Lab practice** from its launcher after installation. Edit the generated Activity, not the tracked template. Existing work is preserved; `clean` does not reset it.
+Edit that ViewModel, leaving the tracked template and fixed factory/repository/screens/tests unchanged. Build prepares it only if missing. Your earlier `MainActivity.kt` and `StudyPlannerActivity.kt` answers stay in the same ignored folder; preparation and `clean` preserve all three.
 
-The current launcher opens Chapter 14's two-session Compose list/editor: Kotlin, Android, and **Completed 0 of 2**. The untouched editor has deliberately split state; saving/selection/completion/restoration need repairs. Follow [Workshop 14](../chapters/14-jetpack-compose/WORKSHOP.md).
+A build variant combines the practice/reference source choice with a build type, such as debug. The growing practice variant compiles all three answers, so an older edited file must still compile. Repair that error or use a fresh snapshot folder without overwriting original work. Use immutable [ch13-v1](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) or [ch14-v2](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) for those lessons' original launchers.
 
-Your Chapter 13 `MainActivity.kt` answer remains in the same ignored folder, and preparation preserves it. To follow that lesson's original launcher and commands, use its immutable [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) in a new folder. The current module compiles both Activities, so earlier edited code still needs to compile; do not overwrite it to switch chapters.
-
-A build variant combines a source choice (practice or reference) with a build type (debug here). **practiceDebug** means your Activity in a debug build; the build setup already supplies that choice.
-
-The fixed manifest/resources/window helper live in `src/main`. Shared main contains neither variant Activity class. Its Compose screen/theme is shared between variants; each flavor supplies its own Activity/owner/editor. The **referenceDebug** variant compiles `src/solution`, installs separately as **Study Lab reference**, and never compiles your practice Activity. Select practiceDebug again when returning to your answer.
+Shared `src/main` contains the fixed catalogue Activity, repository, state/model, navigation, resources, and window scaffolding. Each flavor supplies its own two older Activities and current ViewModel. **referenceDebug** compiles `src/solution`, installs separately as **Study Lab reference**, and never compiles the practice answers. Select practiceDebug again to return to your work.
 
 ## Check behavior
 
-With one emulator/device connected:
+Local Android unit tests need the configured SDK/JDK but no running device:
 
 ```sh
-./gradlew --console=plain :androidApp:connectedPracticeDebugAndroidTest
+./gradlew --console=plain :androidApp:testPracticeDebugUnitTest
 ```
 
-The **32 device tests** contain 22 Compose checks and 10 retained Chapter 13 Activity checks. Some intentionally fail on the starter. Reports appear under `androidApp/build/reports/androidTests/connected/`. They require Android; they are not the Kotlin labs' JVM tests. If several devices are connected, set `ANDROID_SERIAL` to the intended device's identifier from `adb devices` before running.
+The **20 local tests** use JUnit 4 and coroutine virtual time to check the new ViewModel/repository. Reports: `androidApp/build/reports/tests/testPracticeDebugUnitTest/`. Some deliberately fail on the starter.
 
-For the isolated reference:
+With an API 30+ emulator/device running, focus on this chapter:
+
+```sh
+./gradlew --console=plain :androidApp:connectedPracticeDebugAndroidTest -Pandroid.testInstrumentationRunnerArguments.class=workshop.studylab.CatalogueNavigationTest,workshop.studylab.CatalogueScreenTest
+```
+
+There are **14 new device checks** and **46 in the full workspace**: those 14 plus the earlier 22 Compose and ten lifecycle checks. Use `:androidApp:connectedPracticeDebugAndroidTest` unfiltered to run all. Earlier unsolved answers retain their expected failures. Device reports are under `androidApp/build/reports/androidTests/connected/`; these tasks are separate from unit tests. Set `ANDROID_SERIAL` to the intended identifier from `adb devices` when several devices are attached.
+
+For the independent reference:
 
 ```sh
 ./gradlew --console=plain :androidApp:assembleReferenceDebug
-./gradlew --console=plain :androidApp:lintReferenceDebug
+./gradlew --console=plain :androidApp:testReferenceDebugUnitTest
 ./gradlew --console=plain :androidApp:connectedReferenceDebugAndroidTest
+./gradlew --console=plain :androidApp:lintReferenceDebug
 ./gradlew --console=plain :androidApp:installReferenceDebug
 ```
 
-Install explicitly after connected tests when you want to inspect the app; the test tooling may remove installed test/app packages at completion. The reference has the same Compose UI with correct event/owner behavior, plus the preserved reference Activity for Chapter 13 checks. Lint can report that newer versions exist; the course deliberately pins a verified compatible set.
+Install after connected tests for manual inspection; tooling may remove app/test packages afterward. Reference checks do not complete a learner attempt. Lint may report newer versions; the course keeps a verified compatible set.
 
 ## Trace and recover
 
-In Logcat, filter on **StudyLifecycle**. The old View Activity's log line contains the process ID, Activity instance identity, and callback name. No topic text is logged. Changing Activity identity demonstrates recreation; a changed process ID is separate evidence of process restart.
+The catalogue's first source failure is a deterministic fixture, not a real network outage. After retry, navigate by ID and edit a **draft planning note**. Back/reopen and rotation retain the Activity-owned model. Eligible process restoration reconstructs notes/navigation and reloads data; the new fixture fails once again. A note is not durable catalogue data. See [Lesson 15](../chapters/15-android-app-architecture/LESSON.md) for these lifetimes.
 
-To recreate a fresh starter, first move your Activity answer somewhere safe outside its source folder. Run `:androidApp:preparePractice`. It fills only missing Activities. To prepare only the Chapter 14 file use `:androidApp:prepareComposePractice`; both commands preserve existing work. Do not delete the whole workspace or use `clean` as an answer reset.
+For Chapter 13's separate lifecycle logs, filter Logcat on **StudyLifecycle** in its original checkpoint. Activity identity and process ID establish different observations; force-stop is not a substitute for eligible system restoration.
 
-If Gradle cannot find the SDK, check the IDE SDK path and `local.properties`/`ANDROID_HOME`. If no device is available, start an API 30+ emulator and wait for boot. If Kotlin reports duplicate Activity classes, make sure you have not copied an answer into shared `src/main`; use the single generated `src/practice` file. Never force-add answers or commit local SDK paths.
+To reset one mission, move its answer somewhere safe outside the source folder, then use `:androidApp:prepareArchitecturePractice` for Chapter 15 or `:androidApp:prepareComposePractice` for Chapter 14. `:androidApp:preparePractice` fills all missing answers, including Chapter 13. Existing files remain intact; `clean` is not a reset command.
 
-The [Compose workshop](../chapters/14-jetpack-compose/WORKSHOP.md) provides current prediction, repair, and verification steps. Its immutable [ch14-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip) include both variants. The [Chapter 13 workshop](../chapters/13-android-runtime-and-lifecycle/WORKSHOP.md) explains its separate lifecycle/process-restoration checks; its original sources remain available in [ch13-v1](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) and its [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip). Extract either ZIP into a new folder and open `mobile`; keep any existing answer safe in its original workspace. The installed variant follows whichever checkpoint you build/install; the checkpoints are versions of this same app.
+If the SDK is missing, check `local.properties` and `ANDROID_HOME`. If a device is unavailable, start it and wait for boot. Duplicate classes usually mean an answer was copied into shared `src/main`; keep a single answer in `src/practice` and never force-add answers or SDK paths.
+
+The current source starter/reference are linked from [Workshop 15](../chapters/15-android-app-architecture/WORKSHOP.md) and its [solution](../chapters/15-android-app-architecture/SOLUTION.md). Earlier immutable downloads are [Chapter 14 ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip) and [Chapter 13 ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch13-v1.zip). Extract into a new folder and open `mobile`, preserving original answers. Installing another checkpoint changes that variant of the same app.

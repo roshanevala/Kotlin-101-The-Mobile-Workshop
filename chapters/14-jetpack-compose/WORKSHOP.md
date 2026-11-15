@@ -1,5 +1,7 @@
 # Workshop 14 The editor saved the wrong topic
 
+> The current app launcher has advanced to Chapter 15. Follow this lesson in the immutable [ch14-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) or its [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip), extracted into a new folder. Keep your existing answers safe.
+
 Bug report: “I changed the text to Coroutines, but Save kept Kotlin. Switching sessions also leaves stale text, and completing one session changes both rows.” Repair the owner/editor contract in the growing Study Lab app.
 
 Read the [lesson](LESSON.md) first. Work in three sessions if needed: controlled input, owner events/restoration, then effects and independent checks.

@@ -37,13 +37,15 @@ jobs:
         run: |
           "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" \
             --sdk_root="$ANDROID_HOME" 'platforms;android-36' 'build-tools;35.0.0'
-      - name: Build both variants, compile device tests, and lint reference
+      - name: Build variants, run unit checks, compile device tests, and lint reference
         working-directory: mobile
-        run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:lintReferenceDebug
-      - name: Check that preparation retains both exercises and ignores answers
+        run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:testReferenceDebugUnitTest :androidApp:lintReferenceDebug
+      - name: Check that preparation retains all three exercises and ignores answers
         working-directory: mobile
         run: |
           cmp androidApp/src/starter/kotlin/workshop/studylab/MainActivity.kt androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt
           git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/MainActivity.kt
           cmp androidApp/src/starter/kotlin/workshop/studylab/StudyPlannerActivity.kt androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt
           git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt
+          cmp androidApp/src/starter/kotlin/workshop/studylab/CatalogueViewModel.kt androidApp/src/practice/kotlin/workshop/studylab/CatalogueViewModel.kt
+          git check-ignore --quiet androidApp/src/practice/kotlin/workshop/studylab/CatalogueViewModel.kt

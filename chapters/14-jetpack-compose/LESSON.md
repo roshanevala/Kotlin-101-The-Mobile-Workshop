@@ -1,5 +1,7 @@
 # Lesson 14 Jetpack Compose
 
+> The current app launcher has advanced to Chapter 15. Follow this lesson in the immutable [ch14-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) or its [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip), extracted into a new folder. Keep your existing answers safe.
+
 A user edits the topic to “Coroutines,” but Save still commits “Kotlin.” The screen and its owner have separate copies of text. Compose makes this boundary explicit: describe the UI from state, and send user events back to the owner that can change that state.
 
 Start after [Chapter 13](../13-android-runtime-and-lifecycle/LESSON.md). Keep Kotlin lambdas, data classes, immutable values, cancellation, and saved-state lifetimes in mind. This chapter introduces Compose UI; ViewModel, repositories, navigation, and lifecycle-aware Flow collection belong to Chapter 15.

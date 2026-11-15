@@ -8,6 +8,20 @@ val starterFile = layout.projectDirectory.file("src/starter/kotlin/workshop/stud
 val practiceFile = layout.projectDirectory.file("src/practice/kotlin/workshop/studylab/MainActivity.kt")
 val composeStarter = layout.projectDirectory.file("src/starter/kotlin/workshop/studylab/StudyPlannerActivity.kt")
 val composePractice = layout.projectDirectory.file("src/practice/kotlin/workshop/studylab/StudyPlannerActivity.kt")
+val architectureStarter = layout.projectDirectory.file("src/starter/kotlin/workshop/studylab/CatalogueViewModel.kt")
+val architecturePractice = layout.projectDirectory.file("src/practice/kotlin/workshop/studylab/CatalogueViewModel.kt")
+val prepareArchitecturePractice by tasks.registering {
+    group = "application"
+    description = "Creates the Chapter 15 ViewModel answer once, preserving earlier work."
+    inputs.file(architectureStarter)
+    outputs.file(architecturePractice)
+    onlyIf("the architecture answer does not exist") { !architecturePractice.asFile.exists() }
+    doLast {
+        val target = architecturePractice.asFile
+        target.parentFile.mkdirs()
+        architectureStarter.asFile.copyTo(target, overwrite = false)
+    }
+}
 val prepareComposePractice by tasks.registering {
     group = "application"
     description = "Creates the Chapter 14 Compose answer once, preserving earlier work."
@@ -23,9 +37,9 @@ val prepareComposePractice by tasks.registering {
 }
 
 val preparePractice by tasks.registering {
-    dependsOn(prepareComposePractice)
+    dependsOn(prepareComposePractice, prepareArchitecturePractice)
     group = "application"
-    description = "Creates the local Activity answer once, preserving existing work."
+    description = "Creates missing local answers once, preserving existing work."
     inputs.file(starterFile)
     outputs.file(practiceFile)
     onlyIf("the Activity answer does not exist") { !practiceFile.asFile.exists() }
@@ -72,7 +86,7 @@ android {
 
 kotlin { jvmToolchain(17) }
 
-// Only practice variants need the learner's Activity; references never prepare/compile it.
+// Only practice variants prepare learner answers; references never compile them.
 tasks.configureEach {
     if (name.startsWith("compilePractice") && name.endsWith("Kotlin")) {
         dependsOn(preparePractice)
@@ -80,6 +94,13 @@ tasks.configureEach {
 }
 
 dependencies {
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.9.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.9.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.9.4")
+    implementation("androidx.navigation:navigation-compose:2.9.5")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.11.0")
     val composeBom = platform("androidx.compose:compose-bom:2025.10.01")
     implementation(composeBom)
     androidTestImplementation(composeBom)

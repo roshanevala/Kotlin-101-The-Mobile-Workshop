@@ -1,5 +1,7 @@
 # Chapter 14 Worked solution
 
+> The current app launcher has advanced to Chapter 15. Follow this lesson in the immutable [ch14-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) or its [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip), extracted into a new folder. Keep your existing answers safe.
+
 Attempt the [workshop](WORKSHOP.md) before opening the [reference Activity/editor](../../mobile/androidApp/src/solution/kotlin/workshop/studylab/StudyPlannerActivity.kt). The [fixed screen](../../mobile/androidApp/src/main/kotlin/workshop/studylab/StudyPlannerScreen.kt) handles layout, Material styling, list identity, and semantics.
 
 ## One owner, one displayed draft
@@ -39,6 +41,6 @@ With the second initial topic changed to Kotlin, both rows still have distinct I
 
 A selection-keyed effect that assigns the committed value to draft can destroy an unsaved restored draft when the new composition enters. Keep that assignment in the explicit selection event instead, and use effects only for their intended composition-owned work.
 
-**Next: Chapter 15 will introduce Android app architecture, ViewModel, repositories, navigation, and lifecycle-aware state collection. Its lesson is planned.**
+**Next: [Chapter 15 Android app architecture](../15-android-app-architecture/README.md).**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

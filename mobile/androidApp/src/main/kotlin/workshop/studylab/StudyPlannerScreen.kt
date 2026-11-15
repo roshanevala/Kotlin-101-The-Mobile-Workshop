@@ -41,9 +41,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-// This immutable value is derived from the owner's saved state; it owns no UI state.
-data class StudySession(val id: Int, val topic: String, val completed: Boolean)
-
 @Composable
 fun StudyLabTheme(content: @Composable () -> Unit) {
     MaterialTheme(colorScheme = lightColorScheme(

@@ -1,0 +1,15 @@
+<resources>
+    <string name="catalogue_title">Study catalogue</string>
+    <string name="catalogue_loading">Loading sessions…</string>
+    <string name="catalogue_empty">No sessions yet.</string>
+    <string name="catalogue_error">Sessions could not load.</string>
+    <string name="catalogue_retry">Try again</string>
+    <string name="catalogue_reload">Reload sessions</string>
+    <string name="catalogue_open">Open %1$s (session %2$d)</string>
+    <string name="catalogue_detail">Session %1$d</string>
+    <string name="catalogue_back">Back to sessions</string>
+    <string name="catalogue_missing">This session is unavailable. Return to the list.</string>
+    <string name="catalogue_note">Planning note</string>
+    <string name="catalogue_note_limit">Up to 120 characters.</string>
+    <string name="catalogue_note_help">This is a draft for your study plan. It is not a saved session update.</string>
+</resources>

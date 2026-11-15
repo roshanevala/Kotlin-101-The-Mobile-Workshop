@@ -1,5 +1,7 @@
 # Chapter 14 Jetpack Compose
 
+> The current app launcher has advanced to Chapter 15. Follow this lesson in the immutable [ch14-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) or its [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch14-v2.zip), extracted into a new folder. Keep your existing answers safe.
+
 The topic editor shows one value while its owner saves another. Build a study list and editor that agree on state, preserve an unsaved draft through recreation, and run effects at the right time.
 
 Start after [Chapter 13](../13-android-runtime-and-lifecycle/README.md). You should know Kotlin lambdas, immutable models, suspending work, and Activity saved state.
