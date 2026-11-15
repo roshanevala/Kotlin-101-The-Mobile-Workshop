@@ -23,7 +23,7 @@ Edit only the new generated answer:
 androidApp/src/practice/kotlin/workshop/studylab/CatalogueViewModel.kt
 ```
 
-Leave the tracked template, reference, factory, repository, screens, and acceptance tests unchanged. Preparation preserves your existing Chapter 13/14 Activities. All three practice files must compile together, even when running only this chapter's tests; the reference compiles none of them. Keep earlier edited compile errors fixed, or use a fresh course copy in another folder while preserving your original work. The immutable [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) follows the old Compose launcher.
+Leave the tracked template, reference, factory, repository, screens, and acceptance tests unchanged. Preparation preserves your existing Chapter 13/14 Activities. All three practice files must compile together, even when running only this chapter's tests; the reference compiles none of them. Keep earlier edited compile errors fixed, or extract this chapter's [ch15-v1 source ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch15-v1.zip) into another folder while preserving your original work. The immutable [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) follows the old Compose launcher.
 
 ## Predict and trace ownership
 

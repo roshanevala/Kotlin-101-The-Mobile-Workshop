@@ -29,7 +29,7 @@ From `mobile`, with an API 30+ device/emulator for the connected task:
 
 There are **20 local ViewModel/repository checks** and **46 device checks**: 14 new architecture/UI/navigation checks and the 32 retained checks. A test that constructs a handle from initial values checks reconstruction logic; a recreation test checks Activity retention/restoration. Neither alone is proof of a real process restart.
 
-Reference compilation excludes all three learner answers. Use [ch14-v2](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) in a separate folder for the previous Compose mission's exact launcher and commands. Preserve original answers when switching snapshots.
+Reference compilation excludes all three learner answers. The immutable [ch15-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch15-v1) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch15-v1.zip) pin this chapter's starter and reference. Use [ch14-v2](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) in a separate folder for the previous Compose mission's exact launcher and commands. Preserve original answers when switching snapshots.
 
 ## Changed request answer
 

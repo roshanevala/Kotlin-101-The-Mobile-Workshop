@@ -14,4 +14,6 @@ Start after [Chapter 14](../14-jetpack-compose/README.md). Keep repositories/int
 
 Continue in the same [mobile workspace](../../mobile/README.md). Earlier answers remain in place. Use the immutable [Chapter 14 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) when following that lesson's original launcher.
 
+This chapter's immutable [ch15-v1 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch15-v1) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch15-v1.zip) contain both starter and reference variants. Extract into a new folder and open `mobile`, preserving any existing answers in their original workspace.
+
 [Back to the course](../../README.md)
