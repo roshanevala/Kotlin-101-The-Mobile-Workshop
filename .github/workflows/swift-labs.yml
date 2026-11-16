@@ -1,0 +1,45 @@
+name: Swift labs
+
+on:
+  push:
+    branches: [main]
+    paths: ['swift-labs/**', '.github/workflows/swift-labs.yml']
+  pull_request:
+    paths: ['swift-labs/**', '.github/workflows/swift-labs.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: swift-labs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ch16:
+    runs-on: macos-26
+    timeout-minutes: 10
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    defaults:
+      run:
+        working-directory: swift-labs/ch16-swift-for-kotlin-developers
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Report selected toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+      - name: Check starter preparation and ignore rule
+        run: |
+          python3 lab.py run
+          cmp src/starter/StudyPlan.swift src/practice/StudyPlan.swift
+          git check-ignore --quiet src/practice/StudyPlan.swift
+      - name: Check reference and lesson examples
+        run: |
+          python3 lab.py check-solution
+          python3 lab.py check-solution --optimized
+          python3 lab.py examples

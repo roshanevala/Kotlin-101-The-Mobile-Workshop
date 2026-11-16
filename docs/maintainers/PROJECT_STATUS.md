@@ -1,16 +1,16 @@
 # Project status
 
-Updated **15 November 2026**. Keep this file short; it records delivery state rather than session history.
+Updated **16 November 2026**. Keep this file short; it records delivery state rather than session history.
 
 ## Current stage
 
-Chapters 01–15 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
+Chapters 01–16 are implemented. Display name: **Kotlin 101 — The Mobile Workshop**. Repository: [roshanevala/Kotlin-101-The-Mobile-Workshop](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop).
 
 Learner navigation now starts with a dedicated lesson, then the workshop and solution. Planning guides and execution records are grouped in this maintainer section; the course README stays focused on starting the course.
 
-Exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Chapters 08 and 12 also prepare learner-authored tests in Git-ignored `src/practiceTest` from `src/starterTest`. Existing code and test answers are preserved and excluded from normal course commits.
+Kotlin exercise templates live in tracked `src/starter`; normal run and test commands create an editable, Git-ignored `src/main` copy if absent. Chapters 08 and 12 also prepare learner-authored tests in Git-ignored `src/practiceTest` from `src/starterTest`. Existing code and test answers are preserved and excluded from normal course commits.
 
-Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–15 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
+Available: curriculum, technology research, public learning plan, Chapter 00 diagnostic, Chapters 01–16 lessons and missions, agent guidance, contribution templates, and a local documentation checker.
 
 Chapters 01–03 have completed learner walkthroughs: the working implementations passed seven, 19, and 26 tests respectively. Chapter 03 covers safe text parsing, topic fallbacks, and explicit error contracts, with 10 verified lesson examples. The modules run independently and keep working-copy and reference compilation separate. Preparation, cleanup, and normal Git staging preserve local answers. See the [Chapter 01](verification/ch01.md), [Chapter 02](verification/ch02.md), and [Chapter 03](verification/ch03.md) verification records.
 
@@ -38,22 +38,24 @@ Chapter 14 is ready for a learner attempt. The existing Android module now launc
 
 Chapter 15 is ready for a learner attempt. The same app now launches a repository-backed catalogue with explicit loading/content/empty/error states, an Activity-owned ViewModel, lifecycle-aware collection, list/detail navigation, and saved per-ID draft notes. Its reference passes 20 local tests and 46 device checks, including the earlier 32. All three answers are prepared independently and preserved; earlier launcher checkpoints remain immutable. See [Chapter 15 verification](verification/ch15.md).
 
-GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 12's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. The Android workflow builds both APKs, compiles device tests, runs the 20 architecture unit checks, and lints the reference; it does not run an emulator. Chapters 16–40, the iOS client, and shared KMP code remain planned. The [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) pins the original View-based starter and reference. The [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) pins the Compose starter and reference. The [ch15-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch15-v1) pins the architecture starter and reference. Each immutable source snapshot includes both build variants.
+Chapter 16 is ready for a learner attempt. A separate native Swift CLI lab teaches optional input, associated-value validation, value plans, protocol/generic helpers, and a stored closure's ARC ownership. Its reference passes 34 behavioral checks with normal and optimized compilation; six complete lesson programs match their stated outputs. The wrapper prepares a missing ignored answer and isolates practice/reference compilation without introducing SwiftPM dependencies or an iOS app. See [Chapter 16 verification](verification/ch16.md).
 
-The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–15 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
+GitHub workflows check documentation and a matrix of the available Kotlin exercises, including Chapter 12's starter baseline and reference checks; see [Actions](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions) for hosted results. The Android workflow builds both APKs, compiles device tests, runs the 20 architecture unit checks, and lints the reference; it does not run an emulator. Chapters 17–40, the iOS client, and shared KMP code remain planned. The [ch13-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch13-v1) pins the original View-based starter and reference. The [ch14-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch14-v2) pins the Compose starter and reference. The [ch15-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch15-v1) pins the architecture starter and reference. Each immutable source snapshot includes both build variants. A separate Swift workflow is configured to run the Chapter 16 starter, reference checks, and examples; its hosted run remains unverified during local preparation.
+
+The active learning priority is a [focused Android and Kotlin refresh](../CURRICULUM.md#focused-android-and-kotlin-refresh) for a near-term interview goal: a six-week core at the confirmed 10–12 hours/week, with Weeks 7–8 available for gaps. Chapters 01–16 are delivered; the accelerated weeks include planned targets. The full roadmap remains the longer-term course.
 
 ## Decisions
 
 - Prioritize Android and Kotlin interviews, with native iOS and KMP coverage.
 - Prioritize a six-week refresh at 10–12 hours/week, with two buffer weeks. Use practical checks to adjust pace and keep public publishing from delaying study.
 - Use the study planner as the growing app and shared logic before the shared UI comparison.
-- Use separate Kotlin and mobile workspaces in one repository: independent exercises first, then one growing app with chapter checkpoints. See [project structure](PROJECT_STRUCTURE.md).
+- Keep independent Kotlin/Swift exercise workspaces separate from the growing mobile app and its chapter checkpoints. See [project structure](PROJECT_STRUCTURE.md).
 - Prefer one coding agent and targeted context. See [agent workflow](AGENT_WORKFLOW.md).
 - Teach concepts before the workshop. Use a short chapter entry page, one optional hints page, and a separate maintainer section.
 
 ## Next deliverable
 
-Review the learner's pending Chapter 05–15 attempts and independent checkpoints, then implement Chapter 16's Swift-for-Kotlin-developers lesson and bounded model/ARC mission. Verify the Swift/Xcode toolchain before adding executable material; the SwiftUI client and shared KMP module remain later chapters. Preserve learner answers and immutable mobile checkpoints.
+Review the learner's pending Chapter 05–16 attempts and independent checkpoints, then implement Chapter 17's SwiftUI/app-lifecycle lesson and small native Study Lab list/detail client. Verify Xcode, deployment targets, and simulator tooling; reuse the Swift modeling concepts without duplicating the Android app. Keep Swift concurrency/testing-framework depth for Chapter 18 and shared KMP code for its later stage. Preserve learner answers and immutable checkpoints.
 
 ## Publication decisions
 

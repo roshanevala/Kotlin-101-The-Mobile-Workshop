@@ -37,6 +37,6 @@ With `DemoSessionsRepository(emptyList(), failFirst = false)` in a temporary fac
 
 The Bug Museum map passes rotation because its ViewModel survives. It fails a fresh-owner test because the map has no saved representation. The right fix is the saved-state boundary, not an extra refresh or a navigation-side copy of the note.
 
-**Next: Chapter 16 introduces Swift for Kotlin developers. Its lesson is planned.**
+**Next: [Chapter 16 Swift for Kotlin developers](../16-swift-for-kotlin-developers/README.md).**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

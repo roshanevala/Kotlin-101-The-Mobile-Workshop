@@ -1,8 +1,8 @@
 # Project structure and chapter checkpoints
 
-Use one repository containing small Kotlin exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
+Use one repository containing small Kotlin/Swift exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12 and the Android draft/list/editor for Chapters 13–14 now exist. The iOS and shared KMP clients remain planned.
+This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, and the Swift language lab for Chapter 16 now exist. The iOS UI and shared KMP clients remain planned.
 
 ## Layout introduced gradually
 
@@ -29,6 +29,8 @@ Kotlin-101-The-Mobile-Workshop/
     12-testing-asynchronous-behavior/  Adds virtual-time regression practice
     13-android-runtime-and-lifecycle/  First Android draft and recreation mission
     14-jetpack-compose/        Compose study list/editor and state mission
+    15-android-app-architecture/  Repository/ViewModel catalogue and navigation
+    16-swift-for-kotlin-developers/  Native Swift models and ARC mission
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -47,15 +49,25 @@ Kotlin-101-The-Mobile-Workshop/
     ch10-structured-concurrency/     Independent search lifecycle exercise
     ch11-flow-and-observable-state/  Independent observable search/progress exercise
     ch12-testing-asynchronous-behavior/  Retry/search exercise plus editable test working copy
+  swift-labs/               Native Swift language exercises, available from Chapter 16
+    ch16-swift-for-kotlin-developers/
+      lab.py                Explicit compiler/run commands, no downloaded dependencies
+      src/starter/          Tracked Swift exercise template
+      src/practice/         Ignored learner answer, prepared only if absent
+      src/solution/         Tracked Swift reference
+      src/runner/           Fixed demonstration entry point
+      src/checks/           Fixed behavioral acceptance entry point
+      examples/             Six independently compiled lesson programs
   mobile/                   Growing Android workspace, available from Chapter 13
     gradlew
     settings.gradle.kts
     androidApp/             Android app that grows through the course
-      src/main/             Fixed manifest, resources, and window scaffolding
-      src/starter/          Tracked Chapter 13/14 Activity exercises
-      src/practice/         Generated learner Activities, ignored
-      src/solution/         Tracked reference Activities/editors
+      src/main/             Fixed catalogue Activity, data/state, navigation, and resources
+      src/starter/          Tracked Chapter 13/14 Activities and Chapter 15 ViewModel
+      src/practice/         Three generated learner answers, ignored
+      src/solution/         Tracked reference Activities/editor/ViewModel
       src/androidTest/      Shared device acceptance checks
+      src/test/             Android local ViewModel/repository checks
     shared/                 Planned KMP code, introduced with the KMP chapters
     iosApp/                 Planned native iOS client and Xcode project
   docs/
@@ -80,6 +92,12 @@ Exercise modules do not depend on earlier exercise modules. Running Chapter 05 m
 Keep starter and reference solution compilation separate so the starter cannot call the answer or compile against it accidentally. Verify that separation when implementing the first exercise. Reuse the resulting small pattern for later chapters.
 
 Each lesson names the files to edit, the run action, expected output, and how to restore its starter. The chapter folder owns teaching prose; its exercise module owns executable code. Link between them instead of duplicating code in multiple maintained projects.
+
+## Swift language chapter
+
+Chapter 16 introduces a bounded Swift CLI lab under `swift-labs` before the native iOS app. Its Python wrapper invokes `xcrun swiftc` in Swift 6 language mode and supplies only the chosen practice/reference model plus a fixed entry point. Reference commands do not prepare the ignored learner answer; clean removes only compiler output. The same 34 condition-based checks run with normal/optimized compilation, and six standalone lesson programs teach the prerequisite syntax.
+
+The local checked toolchain is Xcode 27.0/Apple Swift 6.4 on macOS/Apple silicon. There is no SwiftPM dependency, app project, simulator requirement, or connection to either Gradle workspace. Keep this a language exercise; introduce the SwiftUI client during Chapter 17 and share tested rules when the KMP stage reaches that boundary. See [Swift setup](../../swift-labs/README.md).
 
 ## Android and KMP chapters
 

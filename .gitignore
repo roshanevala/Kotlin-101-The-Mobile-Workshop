@@ -21,6 +21,8 @@ __pycache__/
 /kotlin-labs/*/src/practiceTest/
 /mobile/androidApp/src/practice/
 /mobile/*/bin/
+/swift-labs/*/src/practice/
+.build/
 
 # Android local configuration and signing material
 local.properties

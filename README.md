@@ -15,7 +15,7 @@ flowchart LR
 
     K("Learn Kotlin<br/>Kotlin basics + coroutines<br/>Chapters 01–12 available"):::basics
     A("Build an Android app<br/>Study Lab + Compose + architecture<br/>Chapters 13–15 available"):::android
-    M("Add iOS + KMP<br/>Native UI + shared Kotlin<br/>Planned"):::multiplatform
+    M("Learn Swift, add iOS + KMP<br/>Swift lab available<br/>Clients planned"):::multiplatform
     I("Interview practice<br/>Questions · coding · debugging<br/>Mock interviews planned"):::interview
 
     K --> A --> M
@@ -39,7 +39,7 @@ flowchart LR
 | Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–08 available** |
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
 | Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13–15 available** |
-| Native iOS · 16–18 | A SwiftUI client with native state and concurrency | Planned |
+| Native iOS · 16–18 | Swift models, then a SwiftUI client with native state and concurrency | **16 available**; 17–18 planned |
 | Kotlin Multiplatform · 19–22 | Shared Kotlin business rules used by Android and iOS | Planned |
 | Data and platform features · 23–30 | Networking, saved data, offline behavior, and a native versus shared UI comparison | Planned |
 | Quality and interview practice · 31–40 | Failure tests, profiling, an independent feature, and mock interviews | Planned |
@@ -54,7 +54,7 @@ The [full roadmap](docs/CURRICULUM.md) lists each chapter's topics and practical
 2. **Practice:** follow the workshop and change the starter code. Hints are there if you get stuck.
 3. **Review:** compare your work with the explained solution and try the follow-up challenge.
 
-Read the lessons here on GitHub; their pages live in **`chapters/`**. The independent Kotlin exercise code lives in **`kotlin-labs/`**. The Android app starts in **`mobile/`**, with its own [setup guide](mobile/README.md).
+Read the lessons here on GitHub; their pages live in **`chapters/`**. The independent Kotlin exercise code lives in **`kotlin-labs/`**. The Android app starts in **`mobile/`**, with its own [setup guide](mobile/README.md). Chapter 16 uses the separate [Swift lab setup](swift-labs/README.md) before the native iOS UI client.
 
 When you are ready to code locally, follow the [one-time setup guide](kotlin-labs/README.md). In Android Studio, open **`kotlin-labs`** and keep the lesson open alongside it.
 
@@ -79,8 +79,9 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [13 Android runtime and lifecycle](chapters/13-android-runtime-and-lifecycle/README.md) | Application components, Context, intents, resources, recreation, and process restoration | A Study Lab Android draft that restores its topic and completed count |
 | [14 Jetpack Compose](chapters/14-jetpack-compose/README.md) | Composition, hoisted/saveable state, keyed effects, lists, layouts, and accessibility | A controlled study list/editor with independent drafts and timed save feedback |
 | [15 Android app architecture](chapters/15-android-app-architecture/README.md) | UI/data layers, repositories, ViewModel, lifecycle-aware collection, navigation, and saved state | A catalogue with loading, empty/error/retry states and per-session planning notes |
+| [16 Swift for Kotlin developers](chapters/16-swift-for-kotlin-developers/README.md) | Swift syntax, optionals, value/reference semantics, enums, protocols, generics, and ARC | Independent study-plan values and a callback that safely outlives its owner |
 
-More chapters are coming one at a time. The Android draft, Compose editor, and catalogue architecture mission are available; iOS and KMP clients remain planned.
+More chapters are coming one at a time. The Android missions and native Swift language lab are available; iOS UI and KMP clients remain planned.
 
 Returning for interviews? Follow the [focused Android and Kotlin refresh](docs/CURRICULUM.md#focused-android-and-kotlin-refresh): a six-week core at 10–12 hours per week, with two buffer weeks. The [optional starting-point diagnostic](chapters/00-starting-point/README.md) can help identify what to revisit.
 

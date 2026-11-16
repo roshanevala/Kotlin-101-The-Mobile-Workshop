@@ -8,7 +8,7 @@ import re
 from urllib.parse import unquote, urlsplit
 
 
-SKIP_DIRS = {".git", ".gradle", ".kotlin", ".venv", "build", "node_modules", "Pods", ".agent-local"}
+SKIP_DIRS = {".git", ".gradle", ".kotlin", ".venv", ".build", "build", "node_modules", "Pods", ".agent-local"}
 LINK = re.compile(r'!?\[[^\]\n]*\]\((<[^>\n]+>|[^\s)\n]+)(?:\s+"[^"\n]*")?\)')
 FENCE = re.compile(r"^ {0,3}(`{3,}|~{3,})(.*)$")
 
