@@ -24,6 +24,8 @@ open StudyLab.xcodeproj
 
 Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Edit **`Practice/StudyScreens.swift`**, not Starter/Solution or shared Sources. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Shared UI tests are attached to the corresponding app, so they use the selected source choice.
 
+If an older Chapter 17 answer reports that StudyRoot's initializer is private, preserve your edits and copy only `init(showTip:)` from Starter into your StudyRoot. Preparation intentionally leaves existing answers unchanged.
+
 ## Build, run, and check
 
 ```sh

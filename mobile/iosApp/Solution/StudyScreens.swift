@@ -5,6 +5,10 @@ struct StudyRoot: View {
     @State private var store = StudyStore()
     @State private var path: [Int] = []
 
+    init(showTip: Bool) {
+        self.showTip = showTip
+    }
+
     var body: some View {
         NavigationStack(path: $path) {
             List {

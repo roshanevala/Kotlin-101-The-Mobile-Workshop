@@ -6,6 +6,10 @@ struct StudyRoot: View {
     @State private var path: [Int] = []
     @Environment(\.scenePhase) private var scenePhase
 
+    init(showTip: Bool) {
+        self.showTip = showTip
+    }
+
     var body: some View {
         NavigationStack(path: $path) {
             List {
