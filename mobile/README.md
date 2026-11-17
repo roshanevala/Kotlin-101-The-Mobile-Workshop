@@ -1,5 +1,7 @@
 # Study Lab Android setup
 
+The native SwiftUI client has its own [iOS setup](iosApp/README.md). The commands below concern Android.
+
 This is the growing Android application from [Chapter 13](../chapters/13-android-runtime-and-lifecycle/README.md), extended with [Compose](../chapters/14-jetpack-compose/README.md) and [architecture in Chapter 15](../chapters/15-android-app-architecture/README.md). Keep `kotlin-labs` for independent Kotlin exercises; Android builds do not compile those answers.
 
 ## Install and open

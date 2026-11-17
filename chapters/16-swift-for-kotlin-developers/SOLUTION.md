@@ -41,6 +41,6 @@ The same 34 behavioral checks pass with normal and optimized compilation. The re
 
 A Flashcard with a readable topic property can conform to TopicNamed. The generic helper returns every topic in input order, including duplicates, without knowing the Flashcard's other fields. If a plan's first matching ID is already complete, the method returns false at that record; it never searches for a later incomplete duplicate.
 
-**Next: Chapter 17 will introduce SwiftUI and the native iOS app lifecycle. Its lesson is planned.**
+**Next: [Chapter 17 SwiftUI and app lifecycle](../17-swiftui-and-app-lifecycle/README.md).**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

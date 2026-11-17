@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin/Swift exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, and the Swift language lab for Chapter 16 now exist. The iOS UI and shared KMP clients remain planned.
+This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, the Swift language lab for Chapter 16, and the native SwiftUI client for Chapter 17 now exist. Shared KMP remains planned.
 
 ## Layout introduced gradually
 
@@ -31,6 +31,7 @@ Kotlin-101-The-Mobile-Workshop/
     14-jetpack-compose/        Compose study list/editor and state mission
     15-android-app-architecture/  Repository/ViewModel catalogue and navigation
     16-swift-for-kotlin-developers/  Native Swift models and ARC mission
+    17-swiftui-and-app-lifecycle/  Native list/detail, ownership, and scene mission
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -69,7 +70,14 @@ Kotlin-101-The-Mobile-Workshop/
       src/androidTest/      Shared device acceptance checks
       src/test/             Android local ViewModel/repository checks
     shared/                 Planned KMP code, introduced with the KMP chapters
-    iosApp/                 Planned native iOS client and Xcode project
+    iosApp/                 Native iOS client, introduced in Chapter 17
+      StudyLab.xcodeproj/    Separate practice/reference schemes and UI-test targets
+      ios.py                Preparation, simulator builds/runs/tests, and model checks
+      Sources/              Fixed App, model, and reusable controls
+      Starter/              Tracked screen exercise
+      Practice/             Ignored learner screen answer
+      Solution/             Tracked reference screens
+      Tests/                Shared model and UI acceptance checks
   docs/
     CURRICULUM.md           Optional full course roadmap
     maintainers/            Plans, research, agent workflow, and verification
@@ -97,7 +105,7 @@ Each lesson names the files to edit, the run action, expected output, and how to
 
 Chapter 16 introduces a bounded Swift CLI lab under `swift-labs` before the native iOS app. Its Python wrapper invokes `xcrun swiftc` in Swift 6 language mode and supplies only the chosen practice/reference model plus a fixed entry point. Reference commands do not prepare the ignored learner answer; clean removes only compiler output. The same 34 condition-based checks run with normal/optimized compilation, and six standalone lesson programs teach the prerequisite syntax.
 
-The local checked toolchain is Xcode 27.0/Apple Swift 6.4 on macOS/Apple silicon. There is no SwiftPM dependency, app project, simulator requirement, or connection to either Gradle workspace. Keep this a language exercise; introduce the SwiftUI client during Chapter 17 and share tested rules when the KMP stage reaches that boundary. See [Swift setup](../../swift-labs/README.md).
+The local checked toolchain is Xcode 27.0/Apple Swift 6.4 on macOS/Apple silicon. There is no SwiftPM dependency, app project, simulator requirement, or connection to either Gradle workspace. Keep this a language exercise; use the separate SwiftUI client introduced in Chapter 17 and share tested rules when the KMP stage reaches that boundary. See [Swift setup](../../swift-labs/README.md).
 
 ## Android and KMP chapters
 
@@ -109,15 +117,17 @@ Chapter 14 extends that same module with Compose and `StudyPlannerActivity`, wit
 
 Chapter 15 adds a fixed `CatalogueActivity`, repository, state model, and list/detail navigation in shared Android main. It extracts the unchanged immutable `StudySession` type into its own file and leaves both older Activity answers intact. The new learner-owned `CatalogueViewModel.kt` is supplied separately by practice/reference; `prepareArchitecturePractice` fills only its missing answer, while `preparePractice` prepares all three missing files. The Activity owns the ViewModel outside NavHost; notes use SavedStateHandle and IDs, while the catalogue reloads. The current reference has 20 local unit checks and 46 device checks (14 new plus 32 retained). Chapter 14 entry pages route its old launcher to `ch14-v2`.
 
+Chapter 17 introduces `mobile/iosApp` as the native client of the same growing app. Its checked-in Xcode project has independent Practice/Reference app and UI-test targets, with distinct bundle IDs and source phases. The fixed store/control/App files do not depend on Swift-lab answers or Android sources. `ios.py prepare` fills only a missing ignored `Practice/StudyScreens.swift`; reference commands do not prepare/compile it, and clean removes only build output. The current 12 model checks and 13 simulator UI checks establish the specified in-process ownership/navigation/scene behavior, not persistence. Use [iOS setup](../../mobile/iosApp/README.md).
+
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 
-Add the SwiftUI client and shared KMP module during their course stages. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
+The native SwiftUI client now exists; add the shared KMP module during its course stage. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
 
 Optional experiments can remain separate little exercises when isolation helps explain a concept. They must not become another full application learners are expected to maintain.
 
 ## Chapter checkpoints
 
-For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags when the source checkpoints are published. Chapter 13 keeps the starter and finish reference as separate build variants in one source snapshot; its published tag is `ch13-v1`. Chapters 14 and 15 use the same policy with their published `ch14-v2` and `ch15-v1` tags. Future chapters may use distinct start/finish tags when their snapshots differ. A correction creates a new versioned checkpoint rather than moving a published tag.
+For app-building missions, provide a runnable start checkpoint and a verified finish checkpoint. Use immutable Git tags when the source checkpoints are published. Chapter 13 keeps the starter and finish reference as separate build variants in one source snapshot; its published tag is `ch13-v1`. Chapters 14 and 15 use the same policy with their published `ch14-v2` and `ch15-v1` tags. Chapter 17 will use `ch17-v1` when publication is requested, including its separate starter/reference schemes. Future chapters may use distinct start/finish tags when their snapshots differ. A correction creates a new versioned checkpoint rather than moving a published tag.
 
 During local preparation, link the tracked starter/reference sources and exact variant commands. Once published, link the immutable tag and its GitHub ZIP so Git expertise is optional; never claim an unpublished tag exists. The start contains the prerequisite app behavior and the mission instructions. The worked implementation belongs in the finish checkpoint and separate solution links.
 
@@ -127,4 +137,4 @@ Keep `main` as the latest integrated course state. Maintain chapter history thro
 
 ## First implementation
 
-Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. Chapter 13 now adds the separate mobile workspace with the saved-draft mission; shared KMP and iOS workspaces remain later additions.
+Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. Chapter 13 now adds the separate mobile workspace with the saved-draft mission; Chapter 17 adds the native iOS child project, while shared KMP remains later work.

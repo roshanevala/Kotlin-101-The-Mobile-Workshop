@@ -1,0 +1,44 @@
+name: iOS build
+
+on:
+  push:
+    branches: [main]
+    paths: ['mobile/iosApp/**', '.github/workflows/ios.yml']
+  pull_request:
+    paths: ['mobile/iosApp/**', '.github/workflows/ios.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 15
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+    defaults:
+      run:
+        working-directory: mobile/iosApp
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Report selected toolchain
+        run: |
+          xcodebuild -version
+          xcrun swift --version
+      - name: Check the model and compile both apps and UI-test bundles
+        run: |
+          python3 ios.py check-model
+          python3 ios.py build-tests
+          python3 ios.py build-tests --reference
+      - name: Check preparation and ignore rules
+        run: |
+          cmp Starter/StudyScreens.swift Practice/StudyScreens.swift
+          git check-ignore --quiet Practice/StudyScreens.swift

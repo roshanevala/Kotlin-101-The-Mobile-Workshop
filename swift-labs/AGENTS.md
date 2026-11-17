@@ -1,6 +1,6 @@
 # Swift exercise guidance
 
-Apply the repository root guidance. These are small native Swift CLI exercises, independent of both Gradle workspaces and the planned iOS client.
+Apply the repository root guidance. These are small native Swift CLI exercises, independent of both Gradle workspaces and the native iOS client.
 
 - Chapter 16 is checked with Xcode 27.0 (27A266a), Apple Swift 6.4, and Swift 6 language mode on macOS/Apple silicon. Do not call that a latest-version or cross-platform support claim.
 - Use `python3 lab.py` from the chapter directory. It invokes the selected Xcode compiler through `xcrun swiftc`, with explicit practice/reference sources and isolated build output. No SwiftPM dependency or test framework is required yet.
