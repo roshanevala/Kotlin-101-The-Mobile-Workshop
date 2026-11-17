@@ -29,7 +29,7 @@ python3 ios.py run --reference --device "$study_simulator"
 
 The **12 shared-model checks** and **13 UI checks** cover different boundaries. Model checks alone cannot complete the learner's view repair. UI checks observe concrete input, control values, IDs, draft/committed text, owner retention, rotation, and scene/relaunch behavior. They do not establish process restoration, full accessibility certification, or a fixed number of body evaluations.
 
-Reference builds neither prepare nor compile Practice. Both source choices are part of the same native app project and install separately; preserve existing answers when comparing them.
+Reference builds neither prepare nor compile Practice. Both source choices are part of the same native app project and install separately. The immutable [ch17-v2 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch17-v2) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch17-v2.zip) pin this chapter's starter and reference; use a separate folder to preserve existing answers when comparing snapshots.
 
 ## Changed request answer
 

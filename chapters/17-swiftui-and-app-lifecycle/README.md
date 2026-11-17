@@ -12,6 +12,8 @@ Start after [Chapter 16](../16-swift-for-kotlin-developers/README.md). You shoul
 
 **[Begin the lesson](LESSON.md)**
 
-Use the [iOS setup guide](../../mobile/iosApp/README.md). The native client lives beside Android under `mobile`; earlier learner answers remain untouched. Its tracked starter/reference schemes provide the local checkpoints.
+Use the [iOS setup guide](../../mobile/iosApp/README.md). The native client lives beside Android under `mobile`; earlier learner answers remain untouched.
+
+The immutable [ch17-v2 source checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch17-v2) and [ZIP download](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch17-v2.zip) contain both starter and reference schemes. Extract into a new folder and follow `mobile/iosApp/README.md`, preserving answers in their original workspace.
 
 [Back to the course](../../README.md)
