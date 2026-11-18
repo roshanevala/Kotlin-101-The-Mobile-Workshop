@@ -10,4 +10,6 @@ You ask Study Lab for a Swift review prompt. You tap Swift again while the first
 | [Workshop](WORKSHOP.md) | Repair the prompt loader, write a Swift Testing regression test, and try the screen in the iOS simulator. |
 | [Solution](SOLUTION.md) | Compare your cancellation, state transitions, and test with the worked example. |
 
+To work from the exact Chapter 18 sources, open [ch18-v1](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch18-v1) or [download the ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch18-v1.zip) and extract it into a new folder. Both practice and reference schemes are in `mobile/iosApp`.
+
 [Back to the course](../../README.md)
