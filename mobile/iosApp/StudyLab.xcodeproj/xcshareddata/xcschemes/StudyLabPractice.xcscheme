@@ -8,12 +8,18 @@
       <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="NO">
         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="DD12AD984F83A968E5370F30" BuildableName="StudyLabPracticeUITests.xctest" BlueprintName="StudyLabPracticeUITests" ReferencedContainer="container:StudyLab.xcodeproj" />
       </BuildActionEntry>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="NO">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="B6FF6024B88B7EA8E9409AC4" BuildableName="StudyLabPracticeTests.xctest" BlueprintName="StudyLabPracticeTests" ReferencedContainer="container:StudyLab.xcodeproj" />
+      </BuildActionEntry>
     </BuildActionEntries>
   </BuildAction>
   <TestAction buildConfiguration="Debug" selectedDebuggerIdentifier="Xcode.DebuggerFoundation.Debugger.LLDB" selectedLauncherIdentifier="Xcode.IDEFoundation.Launcher.LLDB" shouldUseLaunchSchemeArgsEnv="YES">
     <Testables>
       <TestableReference skipped="NO">
         <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="DD12AD984F83A968E5370F30" BuildableName="StudyLabPracticeUITests.xctest" BlueprintName="StudyLabPracticeUITests" ReferencedContainer="container:StudyLab.xcodeproj" />
+      </TestableReference>
+      <TestableReference skipped="NO">
+        <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="B6FF6024B88B7EA8E9409AC4" BuildableName="StudyLabPracticeTests.xctest" BlueprintName="StudyLabPracticeTests" ReferencedContainer="container:StudyLab.xcodeproj" />
       </TestableReference>
     </Testables>
     <MacroExpansion>

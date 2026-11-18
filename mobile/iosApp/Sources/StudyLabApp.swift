@@ -14,13 +14,30 @@ struct StudyLabApp: App {
 
 struct StudyShell: View {
     @State private var showTip = false
+    @State private var showingReview = false
 
     var body: some View {
         VStack(spacing: 0) {
-            Toggle("Show study tip", isOn: $showTip)
-                .padding(.horizontal)
-                .accessibilityIdentifier("show-tip")
+            HStack {
+                Toggle("Show study tip", isOn: $showTip)
+                    .accessibilityIdentifier("show-tip")
+                Divider().fixedSize()
+                Button("Review prompts") { showingReview = true }
+                    .accessibilityIdentifier("open-review")
+            }
+            .padding(.horizontal)
             StudyRoot(showTip: showTip)
+        }
+        .sheet(isPresented: $showingReview) {
+            NavigationStack {
+                ReviewScreen()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Close") { showingReview = false }
+                                .accessibilityIdentifier("close-review")
+                        }
+                    }
+            }
         }
     }
 }

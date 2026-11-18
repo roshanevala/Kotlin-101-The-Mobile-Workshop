@@ -117,6 +117,12 @@ Keep one root-owned observable store for the bounded native list/detail feature.
 
 The checked-in project has independent practice/reference app and UI-test targets and uses simulator signing overrides only in the command wrapper. The shared model checker reuses the small compiler/condition-check pattern from Chapter 16; [XCUIApplication](https://developer.apple.com/documentation/xcuiautomation/xcuiapplication) provides fixed UI acceptance scaffolding with required UI-actor annotations. The configured iOS workflow reuses macos-26/Xcode 26.6 from the verified Swift workflow, compiling both app/UI-test bundles and running model checks without a simulator test run. The [corrected hosted run](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/actions/runs/44116383241) reports Xcode 26.6 (17F113)/Apple Swift 6.3.3 and passes both builds, all 12 model checks, and preparation/ignore comparisons. Both root views declare an explicit initializer after the first hosted compiler exposed the starter's inferred private initializer. See [Chapter 17 verification](verification/ch17.md).
 
+## Chapter 18 Swift concurrency and tests
+
+Reviewed on **18 November 2026**. The existing project uses Swift 6 language mode. The new app-hosted unit targets use the Swift Testing framework supplied with Xcode. XCTest continues to drive the running app. A controlled local source suspends each call until its test supplies a reply, which lets an assertion observe an old failure while a newer request is still loading. See [Swift Testing](https://developer.apple.com/documentation/testing) and [Apple’s guide to using both frameworks](https://developer.apple.com/documentation/testing/migratingfromxctest).
+
+The review screen owns its task through a changing request ID. The main-actor loader rechecks its active request after suspension because other calls can enter while it waits. Cancellation signals and identity checks cover different cases when a source can return late. See [Swift concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), [SwiftUI task identity](https://developer.apple.com/documentation/swiftui/view/task(id:name:priority:file:line:_:)), and [Chapter 18 verification](verification/ch18.md).
+
 ## Research boundaries and next checks
 
 This research establishes the curriculum direction and initial stack. The course sequence and interview exercises are teaching recommendations. Employer-specific preparation will depend on actual role descriptions and the learner's interview feedback.

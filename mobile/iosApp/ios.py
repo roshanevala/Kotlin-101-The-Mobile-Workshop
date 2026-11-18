@@ -12,19 +12,22 @@ BUILD = ROOT / "build"
 
 
 def prepare():
-    answer = ROOT / "Practice/StudyScreens.swift"
-    answer.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with answer.open("xb") as target:
-            target.write((ROOT / "Starter/StudyScreens.swift").read_bytes())
-        print("Created Practice/StudyScreens.swift", flush=True)
-    except FileExistsError:
-        pass
+    practice = ROOT / "Practice"
+    practice.mkdir(exist_ok=True)
+    for name in ("StudyScreens.swift", "ReviewLoader.swift", "ReviewRegressionTests.swift"):
+        answer = practice / name
+        template = (ROOT / "Starter" / name).read_bytes()
+        try:
+            with answer.open("xb") as target:
+                target.write(template)
+            print(f"Created Practice/{name}", flush=True)
+        except FileExistsError:
+            pass
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("prepare", "build", "build-tests", "run", "test", "check-model", "clean"))
+    parser.add_argument("action", choices=("prepare", "build", "build-tests", "run", "test", "test-unit", "check-model", "clean"))
     parser.add_argument("--reference", action="store_true")
     parser.add_argument("--device", help="Explicit iOS simulator UDID, required for run/test.")
     parser.add_argument("--only-test", action="append", default=[], help="Xcode test identifier to run; repeat for several tests.")
@@ -45,8 +48,10 @@ def main():
                         str(ROOT / "Tests/ModelChecks/main.swift"), "-o", str(output)], check=True)
         subprocess.run([str(output)], check=True)
         return
-    if args.action in ("run", "test") and not args.device:
-        parser.error("run/test require --device with the intended simulator UDID")
+    if args.action in ("run", "test", "test-unit") and not args.device:
+        parser.error("run/test/test-unit require --device with the intended simulator UDID")
+    if args.only_test and args.action != "test":
+        parser.error("--only-test is available with the test action")
     if not args.reference:
         prepare()
     variant = "reference" if args.reference else "practice"
@@ -55,11 +60,14 @@ def main():
     command = ["xcodebuild", "-project", str(ROOT / "StudyLab.xcodeproj"), "-scheme", scheme,
                "-configuration", "Debug", "-sdk", "iphonesimulator", "-destination", destination,
                "-derivedDataPath", str(BUILD / variant), "CODE_SIGNING_ALLOWED=NO"]
-    if args.action == "test":
-        result = BUILD / variant / "results.xcresult"
+    if args.action in ("test", "test-unit"):
+        unit_only = args.action == "test-unit"
+        result = BUILD / variant / ("unit.xcresult" if unit_only else "results.xcresult")
         if result.exists():
             shutil.rmtree(result)
         command += ["-parallel-testing-enabled", "NO", "-resultBundlePath", str(result), "test"]
+        if unit_only:
+            command.append(f"-only-testing:{scheme}Tests")
         command += [f"-only-testing:{identifier}" for identifier in args.only_test]
     elif args.action == "build-tests":
         command.append("build-for-testing")

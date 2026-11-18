@@ -39,7 +39,7 @@ flowchart LR
 | Kotlin foundations · 01–08 | Session models, validation, progress reports, and tested Kotlin rules | **01–08 available** |
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
 | Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13–15 available** |
-| Native iOS · 16–18 | Swift models, then a SwiftUI client with native state and concurrency | **16–17 available**; 18 planned |
+| Native iOS · 16–18 | Swift models, then a SwiftUI client with native state and concurrency | **16–18 available** |
 | Kotlin Multiplatform · 19–22 | Shared Kotlin business rules used by Android and iOS | Planned |
 | Data and platform features · 23–30 | Networking, saved data, offline behavior, and a native versus shared UI comparison | Planned |
 | Quality and interview practice · 31–40 | Failure tests, profiling, an independent feature, and mock interviews | Planned |
@@ -81,6 +81,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [15 Android app architecture](chapters/15-android-app-architecture/README.md) | UI/data layers, repositories, ViewModel, lifecycle-aware collection, navigation, and saved state | A catalogue with loading, empty/error/retry states and per-session planning notes |
 | [16 Swift for Kotlin developers](chapters/16-swift-for-kotlin-developers/README.md) | Swift syntax, optionals, value/reference semantics, enums, protocols, generics, and ARC | Independent study-plan values and a callback that safely outlives its owner |
 | [17 SwiftUI and app lifecycle](chapters/17-swiftui-and-app-lifecycle/README.md) | Observation, managed state, bindings, view identity, navigation, scenes, and accessibility | A native study list/detail editor with explicit draft and scene lifetimes |
+| [18 Swift concurrency and tests](chapters/18-swift-concurrency-and-tests/README.md) | Tasks, cancellation, actor isolation, Sendable, and async tests | A review prompt that handles retries and rejects late results |
 
 More chapters are coming one at a time. The Android missions, Swift language lab, and native SwiftUI client are available; shared KMP code remains planned.
 

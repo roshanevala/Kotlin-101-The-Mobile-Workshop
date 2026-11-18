@@ -1,6 +1,6 @@
 # Study Lab iOS setup
 
-This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It belongs beside the Android client in the growing mobile project. It does not depend on either Gradle workspace or your Chapter 16 answer.
+This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It gains an asynchronous review screen in [Chapter 18](../../chapters/18-swift-concurrency-and-tests/README.md). It does not depend on either Gradle workspace or your Chapter 16 answer.
 
 ## Check Xcode and a simulator
 
@@ -15,14 +15,14 @@ xcrun simctl list devices available
 
 Finish Xcode's first-launch setup and install a supported iOS runtime through its components/settings if needed. No package download, XcodeGen, CocoaPods, signing account, or physical phone is required for the simulator commands. The project and shared schemes are checked in.
 
-From `mobile/iosApp`, prepare your file before opening the project:
+From `mobile/iosApp`, prepare your files before opening the project:
 
 ```sh
 python3 ios.py prepare
 open StudyLab.xcodeproj
 ```
 
-Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Edit **`Practice/StudyScreens.swift`**, not Starter/Solution or shared Sources. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Shared UI tests are attached to the corresponding app, so they use the selected source choice.
+Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Chapter 17 uses **`Practice/StudyScreens.swift`**. In Chapter 18 edit **`Practice/ReviewLoader.swift`** and **`Practice/ReviewRegressionTests.swift`**. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Each scheme pairs its app with a Swift Testing unit bundle and an XCTest UI bundle.
 
 If an older Chapter 17 answer reports that StudyRoot's initializer is private, preserve your edits and copy only `init(showTip:)` from Starter into your StudyRoot. Preparation intentionally leaves existing answers unchanged.
 
@@ -48,7 +48,14 @@ python3 ios.py test --device "$study_simulator"
 
 If using another existing simulator, set `study_simulator` to that intended UDID instead of creating another device. Start it before `run`; Xcode's test action can boot the selected destination. Do not erase or reset a personal simulator to follow this exercise.
 
-The starter builds but has deliberate state/navigation/editor/lifecycle defects. The **13 UI tests** intentionally fail some contracts until repaired. They use XCTest/XCUIAutomation as fixed acceptance scaffolding; test-authoring and concurrency depth belong to Chapter 18. A failing Swift build is different from an executed UI assertion failure.
+For Chapter 18, open **Review prompts** in the running app. Tap **Swift** to see the first load fail, then **Retry** to get the prompt. Run the loader unit tests while repairing cancellation and late replies. The starter includes a failing marker for the regression you will write.
+
+```sh
+python3 ios.py test-unit --device "$study_simulator"
+python3 ios.py test-unit --reference --device "$study_simulator"
+```
+
+The full `test` action runs both unit and UI tests, including the Chapter 17 list and editor checks. For the original Chapter 17 starter and its 13 UI tests, use the [Chapter 17 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch17-v2).
 
 For the reference, keep the same simulator selection:
 
@@ -59,9 +66,9 @@ python3 ios.py run --reference --device "$study_simulator"
 
 Run installs only the selected variant and starts a fresh process, terminating that variant first if it is running. For the background/foreground experiment, use the simulator's Home action, then return through the app icon or app switcher; do not repeat `ios.py run`, which resets this in-memory data.
 
-Result bundles are `build/practice/results.xcresult` or `build/reference/results.xcresult`; open a result in Xcode to inspect executed tests and failures. Each new test command replaces that variant's old result bundle. App/runner products and caches also remain under ignored `build`.
+Result bundles are `build/practice/results.xcresult` or `build/reference/results.xcresult`; open a result in Xcode to inspect executed tests and failures. The unit-only command writes `unit.xcresult` alongside it. Repeating an action replaces its previous result. App/runner products and caches also remain under ignored `build`.
 
-To compile app/UI-test bundles without running a simulator:
+To compile the app and both test bundles without running a simulator:
 
 ```sh
 python3 ios.py build-tests
@@ -72,8 +79,8 @@ For focused diagnosis, `test` accepts a repeatable selector such as `--only-test
 
 ## Preserve your work and its lifetime
 
-Preparation fills only a missing Practice file. `python3 ios.py clean` removes only this project's build output, preserving your answer and every earlier exercise. To reset, move your Practice file somewhere safe outside its source folder, then prepare again. Reference commands never prepare or compile it. Normal Git staging ignores Practice and build output.
+Preparation fills each missing Practice file independently. `python3 ios.py clean` removes only this project's build output, preserving your answer and every earlier exercise. To reset, move your Practice file somewhere safe outside its source folder, then prepare again. Reference commands never prepare or compile it. Normal Git staging ignores Practice and build output.
 
 The current data is in memory: drafts, topics, completion, filters, and navigation survive the stated view/background interactions within the process. Terminating and relaunching the app starts fresh. No database, file storage, SceneStorage, or process-restoration feature is included. Scene logs use the **StudyScene** prefix and contain no entered topics.
 
-The iOS workflow is configured to compile both apps/UI-test bundles and run the shared model checks; it does not run simulator UI tests. Hosted execution, interactive Xcode/preview actions, physical devices, and broader accessibility/device coverage must be distinguished from the [local verification](../../docs/maintainers/verification/ch17.md).
+The iOS workflow builds both apps and their unit and UI test bundles, and runs the standalone model checks. Simulator results are recorded in the [Chapter 18 verification record](../../docs/maintainers/verification/ch18.md).

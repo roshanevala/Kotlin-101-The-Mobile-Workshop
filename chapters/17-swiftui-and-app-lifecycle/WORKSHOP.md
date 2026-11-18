@@ -6,7 +6,7 @@ Read the [lesson](LESSON.md) first. Work in three sessions if useful: owner/iden
 
 ## Prepare and run your source choice
 
-Follow [iOS setup](../../mobile/iosApp/README.md). Use the locally checked **Xcode 27.0/Apple Swift 6.4**, **Swift 6 language mode**, and an explicitly selected supported iOS Simulator. The project deploys to **iOS 17.0+**; **iOS 26.5** is the checked runtime. No Gradle, package manager, signing account, or physical device is required for these simulator commands.
+Use the [Chapter 17 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch17-v2) in a separate folder for the 13-test suite described below. Follow its [iOS setup](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/blob/ch17-v2/mobile/iosApp/README.md). Use the locally checked **Xcode 27.0/Apple Swift 6.4**, **Swift 6 language mode**, and an explicitly selected supported iOS Simulator. The project deploys to **iOS 17.0+**; **iOS 26.5** is the checked runtime. No Gradle, package manager, signing account, or physical device is required for these simulator commands.
 
 From `mobile/iosApp`:
 

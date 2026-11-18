@@ -33,12 +33,14 @@ jobs:
         run: |
           xcodebuild -version
           xcrun swift --version
-      - name: Check the model and compile both apps and UI-test bundles
+      - name: Check the model and compile both apps and their test bundles
         run: |
           python3 ios.py check-model
           python3 ios.py build-tests
           python3 ios.py build-tests --reference
       - name: Check preparation and ignore rules
         run: |
-          cmp Starter/StudyScreens.swift Practice/StudyScreens.swift
-          git check-ignore --quiet Practice/StudyScreens.swift
+          for source in StudyScreens.swift ReviewLoader.swift ReviewRegressionTests.swift; do
+            cmp "Starter/$source" "Practice/$source"
+            git check-ignore --quiet "Practice/$source"
+          done

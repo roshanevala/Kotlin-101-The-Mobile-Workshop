@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin/Swift exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, the Swift language lab for Chapter 16, and the native SwiftUI client for Chapter 17 now exist. Shared KMP remains planned.
+This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, the Swift language lab for Chapter 16, and the native SwiftUI client for Chapters 17–18 now exist. Shared KMP remains planned.
 
 ## Layout introduced gradually
 
@@ -32,6 +32,7 @@ Kotlin-101-The-Mobile-Workshop/
     15-android-app-architecture/  Repository/ViewModel catalogue and navigation
     16-swift-for-kotlin-developers/  Native Swift models and ARC mission
     17-swiftui-and-app-lifecycle/  Native list/detail, ownership, and scene mission
+    18-swift-concurrency-and-tests/  Async loading, cancellation, and regression tests
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -71,13 +72,13 @@ Kotlin-101-The-Mobile-Workshop/
       src/test/             Android local ViewModel/repository checks
     shared/                 Planned KMP code, introduced with the KMP chapters
     iosApp/                 Native iOS client, introduced in Chapter 17
-      StudyLab.xcodeproj/    Separate practice/reference schemes and UI-test targets
+      StudyLab.xcodeproj/    Practice/reference schemes, each with unit and UI tests
       ios.py                Preparation, simulator builds/runs/tests, and model checks
-      Sources/              Fixed App, model, and reusable controls
-      Starter/              Tracked screen exercise
-      Practice/             Ignored learner screen answer
-      Solution/             Tracked reference screens
-      Tests/                Shared model and UI acceptance checks
+      Sources/              Fixed app, shared models, prompt source, and views
+      Starter/              Tracked screen, loader, and regression-test templates
+      Practice/             Ignored learner source and test answers
+      Solution/             Worked screens, loader, and regression test
+      Tests/                Model checks, shared Swift Testing suite, and UI tests
   docs/
     CURRICULUM.md           Optional full course roadmap
     maintainers/            Plans, research, agent workflow, and verification
@@ -117,7 +118,9 @@ Chapter 14 extends that same module with Compose and `StudyPlannerActivity`, wit
 
 Chapter 15 adds a fixed `CatalogueActivity`, repository, state model, and list/detail navigation in shared Android main. It extracts the unchanged immutable `StudySession` type into its own file and leaves both older Activity answers intact. The new learner-owned `CatalogueViewModel.kt` is supplied separately by practice/reference; `prepareArchitecturePractice` fills only its missing answer, while `preparePractice` prepares all three missing files. The Activity owns the ViewModel outside NavHost; notes use SavedStateHandle and IDs, while the catalogue reloads. The current reference has 20 local unit checks and 46 device checks (14 new plus 32 retained). Chapter 14 entry pages route its old launcher to `ch14-v2`.
 
-Chapter 17 introduces `mobile/iosApp` as the native client of the same growing app. Its checked-in Xcode project has independent Practice/Reference app and UI-test targets, with distinct bundle IDs and source phases. The fixed store/control/App files do not depend on Swift-lab answers or Android sources. `ios.py prepare` fills only a missing ignored `Practice/StudyScreens.swift`; reference commands do not prepare/compile it, and clean removes only build output. The current 12 model checks and 13 simulator UI checks establish the specified in-process ownership/navigation/scene behavior, not persistence. Use [iOS setup](../../mobile/iosApp/README.md).
+Chapter 17 introduces `mobile/iosApp` as the native client of the same growing app. Its checked-in Xcode project has independent Practice/Reference app and UI-test targets, with distinct bundle IDs and source phases. The fixed store/control/App files do not depend on Swift-lab answers or Android sources. `ios.py prepare` fills only a missing ignored `Practice/StudyScreens.swift`; reference commands do not prepare/compile it, and clean removes only build output. Its original 12 model checks and 13 simulator UI checks establish the specified in-process ownership/navigation/scene behavior, not persistence. Use [iOS setup](../../mobile/iosApp/README.md).
+
+Chapter 18 keeps the Chapter 17 list in place and opens a review sheet from the app shell. Each scheme builds its own loader and app-hosted Swift Testing bundle. The bundle imports its matching app module and includes the matching learner or reference regression. The wrapper also prepares missing copies of `ReviewLoader.swift` and `ReviewRegressionTests.swift`.
 
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 

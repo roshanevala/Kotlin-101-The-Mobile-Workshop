@@ -35,6 +35,6 @@ Reference builds neither prepare nor compile Practice. Both source choices are p
 
 A `completedMinutes` computed property can filter the full sessions collection by completion and sum its minutes. The view reads that computed value, which depends on the observed sessions. Completing session 2 yields 40; hiding completed rows still yields 40. Using visibleSessions for the total would make the displayed metric depend on a presentation filter.
 
-**Next: Chapter 18 will introduce Swift concurrency and tests. Its lesson is planned.**
+**[Continue to Chapter 18, Swift concurrency and tests](../18-swift-concurrency-and-tests/README.md).**
 
 [Back to the workshop](WORKSHOP.md) · [Review the lesson](LESSON.md) · [Back to the course](../../README.md)

@@ -152,3 +152,19 @@ final class StudyLabUITests: XCTestCase {
         XCTAssertEqual(app.textFields["topic-field"].value as? String, "Kotlin")
     }
 }
+
+extension StudyLabUITests {
+    @MainActor func testReviewFailureRetryAndReturnToSessions() {
+        let app = launch()
+        app.buttons["open-review"].tap()
+        XCTAssertTrue(app.staticTexts["review-idle"].waitForExistence(timeout: 5))
+        app.buttons["review-swift"].tap()
+        XCTAssertTrue(app.staticTexts["review-failed"].waitForExistence(timeout: 5))
+        app.buttons["review-retry"].tap()
+        let prompt = app.staticTexts["review-ready"]
+        XCTAssertTrue(prompt.waitForExistence(timeout: 5))
+        XCTAssertEqual(prompt.label, "How does a Swift actor protect its state?")
+        app.buttons["close-review"].tap()
+        XCTAssertTrue(app.staticTexts["progress"].waitForExistence(timeout: 5))
+    }
+}
