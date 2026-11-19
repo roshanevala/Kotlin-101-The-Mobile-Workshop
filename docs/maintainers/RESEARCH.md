@@ -123,8 +123,14 @@ Reviewed on **18 November 2026**. The existing project uses Swift 6 language mod
 
 The review screen owns its task through a changing request ID. The main-actor loader rechecks its active request after suspension because other calls can enter while it waits. Cancellation signals and identity checks cover different cases when a source can return late. See [Swift concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), [SwiftUI task identity](https://developer.apple.com/documentation/swiftui/view/task(id:name:priority:file:line:_:)), and [Chapter 18 verification](verification/ch18.md).
 
+## Chapter 19 shared build
+
+Reviewed on **19 November 2026**. The mobile catalog pins Kotlin 2.2.21 and AGP 8.11.1. Both app and library resolve their plugins from these versions. The existing Gradle 8.14.3 wrapper and JDK 17 built both modules. The Android library uses Google's KMP plugin and its `androidLibrary` block for this AGP version. Host tests are opt-in. The two iOS targets establish an `iosMain` source set through Kotlin's default hierarchy. [Android KMP plugin](https://developer.android.com/kotlin/multiplatform/plugin) · [KMP hierarchy and compatibility](https://kotlinlang.org/docs/multiplatform/multiplatform-compatibility-guide.html) · [Gradle version catalogs](https://docs.gradle.org/8.14.3/userguide/version_catalogs.html)
+
+JetBrains lists Xcode **26.0** for Kotlin 2.2.21. Local tests and framework linking also succeeded with Xcode **27.0** and its iOS 27 SDK on Apple silicon, outside that published matrix. The hosted framework job selects Xcode **26.0.1** from the macOS 26 arm64 image. First builds need access to the native distribution and any uncached dependencies. [GitHub runner inventory](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md) · [Kotlin/Native Gradle setup](https://kotlinlang.org/docs/native-get-started.html#using-gradle) · [local verification](verification/ch19.md)
+
 ## Research boundaries and next checks
 
 This research establishes the curriculum direction and initial stack. The course sequence and interview exercises are teaching recommendations. Employer-specific preparation will depend on actual role descriptions and the learner's interview feedback.
 
-Before the first runnable lesson, verify the installed JDK and IDE setup, pin the exercise build, and run the documented commands. Before the KMP chapters, check the installed Xcode and simulator, choose supported targets, and build a shared sample on Android and iOS. Before adding each major library, verify its current compatibility and test the behavior the lesson teaches.
+Before the first runnable lesson, verify the installed JDK and IDE setup, pin the exercise build, and run the documented commands. Before integrating the new library with SwiftUI, verify the generated API and link it in the intended Xcode configuration. Before adding each major library, verify its current compatibility and test the behavior the lesson teaches.

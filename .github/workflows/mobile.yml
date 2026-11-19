@@ -32,6 +32,7 @@ jobs:
           cache: gradle
           cache-dependency-path: |
             mobile/**/*.gradle.kts
+            mobile/gradle/libs.versions.toml
             mobile/gradle/wrapper/gradle-wrapper.properties
       - name: Install pinned SDK packages
         run: |
@@ -40,6 +41,9 @@ jobs:
       - name: Build variants, run unit checks, compile device tests, and lint reference
         working-directory: mobile
         run: ./gradlew --no-daemon --console=plain :androidApp:assemblePracticeDebug :androidApp:assembleReferenceDebug :androidApp:assembleReferenceDebugAndroidTest :androidApp:testReferenceDebugUnitTest :androidApp:lintReferenceDebug
+      - name: Build the shared Android library and run its host tests
+        working-directory: mobile
+        run: ./gradlew --no-daemon --console=plain -PsharedReference :shared:bundleAndroidMainAar :shared:testAndroidHostTest
       - name: Check that preparation retains all three exercises and ignores answers
         working-directory: mobile
         run: |

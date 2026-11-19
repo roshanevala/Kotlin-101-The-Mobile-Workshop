@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "study-lab-mobile"
 include(":androidApp")
+include(":shared")

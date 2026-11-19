@@ -1,0 +1,44 @@
+name: KMP simulator framework
+
+on:
+  push:
+    branches: [main]
+    paths: ['mobile/shared/**', 'mobile/gradle/**', 'mobile/*.gradle.kts', 'mobile/gradle.properties', 'mobile/gradlew', '.github/workflows/kmp.yml']
+  pull_request:
+    paths: ['mobile/shared/**', 'mobile/gradle/**', 'mobile/*.gradle.kts', 'mobile/gradle.properties', 'mobile/gradlew', '.github/workflows/kmp.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kmp-native-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  framework:
+    runs-on: macos-26
+    timeout-minutes: 30
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+          cache-dependency-path: |
+            mobile/**/*.gradle.kts
+            mobile/gradle/libs.versions.toml
+            mobile/gradle/wrapper/gradle-wrapper.properties
+      - name: Link the reference for the arm64 iOS simulator
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphonesimulator --show-sdk-version
+          ./gradlew --no-daemon --console=plain -PsharedReference :shared:linkDebugFrameworkIosSimulatorArm64

@@ -36,6 +36,6 @@ On Kotlin/JVM, tracing garbage collection can reclaim an unreachable cycle. In S
 
 For the changed event order, suppose B succeeds before A fails. The screen should show B's question after the success and keep it when A finally returns. An assertion after both calls finish catches a loader that replaced B's result with A's error.
 
-Chapter 19 will introduce the Kotlin Multiplatform project and build model. [Course roadmap](../../docs/CURRICULUM.md)
+Next, build a Kotlin module for Android and an iOS simulator. [Chapter 19, Project and build model](../19-project-and-build-model/README.md)
 
 [Back to the workshop](WORKSHOP.md) · [Back to the course](../../README.md)

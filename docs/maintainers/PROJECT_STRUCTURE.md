@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin/Swift exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-This is the implementation structure selected for the course. The independent Kotlin exercises for Chapters 01–12, Android missions for Chapters 13–15, the Swift language lab for Chapter 16, and the native SwiftUI client for Chapters 17–18 now exist. Shared KMP remains planned.
+Chapters 01–12 use independent Kotlin exercises. Chapters 13–15 use an Android app, Chapter 16 uses a Swift language lab, and Chapters 17–18 use a native SwiftUI client. Chapter 19 adds the shared Kotlin module.
 
 ## Layout introduced gradually
 
@@ -33,6 +33,7 @@ Kotlin-101-The-Mobile-Workshop/
     16-swift-for-kotlin-developers/  Native Swift models and ARC mission
     17-swiftui-and-app-lifecycle/  Native list/detail, ownership, and scene mission
     18-swift-concurrency-and-tests/  Async loading, cancellation, and regression tests
+    19-project-and-build-model/  First shared module and source-set mission
   kotlin-labs/              Kotlin exercise workspace, available from Chapter 01
     gradlew
     settings.gradle.kts
@@ -70,7 +71,7 @@ Kotlin-101-The-Mobile-Workshop/
       src/solution/         Tracked reference Activities/editor/ViewModel
       src/androidTest/      Shared device acceptance checks
       src/test/             Android local ViewModel/repository checks
-    shared/                 Planned KMP code, introduced with the KMP chapters
+    shared/                 Kotlin Multiplatform library for Android and iOS
     iosApp/                 Native iOS client, introduced in Chapter 17
       StudyLab.xcodeproj/    Practice/reference schemes, each with unit and UI tests
       ios.py                Preparation, simulator builds/runs/tests, and model checks
@@ -124,7 +125,7 @@ Chapter 18 keeps the Chapter 17 list in place and opens a review sheet from the 
 
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 
-The native SwiftUI client now exists; add the shared KMP module during its course stage. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
+Chapter 19 adds `mobile/shared` to the mobile Gradle build. The chapter produces an Android library and an iOS simulator framework. Chapter 20 develops the shared API and Chapter 21 connects it to SwiftUI. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
 
 Optional experiments can remain separate little exercises when isolation helps explain a concept. They must not become another full application learners are expected to maintain.
 
@@ -140,4 +141,4 @@ Keep `main` as the latest integrated course state. Maintain chapter history thro
 
 ## First implementation
 
-Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. Chapter 13 now adds the separate mobile workspace with the saved-draft mission; Chapter 17 adds the native iOS child project, while shared KMP remains later work.
+Chapter 01 creates only the Kotlin workspace and its timer exercise module, alongside the chapter lesson, hints, and explained solution. Verify the run commands, boundary cases, and starter isolation. Chapter 13 now adds the separate mobile workspace with the saved-draft mission; Chapter 17 adds the native iOS child project, and Chapter 19 adds the shared library.
