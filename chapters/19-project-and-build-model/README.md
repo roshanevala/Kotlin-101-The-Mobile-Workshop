@@ -10,4 +10,6 @@ Study Lab needs the same study label on Android and iOS. Where should one Kotlin
 | [Workshop](WORKSHOP.md) | Trace the study label to Android and an iOS simulator, then check each build. |
 | [Solution](SOLUTION.md) | Compare your wiring, outputs, and explanation with the worked example. |
 
+To use the exact Chapter 19 sources, open the [ch19-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch19-v1) or [download the ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch19-v1.zip) and extract it into a new folder. Run the workshop from its `mobile` directory.
+
 [Back to the course](../../README.md)
