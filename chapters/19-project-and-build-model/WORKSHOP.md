@@ -31,11 +31,11 @@ Read the [three common tests](../../mobile/shared/src/commonTest/kotlin/StudyLab
 
 ## 2. Compare the targets, then move one file
 
-Run the Android host tests on your computer. Then, on the configured Mac, compile and execute the same tests for the simulator.
+Run the label tests on your computer and then on the configured Mac. The filter selects the three cases for this chapter as more exercises join the module.
 
 ```sh
-./gradlew :shared:testAndroidHostTest
-./gradlew :shared:iosSimulatorArm64Test --device "$study_simulator"
+./gradlew :shared:testAndroidHostTest --tests 'workshop.studylab.shared.StudyLabelTest'
+./gradlew :shared:iosSimulatorArm64Test --device "$study_simulator" --tests 'workshop.studylab.shared.StudyLabelTest'
 ```
 
 With a fresh starter, Android can read the label. On the simulator path, find the compiler diagnostic in `StudyLabelTest.kt` that says `studyLabel` is unresolved. This happens while compiling the tests, before any assertions execute. A missing SDK, Gradle distribution, Kotlin/Native download, or simulator runtime is a separate setup problem.

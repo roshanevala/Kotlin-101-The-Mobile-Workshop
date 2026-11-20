@@ -40,7 +40,7 @@ flowchart LR
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
 | Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13–15 available** |
 | Native iOS · 16–18 | Swift models, then a SwiftUI client with native state and concurrency | **16–18 available** |
-| Kotlin Multiplatform · 19–22 | A shared module, then business rules and app integration | **19 available**; 20–22 planned |
+| Kotlin Multiplatform · 19–22 | A shared module, then business rules and app integration | **19–20 available**, 21–22 planned |
 | Data and platform features · 23–30 | Networking, saved data, offline behavior, and a native versus shared UI comparison | Planned |
 | Quality and interview practice · 31–40 | Failure tests, profiling, an independent feature, and mock interviews | Planned |
 
@@ -83,6 +83,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [17 SwiftUI and app lifecycle](chapters/17-swiftui-and-app-lifecycle/README.md) | Observation, managed state, bindings, view identity, navigation, scenes, and accessibility | A native study list/detail editor with explicit draft and scene lifetimes |
 | [18 Swift concurrency and tests](chapters/18-swift-concurrency-and-tests/README.md) | Tasks, cancellation, actor isolation, Sendable, and async tests | A review prompt that handles retries and rejects late results |
 | [19 Project and build model](chapters/19-project-and-build-model/README.md) | Gradle wrapper, Kotlin DSL, version catalog, targets, and source sets | Build a shared study label for Android and an iOS simulator |
+| [20 Shared boundaries](chapters/20-shared-boundaries/README.md) | Common interfaces, constructor injection, and `expect`/`actual` functions | A shared session planner that validates a draft before requesting a platform-generated ID |
 
 More chapters are coming one at a time.
 

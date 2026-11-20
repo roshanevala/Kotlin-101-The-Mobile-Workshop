@@ -7,17 +7,24 @@ val reference = providers.gradleProperty("sharedReference").isPresent
 val choice = if (reference) "solution" else "practice"
 layout.buildDirectory.set(layout.projectDirectory.dir("build/${if (reference) "reference" else "practice"}"))
 
-// Moving the answer into commonMain is the mission. Both locations count as an existing answer.
-val starter = layout.projectDirectory.file("src/starter/androidMain/kotlin/StudyLabel.kt")
-val androidAnswer = layout.projectDirectory.file("src/practice/androidMain/kotlin/StudyLabel.kt")
-val commonAnswer = layout.projectDirectory.file("src/practice/commonMain/kotlin/StudyLabel.kt")
+// The Chapter 19 label may already have been moved to commonMain.
+val labelStarter = layout.projectDirectory.file("src/starter/androidMain/kotlin/StudyLabel.kt")
+val androidLabel = layout.projectDirectory.file("src/practice/androidMain/kotlin/StudyLabel.kt")
+val commonLabel = layout.projectDirectory.file("src/practice/commonMain/kotlin/StudyLabel.kt")
+val plannerStarter = layout.projectDirectory.file("src/starter/commonMain/kotlin/SessionPlanner.kt")
+val plannerAnswer = layout.projectDirectory.file("src/practice/commonMain/kotlin/SessionPlanner.kt")
 val preparePractice by tasks.registering {
     group = "workshop"
-    description = "Creates the Chapter 19 answer once, preserving a moved or edited file."
-    onlyIf { !androidAnswer.asFile.exists() && !commonAnswer.asFile.exists() }
+    description = "Creates missing study label and session planner practice files."
     doLast {
-        androidAnswer.asFile.parentFile.mkdirs()
-        starter.asFile.copyTo(androidAnswer.asFile, overwrite = false)
+        if (!androidLabel.asFile.exists() && !commonLabel.asFile.exists()) {
+            androidLabel.asFile.parentFile.mkdirs()
+            labelStarter.asFile.copyTo(androidLabel.asFile, overwrite = false)
+        }
+        if (!plannerAnswer.asFile.exists()) {
+            plannerAnswer.asFile.parentFile.mkdirs()
+            plannerStarter.asFile.copyTo(plannerAnswer.asFile, overwrite = false)
+        }
     }
 }
 

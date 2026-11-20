@@ -21,8 +21,8 @@ Moving the practice file to `shared/src/practice/commonMain/kotlin/StudyLabel.kt
 From `mobile`, use the Gradle project property `-PsharedReference` to select the tracked reference sources and their own build directory.
 
 ```sh
-./gradlew -PsharedReference :shared:testAndroidHostTest :shared:bundleAndroidMainAar
-./gradlew -PsharedReference :shared:iosSimulatorArm64Test --device "$study_simulator" :shared:linkDebugFrameworkIosSimulatorArm64
+./gradlew -PsharedReference :shared:testAndroidHostTest --tests 'workshop.studylab.shared.StudyLabelTest' :shared:bundleAndroidMainAar
+./gradlew -PsharedReference :shared:iosSimulatorArm64Test --device "$study_simulator" --tests 'workshop.studylab.shared.StudyLabelTest' :shared:linkDebugFrameworkIosSimulatorArm64
 ```
 
 Expect three Android host tests and three iOS simulator tests, plus an Android library archive and a debug framework for `iosSimulatorArm64`. Use the simulator UDID selected in the workshop for the second command. Under `shared/build/reference/`, look in `reports/tests/` for the reports and `outputs/aar/shared.aar` for the Android library. The simulator bundle at `bin/iosSimulatorArm64/debugFramework/StudyShared.framework` has `iPhoneSimulator` in the supported-platform list in its `Info.plist`. The Android result comes from running the tests on the host JVM. The simulator result comes from a Kotlin/Native test executable. [Testing multiplatform code](https://kotlinlang.org/docs/multiplatform/multiplatform-run-tests.html)
@@ -31,6 +31,6 @@ Expect three Android host tests and three iOS simulator tests, plus an Android l
 
 If the portable label lived at `shared/src/iosMain/kotlin/StudyLabel.kt`, the two iOS targets could use it and Android would lose it. Place an iOS-only formatter in `iosMain` when its implementation uses Foundation APIs available on both iOS targets. Keep the portable study label in `commonMain`. A device build and a simulator build can share source while producing distinct binaries for their respective platforms.
 
-Chapter 20 will explore the dependency boundaries around shared code. [Course roadmap](../../docs/CURRICULUM.md)
+Continue to [Chapter 20, Shared boundaries](../20-shared-boundaries/README.md), to give a shared session planner a different ID source on each platform.
 
 [Back to the workshop](WORKSHOP.md) · [Back to the course](../../README.md)
