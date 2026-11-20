@@ -10,4 +10,6 @@ You try to plan a zero-minute session, correct it to 25 minutes, and press Save 
 | [Workshop](WORKSHOP.md) | Repair the planner and run the same checks on the Android host JVM and an iOS simulator. |
 | [Solution](SOLUTION.md) | Trace two requests through the worked planner and its ID source. |
 
+To use the exact Chapter 20 sources, open the [ch20-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch20-v1) or [download the ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch20-v1.zip) and extract it into a new folder. Run the workshop from its `mobile` directory.
+
 [Back to the course](../../README.md)
