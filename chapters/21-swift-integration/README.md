@@ -10,4 +10,6 @@ Someone types `ten` into the minutes field. Study Lab offers them a 25-minute se
 | [Workshop](WORKSHOP.md) | Repair the Swift adapter, then follow a receipt across the asynchronous boundary. |
 | [Solution](SOLUTION.md) | Compare the results at the text field, shared planner, and SwiftUI screen. |
 
+To use the exact Chapter 21 sources, open the [ch21-v1 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch21-v1) or [download the ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch21-v1.zip) and extract it into a new folder. Run the workshop from its `mobile/iosApp` directory.
+
 [Back to the course](../../README.md)
