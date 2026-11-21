@@ -2,7 +2,7 @@
 
 Use one repository containing small Kotlin/Swift exercises and one growing mobile application. Learners open the Kotlin exercise workspace first and the mobile workspace when they reach Android. They do not create a new Android project for every chapter.
 
-Chapters 01–12 use independent Kotlin exercises. Chapters 13–15 use an Android app, Chapter 16 uses a Swift language lab, and Chapters 17–18 use a native SwiftUI client. Chapter 19 adds the shared Kotlin module. Chapter 20 adds the common session planner and its platform ID providers.
+Chapters 01–12 use independent Kotlin exercises. Chapters 13–15 use an Android app, Chapter 16 uses a Swift language lab, and Chapters 17–18 use a native SwiftUI client. Chapter 19 adds the shared Kotlin module. Chapter 20 adds the common session planner and its platform ID providers. Chapter 21 links it into the SwiftUI app.
 
 ## Layout introduced gradually
 
@@ -76,7 +76,7 @@ Kotlin-101-The-Mobile-Workshop/
       StudyLab.xcodeproj/    Practice/reference schemes, each with unit and UI tests
       ios.py                Preparation, simulator builds/runs/tests, and model checks
       Sources/              Fixed app, shared models, prompt source, and views
-      Starter/              Tracked screen, loader, and regression-test templates
+      Starter/              Tracked screen, review loader, regression test, and shared planner adapter templates
       Practice/             Ignored learner source and test answers
       Solution/             Worked screens, loader, and regression test
       Tests/                Model checks, shared Swift Testing suite, and UI tests
@@ -125,7 +125,7 @@ Chapter 18 keeps the Chapter 17 list in place and opens a review sheet from the 
 
 Start with a small app structure. Extract modules when a lesson introduces a useful boundary, particularly the shared KMP core. Android guidance treats modularization patterns as adaptable to the application's needs. [Android modularization patterns](https://developer.android.com/topic/modularization/patterns).
 
-Chapter 19 adds `mobile/shared` to the mobile Gradle build. The chapter produces an Android library and an iOS simulator framework. Chapter 20 adds a second ignored answer, `src/practice/commonMain/kotlin/SessionPlanner.kt`. The common interface and the two platform implementations are fixed sources for both practice and reference. Preparation fills missing answers and preserves the Chapter 19 label in either supported location. Chapter 21 will connect the shared core to SwiftUI. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
+Chapter 19 adds `mobile/shared` to the mobile Gradle build. The chapter produces an Android library and an iOS simulator framework. Chapter 20 adds a second ignored answer, `src/practice/commonMain/kotlin/SessionPlanner.kt`. The common interface and the two platform implementations are fixed sources for both practice and reference. Preparation fills missing answers and preserves the Chapter 19 label in either supported location. Chapter 21 connects both Swift schemes to the Kotlin reference framework. Xcode builds the static framework for the selected SDK and configuration before compiling Swift. The new ignored Swift answer lives at `mobile/iosApp/Practice/SharedPlanAdapter.swift`. Later, compare one shared Compose screen with the native reference. Keep these as clients and modules of the same growing mobile project. A chapter number identifies a learning step, not a reason to duplicate the whole app.
 
 Optional experiments can remain separate little exercises when isolation helps explain a concept. They must not become another full application learners are expected to maintain.
 

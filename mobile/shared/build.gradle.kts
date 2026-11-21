@@ -36,16 +36,18 @@ kotlin {
         minSdk = 30
         withHostTestBuilder {}
     }
-    iosArm64()
-    iosSimulatorArm64 {
-        binaries.framework {
+    listOf(iosArm64(), iosSimulatorArm64()).forEach { target ->
+        target.binaries.framework {
             baseName = "StudyShared"
             isStatic = true
         }
     }
 
     sourceSets {
-        commonMain { kotlin.srcDir("src/$choice/commonMain/kotlin") }
+        commonMain {
+            kotlin.srcDir("src/$choice/commonMain/kotlin")
+            dependencies { implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.11.0") }
+        }
         androidMain { kotlin.srcDir("src/$choice/androidMain/kotlin") }
         commonTest.dependencies { implementation(kotlin("test")) }
     }

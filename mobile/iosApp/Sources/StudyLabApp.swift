@@ -15,15 +15,20 @@ struct StudyLabApp: App {
 struct StudyShell: View {
     @State private var showTip = false
     @State private var showingReview = false
+    @State private var showingPlanner = false
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
+            VStack(alignment: .leading) {
                 Toggle("Show study tip", isOn: $showTip)
                     .accessibilityIdentifier("show-tip")
-                Divider().fixedSize()
-                Button("Review prompts") { showingReview = true }
-                    .accessibilityIdentifier("open-review")
+                HStack {
+                    Button("Review prompts") { showingReview = true }
+                        .accessibilityIdentifier("open-review")
+                    Spacer()
+                    Button("Plan a session") { showingPlanner = true }
+                        .accessibilityIdentifier("open-plan")
+                }
             }
             .padding(.horizontal)
             StudyRoot(showTip: showTip)
@@ -35,6 +40,17 @@ struct StudyShell: View {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Close") { showingReview = false }
                                 .accessibilityIdentifier("close-review")
+                        }
+                    }
+            }
+        }
+        .sheet(isPresented: $showingPlanner) {
+            NavigationStack {
+                SharedPlanScreen()
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Close") { showingPlanner = false }
+                                .accessibilityIdentifier("close-plan")
                         }
                     }
             }

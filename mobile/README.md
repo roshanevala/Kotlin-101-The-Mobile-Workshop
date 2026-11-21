@@ -1,6 +1,6 @@
 # Study Lab Android setup
 
-The native SwiftUI client has its own [iOS setup](iosApp/README.md). Chapter 19 introduces the shared library in this Gradle build. For its prerequisites, build commands and source-set exercise, start with [Chapter 19](../chapters/19-project-and-build-model/README.md). [Chapter 20](../chapters/20-shared-boundaries/README.md) uses the same library to plan sessions with platform-generated IDs. The commands below concern the Android app.
+The native SwiftUI client has its own [iOS setup](iosApp/README.md). Chapter 19 introduces the shared library in this Gradle build. For its prerequisites, build commands and source-set exercise, start with [Chapter 19](../chapters/19-project-and-build-model/README.md). [Chapter 20](../chapters/20-shared-boundaries/README.md) uses the same library to plan sessions with platform-generated IDs. [Chapter 21](../chapters/21-swift-integration/README.md) connects the SwiftUI app to that shared planner. The commands below concern the Android app.
 
 This is the growing Android application from [Chapter 13](../chapters/13-android-runtime-and-lifecycle/README.md), extended with [Compose](../chapters/14-jetpack-compose/README.md) and [architecture in Chapter 15](../chapters/15-android-app-architecture/README.md). Keep `kotlin-labs` for independent Kotlin exercises; Android builds do not compile those answers.
 

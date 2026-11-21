@@ -2,7 +2,7 @@
 
 A learner chooses Swift, sees the prompt loading, and taps Cancel. The screen goes idle, then shows a load error for the request they just cancelled. Another learner reports that an old error replaced a newer question. Repair both behaviors and write a test that anyone can use to reproduce the second report.
 
-Read the [lesson](LESSON.md) first. Follow [iOS setup](../../mobile/iosApp/README.md) to select and boot a simulator and set `study_simulator` to its UDID. Run these commands from `mobile/iosApp` in the same terminal.
+Read the [lesson](LESSON.md) first. Use the [Chapter 18 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch18-v1) in a separate folder for the original standalone Swift app and its test counts. Follow its [iOS setup](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/blob/ch18-v1/mobile/iosApp/README.md) to select and boot a simulator and set `study_simulator` to its UDID. Run these commands from `mobile/iosApp` in the same terminal.
 
 ```sh
 python3 ios.py prepare

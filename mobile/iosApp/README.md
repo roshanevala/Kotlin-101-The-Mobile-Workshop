@@ -1,6 +1,6 @@
 # Study Lab iOS setup
 
-This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It gains an asynchronous review screen in [Chapter 18](../../chapters/18-swift-concurrency-and-tests/README.md). It does not depend on either Gradle workspace or your Chapter 16 answer.
+This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It gains an asynchronous review screen in [Chapter 18](../../chapters/18-swift-concurrency-and-tests/README.md). [Chapter 21](../../chapters/21-swift-integration/README.md) adds a form that calls the Kotlin session planner. For the earlier Swift-only project, extract the original [Chapter 18 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch18-v1) in a fresh folder.
 
 ## Check Xcode and a simulator
 
@@ -13,7 +13,7 @@ xcrun simctl list runtimes
 xcrun simctl list devices available
 ```
 
-Finish Xcode's first-launch setup and install a supported iOS runtime through its components/settings if needed. No package download, XcodeGen, CocoaPods, signing account, or physical phone is required for the simulator commands. The project and shared schemes are checked in.
+Finish Xcode's first-launch setup and install a supported iOS runtime through its components/settings if needed. Set up JDK 17 for the mobile Gradle wrapper. Allow the first build to download Gradle, Kotlin/Native, and the shared library's dependencies. Xcode runs the wrapper from the checked-in project. Both app schemes build the same Kotlin reference framework for their selected SDK, so you can work on the Swift form with earlier Kotlin exercises unfinished. See [shared build setup](../../chapters/19-project-and-build-model/WORKSHOP.md).
 
 From `mobile/iosApp`, prepare your files before opening the project:
 
@@ -22,7 +22,7 @@ python3 ios.py prepare
 open StudyLab.xcodeproj
 ```
 
-Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Chapter 17 uses **`Practice/StudyScreens.swift`**. In Chapter 18 edit **`Practice/ReviewLoader.swift`** and **`Practice/ReviewRegressionTests.swift`**. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Each scheme pairs its app with a Swift Testing unit bundle and an XCTest UI bundle.
+Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Chapter 17 uses **`Practice/StudyScreens.swift`**. In Chapter 18 edit **`Practice/ReviewLoader.swift`** and **`Practice/ReviewRegressionTests.swift`**. In Chapter 21, edit **`Practice/SharedPlanAdapter.swift`**. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Each scheme pairs its app with a Swift Testing unit bundle and an XCTest UI bundle.
 
 If an older Chapter 17 answer reports that StudyRoot's initializer is private, preserve your edits and copy only `init(showTip:)` from Starter into your StudyRoot. Preparation intentionally leaves existing answers unchanged.
 
@@ -47,6 +47,12 @@ python3 ios.py test --device "$study_simulator"
 ```
 
 If using another existing simulator, set `study_simulator` to that intended UDID instead of creating another device. Start it before `run`; Xcode's test action can boot the selected destination. Do not erase or reset a personal simulator to follow this exercise.
+
+For Chapter 21, open **Plan a session**. Try `ten`, `0`, and `25` as minutes. A valid plan has a topic, duration, and ID from Kotlin. Confirm it to see a receipt with that ID. Run the adapter tests independently of earlier Swift exercises.
+
+```sh
+python3 ios.py test --device "$study_simulator" --only-test StudyLabPracticeTests/SharedPlanAdapterTests
+```
 
 For Chapter 18, open **Review prompts** in the running app. Tap **Swift** to see the first load fail, then **Retry** to get the prompt. Run the loader unit tests while repairing cancellation and late replies. The starter includes a failing marker for the regression you will write.
 
@@ -83,4 +89,4 @@ Preparation fills each missing Practice file independently. `python3 ios.py clea
 
 The current data is in memory: drafts, topics, completion, filters, and navigation survive the stated view/background interactions within the process. Terminating and relaunching the app starts fresh. No database, file storage, SceneStorage, or process-restoration feature is included. Scene logs use the **StudyScene** prefix and contain no entered topics.
 
-The iOS workflow builds both apps and their unit and UI test bundles, and runs the standalone model checks. Simulator results are recorded in the [Chapter 18 verification record](../../docs/maintainers/verification/ch18.md).
+The iOS workflow builds both apps and their unit and UI test bundles, and runs the standalone model checks. See [Chapter 21 verification](../../docs/maintainers/verification/ch21.md) for the local framework and simulator results.

@@ -129,8 +129,14 @@ Reviewed on **19 November 2026**. The mobile catalog pins Kotlin 2.2.21 and AGP 
 
 JetBrains lists Xcode **26.0** for Kotlin 2.2.21. Local tests and framework linking also succeeded with Xcode **27.0** and its iOS 27 SDK on Apple silicon, outside that published matrix. The hosted framework job selects Xcode **26.0.1** from the macOS 26 arm64 image. First builds need access to the native distribution and any uncached dependencies. [GitHub runner inventory](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md) · [Kotlin/Native Gradle setup](https://kotlinlang.org/docs/native-get-started.html#using-gradle) · [local verification](verification/ch19.md)
 
+## Chapter 21 Swift framework integration
+
+Reviewed on **21 November 2026**. The Xcode dependency invokes the mobile Gradle wrapper to link a static Kotlin reference framework for the selected arm64 SDK and build configuration. Its generated Objective-C header supplies the Swift names, nullable types, and completion-handler signature used in this chapter. The app binary owns the linked runtime. Hosted unit tests use the app's framework symbols. [Kotlin/Native frameworks](https://kotlinlang.org/docs/native-objc-interop.html) · [Kotlin direct integration guidance](https://kotlinlang.org/docs/multiplatform/multiplatform-direct-integration.html)
+
+The receipt uses `kotlinx-coroutines-core:1.11.0`, the version already used by the Android app. A `CompletableDeferred` lets a decision arrive before or after a waiter and makes cancellation explicit across the language boundary. The Swift tests exercise the compiler-imported async call and the completion-handler form against the same Kotlin request. [CompletableDeferred](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-completable-deferred/) · [Kotlin exception translation](https://kotlinlang.org/docs/native-objc-interop.html#errors-and-exceptions) · [Chapter 21 verification](verification/ch21.md)
+
 ## Research boundaries and next checks
 
 This research establishes the curriculum direction and initial stack. The course sequence and interview exercises are teaching recommendations. Employer-specific preparation will depend on actual role descriptions and the learner's interview feedback.
 
-Before the first runnable lesson, verify the installed JDK and IDE setup, pin the exercise build, and run the documented commands. Before integrating the new library with SwiftUI, verify the generated API and link it in the intended Xcode configuration. Before adding each major library, verify its current compatibility and test the behavior the lesson teaches.
+Before the first runnable lesson, verify the installed JDK and IDE setup, pin the exercise build, and run the documented commands. Before adding each major library, verify its current compatibility and test the behavior the lesson teaches.

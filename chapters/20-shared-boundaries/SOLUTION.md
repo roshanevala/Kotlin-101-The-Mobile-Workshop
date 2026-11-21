@@ -33,6 +33,6 @@ Expect five planner tests on each target. To include the three Chapter 19 label 
 
 The importing caller can pass its own `SessionIdSource` to `SessionPlanner`. Give the source one ID, `"import-007"`, and submit a 121-minute row. Check for `null` and zero calls. Submit a valid row next and check that its ID is exactly `"import-007"` and the count is one. This last call catches a planner that discarded or rewrote an ID supplied by the caller.
 
-Chapter 21 will connect the shared API to SwiftUI. [Course roadmap](../../docs/CURRICULUM.md)
+Continue to [Chapter 21, Swift integration](../21-swift-integration/README.md), to call the planner from a SwiftUI form.
 
 [Back to the workshop](WORKSHOP.md) · [Back to the course](../../README.md)

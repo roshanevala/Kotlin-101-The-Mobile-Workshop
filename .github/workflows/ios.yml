@@ -3,9 +3,9 @@ name: iOS build
 on:
   push:
     branches: [main]
-    paths: ['mobile/iosApp/**', '.github/workflows/ios.yml']
+    paths: ['mobile/iosApp/**', 'mobile/shared/**', 'mobile/gradle/**', 'mobile/*.gradle.kts', 'mobile/gradle.properties', 'mobile/gradlew', '.github/workflows/ios.yml']
   pull_request:
-    paths: ['mobile/iosApp/**', '.github/workflows/ios.yml']
+    paths: ['mobile/iosApp/**', 'mobile/shared/**', 'mobile/gradle/**', 'mobile/*.gradle.kts', 'mobile/gradle.properties', 'mobile/gradlew', '.github/workflows/ios.yml']
   workflow_dispatch:
 
 permissions:
@@ -18,9 +18,9 @@ concurrency:
 jobs:
   build:
     runs-on: macos-26
-    timeout-minutes: 15
+    timeout-minutes: 30
     env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+      DEVELOPER_DIR: /Applications/Xcode_26.0.1.app/Contents/Developer
     defaults:
       run:
         working-directory: mobile/iosApp
@@ -29,6 +29,15 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+          cache-dependency-path: |
+            mobile/**/*.gradle.kts
+            mobile/gradle/libs.versions.toml
+            mobile/gradle/wrapper/gradle-wrapper.properties
       - name: Report selected toolchain
         run: |
           xcodebuild -version
@@ -36,11 +45,12 @@ jobs:
       - name: Check the model and compile both apps and their test bundles
         run: |
           python3 ios.py check-model
-          python3 ios.py build-tests
           python3 ios.py build-tests --reference
+          test ! -e Practice
+          python3 ios.py build-tests
       - name: Check preparation and ignore rules
         run: |
-          for source in StudyScreens.swift ReviewLoader.swift ReviewRegressionTests.swift; do
+          for source in StudyScreens.swift ReviewLoader.swift ReviewRegressionTests.swift SharedPlanAdapter.swift; do
             cmp "Starter/$source" "Practice/$source"
             git check-ignore --quiet "Practice/$source"
           done

@@ -5,6 +5,164 @@
 	};
 	"objectVersion" = 56;
 	"objects" = {
+		"79E2338885BA44EFC8F83B2E" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "E444275A22CF8D4415AAF196";
+			"targetProxy" = "EE1F40EE54222254A468F983";
+		};
+		"EE1F40EE54222254A468F983" = {
+			"isa" = "PBXContainerItemProxy";
+			"containerPortal" = "98F54143AB4E86B28C3AFEE0";
+			"proxyType" = 1;
+			"remoteGlobalIDString" = "E444275A22CF8D4415AAF196";
+			"remoteInfo" = "BuildStudyShared";
+		};
+		"5CB8D548B2A4B52DC1B627A8" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "02987997FFD4CD56E58D8498";
+		};
+		"350BB6F275CA7FA832992EEA" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "10A5E59E41AD2E8C8696A598";
+		};
+		"1EFA9501BF3E57847F128B1D" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "9AC8C36984A5FC0C961696EF";
+		};
+		"A6C9D60A4769891A2831E292" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "F0C55E5A65E92E0434BDD018";
+		};
+		"48E824743088369E4E9D9628" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "6CE9D95B67D9F3FA0231DE01";
+		};
+		"9AC8C36984A5FC0C961696EF" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SharedPlanAdapter.swift";
+			"sourceTree" = "<group>";
+		};
+		"47EE6B5727FB293A0D50505A" = {
+			"isa" = "PBXTargetDependency";
+			"target" = "E444275A22CF8D4415AAF196";
+			"targetProxy" = "3098AD6B96D22265F3D0BD76";
+		};
+		"3098AD6B96D22265F3D0BD76" = {
+			"isa" = "PBXContainerItemProxy";
+			"containerPortal" = "98F54143AB4E86B28C3AFEE0";
+			"proxyType" = 1;
+			"remoteGlobalIDString" = "E444275A22CF8D4415AAF196";
+			"remoteInfo" = "BuildStudyShared";
+		};
+		"3B50CB15D085E6E95753624F" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "02987997FFD4CD56E58D8498";
+		};
+		"876ACA86CCCEFA7FB3C0516E" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "10A5E59E41AD2E8C8696A598";
+		};
+		"7AF6631F95D8B375D8C585C4" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "E5235F4FF0605AA0BE0AD6C1";
+		};
+		"4C846980A38CB099281E2C49" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "F0C55E5A65E92E0434BDD018";
+		};
+		"B8F0DD945FE5EA01AE3BD523" = {
+			"isa" = "PBXBuildFile";
+			"fileRef" = "6CE9D95B67D9F3FA0231DE01";
+		};
+		"E5235F4FF0605AA0BE0AD6C1" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SharedPlanAdapter.swift";
+			"sourceTree" = "<group>";
+		};
+		"E444275A22CF8D4415AAF196" = {
+			"isa" = "PBXAggregateTarget";
+			"buildConfigurationList" = "8C836974D8EAAC06599E2A7C";
+			"buildPhases" = (
+				"232FFF5CD114951D74372AD7",
+			);
+			"dependencies" = (
+			);
+			"name" = "BuildStudyShared";
+			"productName" = "BuildStudyShared";
+		};
+		"232FFF5CD114951D74372AD7" = {
+			"isa" = "PBXShellScriptBuildPhase";
+			"alwaysOutOfDate" = 1;
+			"buildActionMask" = 2147483647;
+			"files" = (
+			);
+			"inputPaths" = (
+			);
+			"name" = "Build the shared Kotlin framework";
+			"outputPaths" = (
+				"$(SHARED_FRAMEWORK_DIR)/StudyShared.framework/StudyShared",
+				"$(SHARED_FRAMEWORK_DIR)/StudyShared.framework/Headers/StudyShared.h",
+				"$(SHARED_FRAMEWORK_DIR)/StudyShared.framework/Modules/module.modulemap",
+			);
+			"runOnlyForDeploymentPostprocessing" = 0;
+			"shellPath" = "/bin/sh";
+			"shellScript" = "set -eu\ncd \"$SRCROOT/..\"\nexport JAVA_HOME=\"${JAVA_HOME:-$(/usr/libexec/java_home -v 17)}\"\n./gradlew --console=plain -PsharedReference \":shared:link${CONFIGURATION}FrameworkIos${KOTLIN_IOS_TARGET_SUFFIX}\"\n";
+		};
+		"8C836974D8EAAC06599E2A7C" = {
+			"isa" = "XCConfigurationList";
+			"buildConfigurations" = (
+				"063F7E6A7DA9EDA431348A91",
+				"6BC158956966BF852CB1EF50",
+			);
+			"defaultConfigurationIsVisible" = 0;
+			"defaultConfigurationName" = "Debug";
+		};
+		"6BC158956966BF852CB1EF50" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "NO";
+			};
+			"name" = "Release";
+		};
+		"063F7E6A7DA9EDA431348A91" = {
+			"isa" = "XCBuildConfiguration";
+			"buildSettings" = {
+				"ENABLE_USER_SCRIPT_SANDBOXING" = "NO";
+			};
+			"name" = "Debug";
+		};
+		"AE3997FF728B540CFCD8DCD1" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SharedPlanAdapter.swift";
+			"sourceTree" = "<group>";
+		};
+		"02987997FFD4CD56E58D8498" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "PlanReceiptTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"10A5E59E41AD2E8C8696A598" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SharedPlanAdapterTests.swift";
+			"sourceTree" = "<group>";
+		};
+		"F0C55E5A65E92E0434BDD018" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "PlanReceiptSection.swift";
+			"sourceTree" = "<group>";
+		};
+		"6CE9D95B67D9F3FA0231DE01" = {
+			"isa" = "PBXFileReference";
+			"lastKnownFileType" = "sourcecode.swift";
+			"path" = "SharedPlanScreen.swift";
+			"sourceTree" = "<group>";
+		};
 		"461AAB9F9857825C883EBAD5" = {
 			"isa" = "PBXFileReference";
 			"lastKnownFileType" = "sourcecode.swift";
@@ -50,6 +208,8 @@
 				"916625662BC8D0E58DCDAFB6",
 				"27B5318C30886BC97D4B6A24",
 				"C11E80774BBD451B244949AE",
+				"6CE9D95B67D9F3FA0231DE01",
+				"F0C55E5A65E92E0434BDD018",
 			);
 			"path" = "Sources";
 			"sourceTree" = "<group>";
@@ -78,6 +238,7 @@
 				"BD9757B279275D7639D83784",
 				"5504069B76ACA63D63ABF6AD",
 				"9574CBC731BA9833D8B6E4A6",
+				"AE3997FF728B540CFCD8DCD1",
 			);
 			"path" = "Starter";
 			"sourceTree" = "<group>";
@@ -106,6 +267,7 @@
 				"9548BCA37D5D00AD1CDB5E07",
 				"597B4251A2E94054A1054D62",
 				"C150BA86EF84846D30C590C6",
+				"E5235F4FF0605AA0BE0AD6C1",
 			);
 			"path" = "Practice";
 			"sourceTree" = "<group>";
@@ -134,6 +296,7 @@
 				"EA79A5089907F892ED44C1E9",
 				"254072596ACDD5FC50DA8E8E",
 				"5DFA917C650BCA7002C98461",
+				"9AC8C36984A5FC0C961696EF",
 			);
 			"path" = "Solution";
 			"sourceTree" = "<group>";
@@ -155,6 +318,8 @@
 			"children" = (
 				"26809650F2BC9377C8579F28",
 				"36A6AB76812BC8630BF13036",
+				"10A5E59E41AD2E8C8696A598",
+				"02987997FFD4CD56E58D8498",
 			);
 			"path" = "Tests";
 			"sourceTree" = "<group>";
@@ -162,9 +327,17 @@
 		"ED8772ADEC3A6C25161BC957" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"KOTLIN_IOS_TARGET_SUFFIX" = "Arm64";
+				"KOTLIN_IOS_TARGET_SUFFIX[sdk=iphonesimulator*]" = "SimulatorArm64";
+				"SHARED_FRAMEWORK_DIR" = "$(SRCROOT)/../shared/build/reference/bin/ios$(KOTLIN_IOS_TARGET_SUFFIX)/debugFramework";
+				"FRAMEWORK_SEARCH_PATHS" = (
+					"$(inherited)",
+					"\"$(SHARED_FRAMEWORK_DIR)\"",
+				);
 				"CLANG_ENABLE_MODULES" = "YES";
 				"CLANG_ENABLE_OBJC_ARC" = "YES";
 				"SDKROOT" = "iphoneos";
+				"ARCHS" = "arm64";
 				"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
 				"SWIFT_VERSION" = "6.0";
 				"TARGETED_DEVICE_FAMILY" = "1";
@@ -182,9 +355,17 @@
 		"00F209874A1F7309F6DCEAA7" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"KOTLIN_IOS_TARGET_SUFFIX" = "Arm64";
+				"KOTLIN_IOS_TARGET_SUFFIX[sdk=iphonesimulator*]" = "SimulatorArm64";
+				"SHARED_FRAMEWORK_DIR" = "$(SRCROOT)/../shared/build/reference/bin/ios$(KOTLIN_IOS_TARGET_SUFFIX)/releaseFramework";
+				"FRAMEWORK_SEARCH_PATHS" = (
+					"$(inherited)",
+					"\"$(SHARED_FRAMEWORK_DIR)\"",
+				);
 				"CLANG_ENABLE_MODULES" = "YES";
 				"CLANG_ENABLE_OBJC_ARC" = "YES";
 				"SDKROOT" = "iphoneos";
+				"ARCHS" = "arm64";
 				"IPHONEOS_DEPLOYMENT_TARGET" = "17.0";
 				"SWIFT_VERSION" = "6.0";
 				"TARGETED_DEVICE_FAMILY" = "1";
@@ -256,6 +437,9 @@
 				"CCB75DBA3AB09719F289188C",
 				"88C3446D5A75337E691EED8D",
 				"537154516BF75FFC722E0310",
+				"B8F0DD945FE5EA01AE3BD523",
+				"4C846980A38CB099281E2C49",
+				"7AF6631F95D8B375D8C585C4",
 			);
 			"runOnlyForDeploymentPostprocessing" = 0;
 		};
@@ -276,6 +460,12 @@
 		"49C8BDCA1A71854065376784" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"OTHER_LDFLAGS" = (
+					"$(inherited)",
+					"-framework",
+					"StudyShared",
+					"-lc++",
+				);
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "workshop.studylab.ios.practice";
 				"GENERATE_INFOPLIST_FILE" = "YES";
@@ -297,6 +487,12 @@
 		"AD4AD950D7CE63E16F7D103D" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"OTHER_LDFLAGS" = (
+					"$(inherited)",
+					"-framework",
+					"StudyShared",
+					"-lc++",
+				);
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "workshop.studylab.ios.practice";
 				"GENERATE_INFOPLIST_FILE" = "YES";
@@ -333,6 +529,7 @@
 			"buildRules" = (
 			);
 			"dependencies" = (
+				"47EE6B5727FB293A0D50505A",
 			);
 			"name" = "StudyLabPractice";
 			"productName" = "StudyLabPractice";
@@ -450,6 +647,8 @@
 			"files" = (
 				"4BB7DD7ECE30E1DB6E8D7D14",
 				"2518DB866648DDC020601C51",
+				"876ACA86CCCEFA7FB3C0516E",
+				"3B50CB15D085E6E95753624F",
 			);
 			"runOnlyForDeploymentPostprocessing" = 0;
 		};
@@ -473,6 +672,13 @@
 				"GENERATE_INFOPLIST_FILE" = "YES";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"OTHER_SWIFT_FLAGS" = (
+					"$(inherited)",
+					"-Xfrontend",
+					"-disable-autolink-framework",
+					"-Xfrontend",
+					"StudyShared",
+				);
 				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/StudyLabPractice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyLabPractice";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "$(inherited) PRACTICE";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
@@ -490,6 +696,13 @@
 				"GENERATE_INFOPLIST_FILE" = "YES";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"OTHER_SWIFT_FLAGS" = (
+					"$(inherited)",
+					"-Xfrontend",
+					"-disable-autolink-framework",
+					"-Xfrontend",
+					"StudyShared",
+				);
 				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/StudyLabPractice.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyLabPractice";
 				"SWIFT_ACTIVE_COMPILATION_CONDITIONS" = "$(inherited) PRACTICE";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
@@ -573,6 +786,9 @@
 				"49ED2B33C6060A6A685EADF2",
 				"B1F6BED5AE841E13EFE8C8CC",
 				"0E65B73A39EE912789F6557A",
+				"48E824743088369E4E9D9628",
+				"A6C9D60A4769891A2831E292",
+				"1EFA9501BF3E57847F128B1D",
 			);
 			"runOnlyForDeploymentPostprocessing" = 0;
 		};
@@ -593,6 +809,12 @@
 		"99C463DD6A1C9703F08183DA" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"OTHER_LDFLAGS" = (
+					"$(inherited)",
+					"-framework",
+					"StudyShared",
+					"-lc++",
+				);
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "workshop.studylab.ios.reference";
 				"GENERATE_INFOPLIST_FILE" = "YES";
@@ -614,6 +836,12 @@
 		"54C006B057EE16E41EE89963" = {
 			"isa" = "XCBuildConfiguration";
 			"buildSettings" = {
+				"OTHER_LDFLAGS" = (
+					"$(inherited)",
+					"-framework",
+					"StudyShared",
+					"-lc++",
+				);
 				"PRODUCT_NAME" = "$(TARGET_NAME)";
 				"PRODUCT_BUNDLE_IDENTIFIER" = "workshop.studylab.ios.reference";
 				"GENERATE_INFOPLIST_FILE" = "YES";
@@ -650,6 +878,7 @@
 			"buildRules" = (
 			);
 			"dependencies" = (
+				"79E2338885BA44EFC8F83B2E",
 			);
 			"name" = "StudyLabReference";
 			"productName" = "StudyLabReference";
@@ -767,6 +996,8 @@
 			"files" = (
 				"92C29A3B83BD9AFD94804DEC",
 				"08CADDC97CB6B1BE03302DFB",
+				"350BB6F275CA7FA832992EEA",
+				"5CB8D548B2A4B52DC1B627A8",
 			);
 			"runOnlyForDeploymentPostprocessing" = 0;
 		};
@@ -790,6 +1021,13 @@
 				"GENERATE_INFOPLIST_FILE" = "YES";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"OTHER_SWIFT_FLAGS" = (
+					"$(inherited)",
+					"-Xfrontend",
+					"-disable-autolink-framework",
+					"-Xfrontend",
+					"StudyShared",
+				);
 				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/StudyLabReference.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyLabReference";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-Onone";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf";
@@ -806,6 +1044,13 @@
 				"GENERATE_INFOPLIST_FILE" = "YES";
 				"CODE_SIGN_STYLE" = "Automatic";
 				"BUNDLE_LOADER" = "$(TEST_HOST)";
+				"OTHER_SWIFT_FLAGS" = (
+					"$(inherited)",
+					"-Xfrontend",
+					"-disable-autolink-framework",
+					"-Xfrontend",
+					"StudyShared",
+				);
 				"TEST_HOST" = "$(BUILT_PRODUCTS_DIR)/StudyLabReference.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyLabReference";
 				"SWIFT_OPTIMIZATION_LEVEL" = "-O";
 				"DEBUG_INFORMATION_FORMAT" = "dwarf-with-dsym";
@@ -911,6 +1156,7 @@
 				"0A956712269E706F3F14E289",
 				"8943D5B9BCC78D87836D187C",
 				"11828EF65ABD4768B19072E1",
+				"E444275A22CF8D4415AAF196",
 			);
 		};
 	};

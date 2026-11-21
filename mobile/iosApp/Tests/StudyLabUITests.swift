@@ -154,6 +154,30 @@ final class StudyLabUITests: XCTestCase {
 }
 
 extension StudyLabUITests {
+    @MainActor func testSharedPlanRejectsDurationThenDisplaysKotlinSession() {
+        let app = launch()
+        app.buttons["open-plan"].tap()
+        let minutes = app.textFields["plan-minutes"]
+        XCTAssertTrue(minutes.waitForExistence(timeout: 5))
+        minutes.tap()
+        minutes.typeText("121")
+        app.buttons["plan-submit"].tap()
+        XCTAssertTrue(app.staticTexts["plan-duration-error"].waitForExistence(timeout: 5))
+
+        minutes.tap()
+        minutes.typeText(XCUIKeyboardKey.delete.rawValue)
+        app.buttons["plan-submit"].tap()
+        let summary = app.staticTexts["plan-summary"]
+        XCTAssertTrue(summary.waitForExistence(timeout: 5))
+        XCTAssertEqual(summary.label, "Untitled · 12 min")
+        app.buttons["confirm-plan"].tap()
+        let receipt = app.staticTexts["plan-receipt"]
+        XCTAssertTrue(receipt.waitForExistence(timeout: 5))
+        XCTAssertNotNil(UUID(uuidString: String(receipt.label.dropFirst("Confirmed plan ".count))))
+        app.buttons["close-plan"].tap()
+        XCTAssertTrue(app.staticTexts["progress"].waitForExistence(timeout: 5))
+    }
+
     @MainActor func testReviewFailureRetryAndReturnToSessions() {
         let app = launch()
         app.buttons["open-review"].tap()
