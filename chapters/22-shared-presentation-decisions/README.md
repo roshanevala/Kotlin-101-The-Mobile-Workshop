@@ -10,4 +10,6 @@ You type a topic, close the planner to check your calendar, and come back to two
 | [Workshop](WORKSHOP.md) | Repair the disappearing draft, then make a presentation decision for Study Lab. |
 | [Solution](SOLUTION.md) | Compare your repair and decision with a worked example. |
 
+To work from the exact Chapter 22 starter and reference, extract the checkpoint into a fresh folder. Start in `mobile/iosApp` for the SwiftUI workshop or `mobile` for the Kotlin exercise. [Browse the checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch22-v1) · [Download the ZIP](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/archive/refs/tags/ch22-v1.zip)
+
 [Back to the course](../../README.md)
