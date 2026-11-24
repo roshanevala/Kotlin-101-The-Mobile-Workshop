@@ -34,6 +34,6 @@ python3 ios.py test --reference --device "$study_simulator" --only-test StudyLab
 
 Padding can be removed before parsing `"  25  "`, so the planner receives 25 and allocates one ID. The digits in `"2147483648"` exceed `Int32.max`. Conversion fails before the planner receives a request. If Kotlin later accepts 180 minutes, a Swift caller that already trusts the optional Kotlin result can accept that session without changing its own validation logic. Review any displayed range text alongside such a rule change.
 
-Chapter 22 will compare choices for owning presentation state. [Course roadmap](../../docs/CURRICULUM.md)
+Continue with [Chapter 22 · Shared presentation decisions](../22-shared-presentation-decisions/README.md) to decide who should keep an unfinished draft when this sheet closes.
 
 [Back to the workshop](WORKSHOP.md) · [Back to the course](../../README.md)

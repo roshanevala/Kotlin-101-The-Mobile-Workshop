@@ -1,6 +1,6 @@
 # Study Lab iOS setup
 
-This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It gains an asynchronous review screen in [Chapter 18](../../chapters/18-swift-concurrency-and-tests/README.md). [Chapter 21](../../chapters/21-swift-integration/README.md) adds a form that calls the Kotlin session planner. For the earlier Swift-only project, extract the original [Chapter 18 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch18-v1) in a fresh folder.
+This is the native SwiftUI client introduced in [Chapter 17](../../chapters/17-swiftui-and-app-lifecycle/README.md). It gains an asynchronous review screen in [Chapter 18](../../chapters/18-swift-concurrency-and-tests/README.md). [Chapter 21](../../chapters/21-swift-integration/README.md) adds a form that calls the Kotlin session planner. [Chapter 22](../../chapters/22-shared-presentation-decisions/README.md) compares Swift and Kotlin implementations of the draft in that form. For the earlier Swift-only project, extract the original [Chapter 18 checkpoint](https://github.com/roshanevala/Kotlin-101-The-Mobile-Workshop/tree/ch18-v1) in a fresh folder.
 
 ## Check Xcode and a simulator
 
@@ -22,7 +22,7 @@ python3 ios.py prepare
 open StudyLab.xcodeproj
 ```
 
-Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Chapter 17 uses **`Practice/StudyScreens.swift`**. In Chapter 18 edit **`Practice/ReviewLoader.swift`** and **`Practice/ReviewRegressionTests.swift`**. In Chapter 21, edit **`Practice/SharedPlanAdapter.swift`**. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Each scheme pairs its app with a Swift Testing unit bundle and an XCTest UI bundle.
+Choose the **StudyLabPractice** scheme for your work, or **StudyLabReference** for the independent solution. Chapter 17 uses **`Practice/StudyScreens.swift`**. In Chapter 18 edit **`Practice/ReviewLoader.swift`** and **`Practice/ReviewRegressionTests.swift`**. In Chapter 21, edit **`Practice/SharedPlanAdapter.swift`**. In Chapter 22, edit **`Practice/PlannerDraftOwner.swift`**. The two schemes build different source files and install under separate IDs: `workshop.studylab.ios.practice` and `.reference`. Each scheme pairs its app with a Swift Testing unit bundle and an XCTest UI bundle.
 
 If an older Chapter 17 answer reports that StudyRoot's initializer is private, preserve your edits and copy only `init(showTip:)` from Starter into your StudyRoot. Preparation intentionally leaves existing answers unchanged.
 
@@ -47,6 +47,12 @@ python3 ios.py test --device "$study_simulator"
 ```
 
 If using another existing simulator, set `study_simulator` to that intended UDID instead of creating another device. Start it before `run`; Xcode's test action can boot the selected destination. Do not erase or reset a personal simulator to follow this exercise.
+
+For Chapter 22, open **Plan a session**, enter a topic and `025` under **Native**, then close and reopen the sheet. **Shared** gives you a separate draft in the same form. Run the ownership tests while working on the fix.
+
+```sh
+python3 ios.py test --device "$study_simulator" --only-test StudyLabPracticeTests/PlannerDraftTests
+```
 
 For Chapter 21, open **Plan a session**. Try `ten`, `0`, and `25` as minutes. A valid plan has a topic, duration, and ID from Kotlin. Confirm it to see a receipt with that ID. Run the adapter tests independently of earlier Swift exercises.
 
@@ -89,4 +95,4 @@ Preparation fills each missing Practice file independently. `python3 ios.py clea
 
 The current data is in memory: drafts, topics, completion, filters, and navigation survive the stated view/background interactions within the process. Terminating and relaunching the app starts fresh. No database, file storage, SceneStorage, or process-restoration feature is included. Scene logs use the **StudyScene** prefix and contain no entered topics.
 
-The iOS workflow builds both apps and their unit and UI test bundles, and runs the standalone model checks. See [Chapter 21 verification](../../docs/maintainers/verification/ch21.md) for the local framework and simulator results.
+The iOS workflow builds both apps and their unit and UI test bundles, and runs the standalone model checks. See [Chapter 22 verification](../../docs/maintainers/verification/ch22.md) for the draft ownership and simulator results.

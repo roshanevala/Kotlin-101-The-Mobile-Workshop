@@ -16,6 +16,8 @@ struct StudyShell: View {
     @State private var showTip = false
     @State private var showingReview = false
     @State private var showingPlanner = false
+    @State private var draftOwner = PlannerDraftOwner()
+    @State private var draftDesign = DraftDesign.native
 
     var body: some View {
         VStack(spacing: 0) {
@@ -46,7 +48,7 @@ struct StudyShell: View {
         }
         .sheet(isPresented: $showingPlanner) {
             NavigationStack {
-                SharedPlanScreen()
+                SharedPlanScreen(owner: draftOwner, design: $draftDesign)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Close") { showingPlanner = false }

@@ -2,12 +2,14 @@ import XCTest
 import CoreGraphics
 
 final class StudyLabUITests: XCTestCase {
-    @MainActor private func launch() -> XCUIApplication {
+    @MainActor private func launch(
+        waitingFor readyElement: (XCUIApplication) -> XCUIElement = { $0.staticTexts["progress"] }
+    ) -> XCUIApplication {
         continueAfterFailure = false
         XCUIDevice.shared.orientation = .portrait
         let app = XCUIApplication()
         app.launch()
-        XCTAssertTrue(app.staticTexts["progress"].waitForExistence(timeout: 8))
+        XCTAssertTrue(readyElement(app).waitForExistence(timeout: 8))
         return app
     }
 
@@ -154,6 +156,53 @@ final class StudyLabUITests: XCTestCase {
 }
 
 extension StudyLabUITests {
+    @MainActor func testNativeDraftSurvivesClosingPlanner() {
+        checkPlannerReopening(design: "Native")
+    }
+
+    @MainActor func testSharedDraftSurvivesClosingPlanner() {
+        checkPlannerReopening(design: "Shared")
+    }
+
+    @MainActor private func checkPlannerReopening(design: String) {
+        let app = launch { $0.buttons["open-plan"] }
+        app.buttons["open-plan"].tap()
+        let option = app.segmentedControls["draft-design"].buttons[design]
+        XCTAssertTrue(option.waitForExistence(timeout: 5))
+        option.tap()
+        let topic = app.textFields["plan-topic"]
+        let minutes = app.textFields["plan-minutes"]
+        topic.tap()
+        topic.typeText("Loops")
+        minutes.tap()
+        minutes.typeText("025")
+        app.buttons["plan-submit"].tap()
+        XCTAssertTrue(app.staticTexts["plan-summary"].waitForExistence(timeout: 5))
+        XCTAssertEqual(app.staticTexts["plan-summary"].label, "Loops · 25 min")
+        app.buttons["close-plan"].tap()
+
+        app.buttons["open-plan"].tap()
+        XCTAssertTrue(topic.waitForExistence(timeout: 5))
+        XCTAssertTrue(option.isSelected)
+        XCTAssertEqual(topic.value as? String, "Loops")
+        XCTAssertEqual(minutes.value as? String, "025")
+        XCTAssertFalse(app.staticTexts["plan-summary"].exists)
+        XCTAssertFalse(app.buttons["confirm-plan"].exists)
+        let clear = app.buttons["plan-clear"]
+        app.buttons["plan-submit"].tap()
+        XCTAssertTrue(app.staticTexts["plan-summary"].waitForExistence(timeout: 5))
+        let otherDesign = design == "Native" ? "Shared" : "Native"
+        app.segmentedControls["draft-design"].buttons[otherDesign].tap()
+        XCTAssertFalse(clear.isEnabled)
+        XCTAssertFalse(app.staticTexts["plan-summary"].exists)
+        option.tap()
+        XCTAssertEqual(topic.value as? String, "Loops")
+        XCTAssertEqual(minutes.value as? String, "025")
+        XCTAssertFalse(app.staticTexts["plan-summary"].exists)
+        clear.tap()
+        XCTAssertFalse(clear.isEnabled)
+    }
+
     @MainActor func testSharedPlanRejectsDurationThenDisplaysKotlinSession() {
         let app = launch()
         app.buttons["open-plan"].tap()

@@ -40,7 +40,7 @@ flowchart LR
 | Coroutines and Flow · 09–12 | Cancellable search and predictable, tested state updates | **09–12 available** |
 | Android · 13–15 | The Study Lab app, followed by Compose screens, ViewModel, and repositories | **13–15 available** |
 | Native iOS · 16–18 | Swift models, then a SwiftUI client with native state and concurrency | **16–18 available** |
-| Kotlin Multiplatform · 19–22 | A shared module, then business rules and app integration | **19–21 available**, 22 planned |
+| Kotlin Multiplatform · 19–22 | A shared module, business rules, Swift integration, and draft ownership | **19–22 available** |
 | Data and platform features · 23–30 | Networking, saved data, offline behavior, and a native versus shared UI comparison | Planned |
 | Quality and interview practice · 31–40 | Failure tests, profiling, an independent feature, and mock interviews | Planned |
 
@@ -85,6 +85,7 @@ Workshop commands create a local working copy for your answers. Normal Git commi
 | [19 Project and build model](chapters/19-project-and-build-model/README.md) | Gradle wrapper, Kotlin DSL, version catalog, targets, and source sets | Build a shared study label for Android and an iOS simulator |
 | [20 Shared boundaries](chapters/20-shared-boundaries/README.md) | Common interfaces, constructor injection, and `expect`/`actual` functions | A shared session planner that validates a draft before requesting a platform-generated ID |
 | [21 Swift integration](chapters/21-swift-integration/README.md) | Framework linking, Swift optionals, errors, and cancellation across Kotlin and Swift | A SwiftUI form that creates a shared plan and confirms its receipt |
+| [22 Shared presentation decisions](chapters/22-shared-presentation-decisions/README.md) | State holders, lifecycle ownership, and injecting a test double | Reopen a SwiftUI planner with its unfinished draft and compare the native and shared implementations |
 
 More chapters are coming one at a time.
 

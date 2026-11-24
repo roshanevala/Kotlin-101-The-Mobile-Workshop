@@ -7,29 +7,61 @@ enum SharedPlanResult: Equatable {
 }
 
 struct SharedPlanScreen: View {
+    let owner: PlannerDraftOwner
+    @Binding var design: DraftDesign
+
+    var body: some View {
+        PlanDraftForm(draft: owner.draft(for: design), design: $design)
+            .id(design)
+    }
+}
+
+private struct PlanDraftForm: View {
     private enum Field { case topic, minutes }
-    @State private var topic = ""
-    @State private var minutesText = ""
+    @State private var draft: PlannerDraft
+    @Binding private var design: DraftDesign
     @State private var result: SharedPlanResult?
     @FocusState private var editing: Field?
 
-    init() {}
+    init(draft: PlannerDraft, design: Binding<DraftDesign>) {
+        _draft = State(initialValue: draft)
+        _design = design
+    }
 
     var body: some View {
         Form {
+            Section("Draft implementation") {
+                Picker("Draft implementation", selection: $design) {
+                    Text("Native").tag(DraftDesign.native)
+                    Text("Shared").tag(DraftDesign.shared)
+                }
+                .pickerStyle(.segmented)
+                .accessibilityIdentifier("draft-design")
+            }
             Section("Session details") {
-                TextField("Topic (optional)", text: $topic)
+                TextField("Topic (optional)", text: Binding(
+                    get: { draft.values.topic }, set: { draft.editTopic($0) }
+                ))
                     .focused($editing, equals: .topic)
                     .accessibilityIdentifier("plan-topic")
-                TextField("Minutes", text: $minutesText)
+                TextField("Minutes", text: Binding(
+                    get: { draft.values.minutesText }, set: { draft.editMinutes($0) }
+                ))
                     .focused($editing, equals: .minutes)
                     .keyboardType(.numbersAndPunctuation)
                     .accessibilityIdentifier("plan-minutes")
                 Button("Create plan") {
                     editing = nil
-                    result = SharedPlanAdapter().submit(topic: topic, minutesText: minutesText)
+                    result = SharedPlanAdapter().submit(topic: draft.values.topic, minutesText: draft.values.minutesText)
                 }
                 .accessibilityIdentifier("plan-submit")
+                Button("Clear draft") {
+                    editing = nil
+                    draft.clear()
+                    result = nil
+                }
+                .disabled(draft.values.topic.isEmpty && draft.values.minutesText.isEmpty && result == nil)
+                .accessibilityIdentifier("plan-clear")
             }
             switch result {
             case nil:
@@ -51,7 +83,6 @@ struct SharedPlanScreen: View {
             }
         }
         .navigationTitle("Plan a session")
-        .onChange(of: topic) { _, _ in result = nil }
-        .onChange(of: minutesText) { _, _ in result = nil }
+        .onChange(of: draft.values) { _, _ in result = nil }
     }
 }

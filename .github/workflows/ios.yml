@@ -50,7 +50,7 @@ jobs:
           python3 ios.py build-tests
       - name: Check preparation and ignore rules
         run: |
-          for source in StudyScreens.swift ReviewLoader.swift ReviewRegressionTests.swift SharedPlanAdapter.swift; do
+          for source in StudyScreens.swift ReviewLoader.swift ReviewRegressionTests.swift SharedPlanAdapter.swift PlannerDraftOwner.swift; do
             cmp "Starter/$source" "Practice/$source"
             git check-ignore --quiet "Practice/$source"
           done

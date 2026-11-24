@@ -14,7 +14,8 @@ BUILD = ROOT / "build"
 def prepare():
     practice = ROOT / "Practice"
     practice.mkdir(exist_ok=True)
-    for name in ("StudyScreens.swift", "ReviewLoader.swift", "ReviewRegressionTests.swift", "SharedPlanAdapter.swift"):
+    for name in ("StudyScreens.swift", "ReviewLoader.swift", "ReviewRegressionTests.swift",
+                 "SharedPlanAdapter.swift", "PlannerDraftOwner.swift"):
         answer = practice / name
         template = (ROOT / "Starter" / name).read_bytes()
         try:
